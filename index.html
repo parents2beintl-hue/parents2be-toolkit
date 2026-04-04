@@ -582,7 +582,7 @@ footer span{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:
     <input type="text" class="text-input" id="addr-line2" placeholder="Address line 2 (optional)">
     <input type="text" class="text-input" id="addr-city" placeholder="Town / City">
     <input type="text" class="text-input" id="addr-postcode" placeholder="Postcode">
-    <p style="font-family:Arial,sans-serif;font-size:.65rem;color:rgba(245,245,245,.25);line-height:1.5;margin-top:.35rem;">Your address is used only to send your printed copy. It is stored securely and never used for marketing without your explicit consent. You can request deletion at any time by emailing hello@parents2beintl.com</p>
+    <p style="font-family:Arial,sans-serif;font-size:.65rem;color:rgba(245,245,245,.25);line-height:1.5;margin-top:.35rem;">Your address is used only to send your printed copy. It is stored securely and never used for marketing without your explicit consent. You can request deletion at any time by emailing <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4f272a2323200f3f2e3d2a213b3c7d2d2a26213b23612c2022">[email&#160;protected]</a></p>
   </div>
 
   <div class="sec-divider"></div>
@@ -624,7 +624,7 @@ footer span{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:
   <span>parents2beintl.com</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── STATE ────────────────────────────────────────────────────────────────────
 var whoIs = null;
 var history = ['s-intro'];
@@ -651,14 +651,15 @@ function selWho(who) {
 
 function begin() {
   if (!whoIs) return;
-  populateDynamic();
+  try { populateDynamic(); } catch(e) { console.log('Populate error:', e); }
   goTo('s1');
 }
 
 // ── DYNAMIC CONTENT ───────────────────────────────────────────────────────────
 function populateDynamic() {
   var isP = whoIs === 'partner';
-  var score = parseInt(localStorage.getItem('p2bi_score') || '0');
+  var storedScore = localStorage.getItem('p2bi_score');
+  var score = storedScore ? parseInt(storedScore) : 20;
   var band = score >= 27 ? 'significant' : score >= 13 ? 'probable' : 'none';
 
   // Section 1 intro
@@ -875,9 +876,4 @@ function restoreSaved() {
   } catch(e) {}
 }
 
-// ── INIT ──────────────────────────────────────────────────────────────────────
-restoreSaved();
-updateProgress('s-intro');
-</script>
-</body>
-</html>
+// ── INIT ───────────────
