@@ -188,7 +188,7 @@ footer span{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:
 </div>
 
 <!-- ══ SECTION 1: WHAT YOUR SCORE MEANS ══ -->
-<div id="s1" class="screen">
+<div id="s1" class="screen" style="display:none;">
   <div class="section-num">SECTION 01 OF 05</div>
   <h2>What Your Score<br><em>Actually Means</em></h2>
   <div class="section-intro" id="s1-intro"></div>
@@ -241,7 +241,7 @@ footer span{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:
 </div>
 
 <!-- ══ SECTION 2: 90 DAYS ══ -->
-<div id="s2" class="screen">
+<div id="s2" class="screen" style="display:none;">
   <div class="section-num">SECTION 02 OF 05</div>
   <h2>Your Next<br><em>90 Days</em></h2>
   <div class="section-intro">This section gives you a structured plan. It is not a prescription — it is a framework. If a week's actions feel impossible right now, do the smallest possible version of them. A plan you partially complete is more useful than a perfect plan you abandon.<br><br>NHS guidance emphasises that earlier intervention produces faster recovery and reduces the impact on the whole family. Every week you act reduces that cost.</div>
@@ -353,7 +353,7 @@ footer span{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:
 </div>
 
 <!-- ══ SECTION 3: THE CONVERSATION GUIDE ══ -->
-<div id="s3" class="screen">
+<div id="s3" class="screen" style="display:none;">
   <div class="section-num">SECTION 03 OF 05</div>
   <h2>The Conversation<br><em>Guide</em></h2>
   <div class="section-intro">The conversations in this section are the ones most people avoid for months or years. NHS active listening research recommends open questions, holding silence, and resisting the urge to give advice too early. This section gives you the language — not to perform a conversation, but to have a real one.<br><br>If you find yourself writing the version you'd be comfortable with someone reading rather than the version that is true — pause. Come back. Write the true one.</div>
@@ -417,7 +417,7 @@ footer span{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:
 </div>
 
 <!-- ══ SECTION 4: GETTING THROUGH IT TOGETHER ══ -->
-<div id="s4" class="screen">
+<div id="s4" class="screen" style="display:none;">
   <div class="section-num">SECTION 04 OF 05</div>
   <h2>Getting Through It<br><em>Together</em></h2>
   <div class="section-intro">NHS-cited research confirms that partners and families have an important influence on perinatal mental health, access to care, and interactions with services — but that services focus on individuals with little regard for the wider family context. This section exists because that family context matters. You are part of the clinical picture whether the system sees you or not.<br><br>Relationship satisfaction drops for up to 67% of couples in the first year after birth. That is not about failure. It is about the scale of the transition.</div>
@@ -475,7 +475,7 @@ footer span{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:
 </div>
 
 <!-- ══ SECTION 5: IF IT GETS WORSE ══ -->
-<div id="s5" class="screen">
+<div id="s5" class="screen" style="display:none;">
   <div class="section-num">SECTION 05 OF 05</div>
   <h2>If It Gets<br><em>Worse</em></h2>
   <div class="section-intro">This section is not a failure state. It is preparation. Knowing what to do if things deteriorate is part of having a plan — not evidence that the plan isn't working.<br><br>Read this section carefully. If you find that you are already in the territory described below — stop reading and contact support now.</div>
@@ -539,7 +539,7 @@ footer span{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:
 </div>
 
 <!-- ══ COMPLETION ══ -->
-<div id="s-complete" class="screen">
+<div id="s-complete" class="screen" style="display:none;">
   <div style="text-align:center;padding-top:2rem;">
     <div class="complete-icon">&#10003;</div>
     <h2>You completed<br>all five sections.</h2>
@@ -627,7 +627,7 @@ footer span{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── STATE ────────────────────────────────────────────────────────────────────
 var whoIs = null;
-var navHistory = ['s-intro'];
+var history = ['s-intro'];
 var currentScreen = 's-intro';
 var deliveryChoice = null;
 
@@ -796,7 +796,7 @@ function proceedToCheckout() {
 
 // ── NAVIGATION ────────────────────────────────────────────────────────────────
 function goTo(sid) {
-  navHistory.push(currentScreen);
+  history.push(currentScreen);
   currentScreen = sid;
   document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
   var t = document.getElementById(sid);
@@ -810,8 +810,8 @@ function goTo(sid) {
 }
 
 function goBack() {
-  if (nav.History.length > 1) {
-    var prev = navHistory.pop();
+  if (history.length > 1) {
+    var prev = history.pop();
     currentScreen = prev;
     document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
     document.getElementById(prev).classList.add('active');
