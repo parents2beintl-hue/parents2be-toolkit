@@ -627,7 +627,7 @@ footer span{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── STATE ────────────────────────────────────────────────────────────────────
 var whoIs = null;
-var history = ['s-intro'];
+var navHistory = ['s-intro'];
 var currentScreen = 's-intro';
 var deliveryChoice = null;
 
@@ -796,7 +796,7 @@ function proceedToCheckout() {
 
 // ── NAVIGATION ────────────────────────────────────────────────────────────────
 function goTo(sid) {
-  history.push(currentScreen);
+  navHistory.push(currentScreen);
   currentScreen = sid;
   document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
   var t = document.getElementById(sid);
@@ -810,8 +810,8 @@ function goTo(sid) {
 }
 
 function goBack() {
-  if (history.length > 1) {
-    var prev = history.pop();
+  if (nav.History.length > 1) {
+    var prev = navHistory.pop();
     currentScreen = prev;
     document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
     document.getElementById(prev).classList.add('active');
