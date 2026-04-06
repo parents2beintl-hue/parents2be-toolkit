@@ -12,15 +12,15 @@ html,body{background:#000;color:#F5F5F5;font-family:Georgia,serif;font-size:16px
 #prog-wrap{position:sticky;top:0;z-index:100;background:#000;border-bottom:1px solid var(--border);padding:.6rem 1.25rem;display:flex;align-items:center;gap:1rem;}
 #prog-track{flex:1;height:2px;background:rgba(201,168,76,.15);border-radius:2px;}
 #prog-fill{height:100%;background:var(--gold);border-radius:2px;width:0%;transition:width .5s ease;}
-#prog-label{font-family:Courier New,monospace;font-size:.58rem;letter-spacing:.15em;color:var(--gold);white-space:nowrap;min-width:4rem;text-align:right;}
+#prog-label{font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.15em;color:var(--gold);white-space:nowrap;min-width:4rem;text-align:right;}
 .wrap{max-width:640px;margin:0 auto;padding:0 1.25rem 5rem;}
 h1{font-size:clamp(1.8rem,6vw,2.8rem);font-weight:normal;line-height:1.15;margin-bottom:1rem;}
 h1 em,h2 em{color:var(--gold);font-style:italic;}
 h2{font-size:clamp(1.3rem,4.5vw,2rem);font-weight:normal;line-height:1.2;margin-bottom:.75rem;}
 h3{font-size:1.1rem;font-weight:normal;color:var(--gold);margin-bottom:.5rem;}
-.brand{font-family:Courier New,monospace;font-size:.6rem;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;padding-top:2.5rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem;}
-.brand::after{content:"";flex:1;height:1px;background:var(--border);}
-.body{font-family:Arial,sans-serif;font-size:.88rem;color:rgba(245,245,245,.65);line-height:1.75;margin-bottom:1.25rem;}
+.brand{font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;padding-top:2.5rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem;}
+.brand::after{content:'';flex:1;height:1px;background:var(--border);}
+.body-text{font-family:Arial,sans-serif;font-size:.88rem;color:rgba(245,245,245,.65);line-height:1.75;margin-bottom:1.25rem;}
 .callout{background:rgba(201,168,76,.06);border-left:2px solid var(--gold);padding:.85rem 1rem;margin:1.25rem 0;font-family:Arial,sans-serif;font-size:.78rem;color:rgba(245,245,245,.65);line-height:1.65;}
 .callout strong{color:var(--gold);font-weight:400;}
 .crisis{background:rgba(180,60,60,.08);border:1px solid rgba(180,60,60,.35);padding:.85rem 1rem;margin:1.25rem 0;font-family:Arial,sans-serif;font-size:.78rem;color:rgba(245,245,245,.7);line-height:1.65;}
@@ -30,14 +30,14 @@ h3{font-size:1.1rem;font-weight:normal;color:var(--gold);margin-bottom:.5rem;}
 .who-btn small{display:block;font-size:.65rem;color:var(--muted);margin-top:.3rem;}
 .who-btn.sel{background:rgba(201,168,76,.2);border-color:var(--gold);color:var(--gold);}
 .trust-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border);}
-.trust-item{font-family:Courier New,monospace;font-size:.58rem;letter-spacing:.1em;color:rgba(201,168,76,.5);}
-.trust-item::before{content:"\2713 ";color:var(--gold);}
-.sec-num{font-family:Courier New,monospace;font-size:.55rem;letter-spacing:.2em;color:rgba(201,168,76,.4);margin-bottom:.4rem;}
+.trust-item{font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.1em;color:rgba(201,168,76,.5);}
+.trust-item::before{content:'&#10003; ';}
+.sec-num{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:.2em;color:rgba(201,168,76,.4);margin-bottom:.4rem;}
 .sec-intro{font-family:Arial,sans-serif;font-size:.8rem;color:rgba(245,245,245,.55);font-style:italic;line-height:1.7;padding:.9rem 1rem;border-left:2px solid var(--border);margin-bottom:1.75rem;}
 .q-block{margin-bottom:2rem;}
 .q-label{font-family:Arial,sans-serif;font-size:.88rem;color:#F5F5F5;line-height:1.5;margin-bottom:.4rem;display:block;}
 .q-hint{font-family:Arial,sans-serif;font-size:.72rem;color:var(--muted);font-style:italic;line-height:1.55;margin-bottom:.6rem;display:block;}
-.q-reflect{font-family:Courier New,monospace;font-size:.58rem;letter-spacing:.08em;color:rgba(201,168,76,.4);margin-top:.35rem;display:block;}
+.q-reflect{font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.08em;color:rgba(201,168,76,.4);margin-top:.35rem;display:block;}
 textarea{width:100%;background:rgba(201,168,76,.03);border:1px solid rgba(201,168,76,.2);color:#F5F5F5;font-family:Arial,sans-serif;font-size:.82rem;padding:.75rem .9rem;border-radius:1px;outline:none;resize:vertical;min-height:80px;transition:border-color .2s;}
 textarea:focus{border-color:var(--gold);}
 textarea::placeholder{color:rgba(245,245,245,.2);}
@@ -47,33 +47,34 @@ textarea::placeholder{color:rgba(245,245,245,.2);}
 .scale-wrap{display:flex;gap:.35rem;margin:.5rem 0;}
 .scale-item{flex:1;position:relative;}
 .scale-item input{position:absolute;opacity:0;width:0;height:0;}
-.scale-item label{display:flex;align-items:center;justify-content:center;height:40px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.02);cursor:pointer;font-family:Courier New,monospace;font-size:.65rem;color:rgba(245,245,245,.5);transition:all .2s;border-radius:1px;text-align:center;padding:0 .25rem;}
+.scale-item label{display:flex;align-items:center;justify-content:center;height:40px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.02);cursor:pointer;font-family:'Courier New',monospace;font-size:.6rem;color:rgba(245,245,245,.5);transition:all .2s;border-radius:1px;text-align:center;padding:0 .2rem;}
 .scale-item input:checked+label{background:var(--gold);border-color:var(--gold);color:#000;}
 .track-block{background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.15);padding:1rem;margin-bottom:1rem;border-radius:1px;}
-.track-label{font-family:Courier New,monospace;font-size:.58rem;letter-spacing:.15em;color:var(--gold);margin-bottom:.5rem;}
+.track-label{font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.15em;color:var(--gold);margin-bottom:.5rem;}
 .track-text{font-family:Arial,sans-serif;font-size:.82rem;color:rgba(245,245,245,.7);line-height:1.65;}
 .track-action{font-family:Arial,sans-serif;font-size:.78rem;color:#F5F5F5;font-style:italic;margin-top:.4rem;padding-left:.75rem;border-left:2px solid var(--gold);}
 .div-line{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:2rem 0;}
 .nav-row{display:flex;gap:.75rem;padding-top:1.5rem;margin-top:1rem;border-top:1px solid var(--border);}
-.btn-back{padding:.85rem 1.25rem;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:Courier New,monospace;font-size:.6rem;letter-spacing:.12em;cursor:pointer;transition:all .2s;border-radius:1px;}
+.btn-back{padding:.85rem 1.25rem;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:.12em;cursor:pointer;transition:all .2s;border-radius:1px;}
 .btn-back:hover{border-color:var(--gold);color:var(--gold);}
-.btn-next{flex:1;padding:.85rem;background:var(--gold);border:none;color:#000;font-family:Courier New,monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .2s;border-radius:1px;}
+.btn-next{flex:1;padding:.85rem;background:var(--gold);border:none;color:#000;font-family:'Courier New',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:background .2s;border-radius:1px;}
 .btn-next:hover{background:var(--gold-light);}
-.btn-save{padding:.85rem 1.25rem;background:rgba(201,168,76,.08);border:1px solid var(--border);color:var(--muted);font-family:Courier New,monospace;font-size:.58rem;letter-spacing:.1em;cursor:pointer;transition:all .2s;border-radius:1px;}
+.btn-save{padding:.85rem 1.25rem;background:rgba(201,168,76,.08);border:1px solid var(--border);color:var(--muted);font-family:'Courier New',monospace;font-size:.58rem;letter-spacing:.1em;cursor:pointer;transition:all .2s;border-radius:1px;}
 .btn-save:hover{border-color:var(--gold);color:var(--gold);}
-.save-note{font-family:Courier New,monospace;font-size:.55rem;letter-spacing:.08em;color:rgba(201,168,76,.3);margin-top:.5rem;text-align:center;}
+.save-note{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:.08em;color:rgba(201,168,76,.3);margin-top:.5rem;text-align:center;}
 .del-opt{border:1px solid var(--border);padding:1.1rem;margin-bottom:.75rem;cursor:pointer;transition:all .2s;border-radius:1px;}
 .del-opt.sel{border-color:var(--gold);background:rgba(201,168,76,.08);}
 .del-label{font-family:Arial,sans-serif;font-size:.88rem;color:#F5F5F5;}
-.del-label span{font-family:Courier New,monospace;font-size:.62rem;color:var(--gold);display:block;margin-top:.2rem;}
+.del-label span{font-family:'Courier New',monospace;font-size:.62rem;color:var(--gold);display:block;margin-top:.2rem;}
 .del-note{font-family:Arial,sans-serif;font-size:.72rem;color:var(--muted);font-style:italic;margin-top:.35rem;line-height:1.55;}
-.cta-stack{display:flex;flex-direction:column;gap:.6rem;margin-top:1.75rem;}
-.cta-primary{display:block;padding:1rem;background:var(--gold);color:#000;text-decoration:none;text-align:center;font-family:Courier New,monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;transition:background .2s;border-radius:1px;border:none;cursor:pointer;width:100%;}
-.cta-primary:hover{background:var(--gold-light);}
+.cta-btn{display:block;padding:1rem;background:var(--gold);color:#000;text-align:center;font-family:'Courier New',monospace;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;transition:background .2s;border-radius:1px;border:none;cursor:pointer;width:100%;}
+.cta-btn:hover{background:var(--gold-light);}
 .disclaimer{font-family:Arial,sans-serif;font-size:.65rem;color:rgba(245,245,245,.22);line-height:1.65;padding-top:1.5rem;border-top:1px solid rgba(201,168,76,.1);margin-top:2rem;}
 .disclaimer strong{color:rgba(245,245,245,.4);}
 footer{max-width:640px;margin:0 auto;padding:1.5rem 1.25rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
-footer span{font-family:Courier New,monospace;font-size:.55rem;letter-spacing:.1em;color:rgba(201,168,76,.3);}
+footer span{font-family:'Courier New',monospace;font-size:.55rem;letter-spacing:.1em;color:rgba(201,168,76,.3);}
+.addr-fields{display:flex;flex-direction:column;gap:.5rem;margin-top:1rem;}
+.complete-icon{width:60px;height:60px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;color:var(--gold);font-size:1.4rem;}
 </style>
 </head>
 <body>
@@ -81,339 +82,358 @@ footer span{font-family:Courier New,monospace;font-size:.55rem;letter-spacing:.1
   <div id="prog-track"><div id="prog-fill"></div></div>
   <div id="prog-label">0 / 5</div>
 </div>
-<div class="wrap" id="main-wrap"></div>
+<div class="wrap" id="app"></div>
 <footer>
   <span>&copy; Parents2Be International</span>
   <span>NHS PMH Trained &middot; Evidence-Based &middot; UK</span>
   <span>parents2beintl.com</span>
 </footer>
 <script>
-var whoIs = null;
-var navHistory = [];
-var currentScreen = 'intro';
-var deliveryChoice = null;
+var WHO = null;
+var NAV = [];
+var CUR = 'intro';
+var DEL = null;
 
-var SCREENS = {
-intro: function() {
-  return '<div class="brand">Parents2Be International</div>' +
-  '<h1>Paternal PPD<br>Recovery <em>Toolkit</em></h1>' +
-  '<p class="body">A self-guided 90-day recovery toolkit for paternal postpartum depression. Built on the evidence base referenced across all four NHS perinatal mental health training modules.</p>' +
-  '<div class="callout"><strong>Before you begin:</strong> The NHS describes including fathers in perinatal mental health care as &ldquo;aspirational within the current context of services.&rdquo; This toolkit exists because aspirational is not good enough when families are fracturing right now.<br><br>The only thing this toolkit asks of you is honesty. Not performance. Not the version of fine you show everyone else.<br><br><strong style="color:var(--gold);">What you put in here is what you get back.</strong></div>' +
-  '<div class="callout" style="border-left-color:rgba(245,245,245,.2);"><strong style="color:var(--gold);">A note on cost:</strong> There is a cost to this toolkit. There is also a cost to not using it. One is paid in money. The other has the potential to be paid in time, in relationship, in the slow accumulation of distance that untreated paternal PPD can create in families. We know what that cost can look like. We have lived it.</div>' +
-  '<div class="div-line"></div>' +
-  '<p style="font-family:Courier New,monospace;font-size:.6rem;letter-spacing:.18em;color:var(--gold);margin-bottom:.75rem;">WHO IS COMPLETING THIS?</p>' +
-  '<div class="who-wrap">' +
-    '<button class="who-btn' + (whoIs==='partner'?' sel':'') + '" onclick="selWho('\'partner\'')">' +
-      'I am his partner<small>Completing about what I have observed</small></button>' +
-    '<button class="who-btn' + (whoIs==='father'?' sel':'') + '" onclick="selWho('\'father\'')">' +
-      'I am the father<small>Completing about my own experience</small></button>' +
-  '</div>' +
-  (whoIs ? '<button class="btn-next" onclick="goTo('\'s1\'')" style="width:100%;">Begin Toolkit &rarr;</button>' : '<button class="btn-next" style="width:100%;background:rgba(201,168,76,.3);cursor:default;">Select who is completing above</button>') +
-  '<div class="trust-row">' +
-    '<span class="trust-item">NHS PMH training &mdash; 4 modules, 100%</span>' +
-    '<span class="trust-item">Gotland Male Depression Scale</span>' +
-    '<span class="trust-item">Save &amp; return anytime</span>' +
-    '<span class="trust-item">GDPR compliant</span>' +
-  '</div>';
-},
+function g(id){ return document.getElementById(id); }
+function ls(k,v){ if(v!==undefined) localStorage.setItem('p2bi_'+k,v); return localStorage.getItem('p2bi_'+k)||''; }
 
-s1: function() {
-  var isP = whoIs==='partner';
-  var q1 = isP ? 'What have you observed that brought you here?' : 'What has changed since the baby arrived?';
-  var q2 = isP ? 'How long have you been noticing these changes?' : 'How long has this been happening?';
-  var q3 = isP ? 'Has he acknowledged that something is wrong — and what has he said?' : 'Who in your life has been closest to what has been happening — and what have they said?';
-  var q4 = isP ? 'What has been hardest about watching this happen — including what it has cost you personally?' : 'What has been hardest to talk about?';
-  var q5 = isP ? 'What would things looking better actually mean for your family?' : 'What would feeling better actually look like for you?';
-  var intro = isP ?
-    'NHS-cited research confirms that partners have an important influence on a father'\'s access to care. You noticing this — and acting on it — is clinically significant. You are not overreacting. You are also carrying something. Your experience belongs in this toolkit alongside his.' :
-    'NHS perinatal mental health training identifies three core factors: fatherhood identity formation, role conflict, and negative feelings and fears. What you are experiencing follows a documented pattern. In men, depression presents as irritability and withdrawal three times more often than sadness. Over 80% of fathers go undiagnosed. You are not weak for not having been found sooner.';
-  return '<div class="sec-num">SECTION 01 OF 05</div>' +
-  '<h2>What Your Score<br><em>Actually Means</em></h2>' +
-  '<div class="sec-intro">' + intro + '</div>' +
-  '<div class="callout"><strong>Honesty statement:</strong> There are no right answers here. There is only what is true for you today. NHS research shows that hiding symptoms is one of the most common and most damaging responses to perinatal mental health difficulties. You don'\'t have to keep paying that cost here.</div>' +
-  qOpen('s1q1', q1, 'Start wherever feels true. &ldquo;I don'\'t know how to describe it&rdquo; is a valid answer.') +
-  qOpen('s1q2', q2, 'Include what was happening around the time it started if you can.') +
-  qOpen('s1q3', q3, 'If nobody knows &mdash; that answer matters too. Write it.') +
-  qOpen('s1q4', q4, 'If the answer is &ldquo;all of it&rdquo; &mdash; write that.') +
-  qOpen('s1q5', q5, 'Not what you think you should say. What you actually want. What a good day would feel like.') +
-  nav('intro', 's2');
-},
-
-s2: function() {
-  var isP = whoIs==='partner';
-  var t12, t34, t58, t912;
-  if (isP) {
-    t12 = track('Track 1 &mdash; Your own mental health','Your own risk is significantly elevated if he is struggling. Your first action is to name your own state honestly.','Complete this sentence below: &ldquo;The thing I am most exhausted by right now is...&rdquo;') +
-          track('Track 2 &mdash; The relationship','One low-stakes question, once: &ldquo;How are you actually doing?&rdquo; Then wait. NHS active listening guidance: hold back, allow silence.','Ask him this week.') +
-          track('Track 3 &mdash; Practical','Identify one person who can provide practical support this week.','Ask them for one specific thing.');
-    t34 = track('Track 1 &mdash; Your own mental health','Speak to your own GP this week &mdash; about you. You are entitled to support independently of his situation.','Say: &ldquo;I'\'ve been struggling since the baby arrived and I'\'m finding it hard to cope.&rdquo;') +
-          track('Track 2 &mdash; The relationship','Have the direct conversation. &ldquo;I'\'ve noticed you'\'ve been really struggling. I'\'m not angry. I'\'m worried about you. I want to help you find support.&rdquo;','If he denies it: &ldquo;I'\'m not asking you to agree. I just need you to know I'\'ve seen it.&rdquo;') +
-          track('Track 3 &mdash; Practical','If he will not engage &mdash; contact your GP for guidance. NHS services can advise on supporting a resistant partner.','You do not have to navigate this alone.');
-    t58 = track('Track 1 &mdash; Your own mental health','What can you sustainably give? Identify three things you will not compromise on for your own wellbeing.','Write your three non-negotiables in the check-in below.') +
-          track('Track 2 &mdash; The relationship','Protect one moment per week that belongs to your relationship &mdash; not to parenting, not to his mental health.','Consistent. Brief. Non-negotiable.') +
-          track('Track 3 &mdash; Practical','If his engagement has stalled &mdash; escalate. Return to your GP. Ask for a referral to the perinatal mental health team.','You are entitled to push for this.');
-    t912 = track('Track 1 &mdash; Your own mental health','What has the last 90 days cost you? Name it honestly.','Write it in the check-in below.') +
-           track('Track 2 &mdash; The relationship','Where are you compared to 90 days ago &mdash; honestly?','Write it below.') +
-           track('Track 3 &mdash; Practical','What do you need in the next 90 days?','Write it below.');
-  } else {
-    t12 = track('Track 1 &mdash; Individual','Tell one person the truth this week. Naming what is happening reduces its psychological weight measurably.','Say: &ldquo;I haven'\'t been okay since the baby arrived and I think I need some help.&rdquo;') +
-          track('Track 2 &mdash; Relational','Do not attempt to fix the relationship in weeks 1-2. Show up physically. Sit near your partner, no phone, no agenda. Three times this week.','Proximity is its own signal.') +
-          track('Track 3 &mdash; Systemic','Book a GP appointment this week. NHS guidance confirms prompt identification provides long-term gains for the individual, family, and wider society.','Say: &ldquo;I'\'ve been struggling since the baby was born and I need to talk about my mental health.&rdquo;');
-    t34 = track('Track 1 &mdash; Individual','Your GP appointment should happen this week. Take your toolkit document and your assessment score.','Say: &ldquo;I completed a validated depression screening. I'\'d like to understand what support is available.&rdquo;') +
-          track('Track 2 &mdash; Relational','Have one honest conversation with your partner. One specific thing.','Say: &ldquo;The thing I find hardest right now is [X].&rdquo;') +
-          track('Track 3 &mdash; Systemic','If your workplace has an Employee Assistance Programme &mdash; access it this week. Free, confidential, no GP referral needed.','NHS options also include IAPT talking therapies &mdash; ask your GP.');
-    t58 = track('Track 1 &mdash; Individual','Establish one daily non-negotiable that belongs only to you. 20-30 minutes. The content matters less than the consistency.','Write yours in the check-in below.') +
-          track('Track 2 &mdash; Relational','One protected time per week &mdash; no logistics, no problem solving, just presence with your partner.','Consistent. Brief. Non-negotiable.') +
-          track('Track 3 &mdash; Systemic','If referred for talking therapy, your first appointment should happen in this window. Ask about IAPT if waiting times are long &mdash; NHS funded, no cost.','NHS guidance confirms non-pharmacological treatments are particularly important in the perinatal period.');
-    t912 = track('Track 1 &mdash; Individual','What is working? What isn'\'t? The plan is responsive, not fixed.','Write what needs to change below.') +
-           track('Track 2 &mdash; Relational','Revisit the week 3-4 conversation. What has changed? What still needs to be said?','Write it below.') +
-           track('Track 3 &mdash; Systemic','Return to your GP at week 10-12. Take your toolkit document. Show them what you said at the start and what you would say now. NHS guidance recommends regular review.','That comparison is clinical data.');
-  }
-  return '<div class="sec-num">SECTION 02 OF 05</div>' +
-  '<h2>Your Next<br><em>90 Days</em></h2>' +
-  '<div class="sec-intro">This section gives you a structured plan. It is not a prescription &mdash; it is a framework. NHS guidance emphasises that earlier intervention produces faster recovery and reduces the impact on the whole family.</div>' +
-  '<div class="callout"><strong>Honesty statement:</strong> The check-in questions matter as much as the actions. Including when the answer is &ldquo;I didn'\'t do any of this.&rdquo; That answer is information too.</div>' +
-  '<h3>Weeks 1&ndash;2: Name It</h3>' + t12 +
-  qOpen('s2gp','What happened with the GP appointment &mdash; or what got in the way?','') +
-  qOpen('s2hard','What was harder than expected?','') +
-  qOpen('s2easy','What was easier than expected?','') +
-  '<div class="div-line"></div><h3>Weeks 3&ndash;4: Understand It</h3>' + t34 +
-  qOpen('s2gp34','What did the GP suggest &mdash; or what has happened so far?','') +
-  scale('s2prog34','How are you feeling compared to week 1?') +
-  qOpen('s2why34','What does that change &mdash; or lack of change &mdash; tell you?','') +
-  '<div class="div-line"></div><h3>Weeks 5&ndash;8: Build It</h3>' + t58 +
-  qOpen('s2daily','What is your daily non-negotiable &mdash; and are you keeping it?','') +
-  scale('s2prog58','How would you rate your overall state compared to week 1?') +
-  '<div class="div-line"></div><h3>Weeks 9&ndash;12: Consolidate It</h3>' + t912 +
-  qOpen('s2helped','What has helped most in the last 90 days?','') +
-  qOpen('s2tell','What would you tell yourself at week 1 if you could?','') +
-  scale('s2prog912','How would you rate your overall state compared to week 1?') +
-  qOpen('s2next90','What do you need in the next 90 days?','') +
-  nav('s1', 's3');
-},
-
-s3: function() {
-  var isP = whoIs==='partner';
-  var c1title = isP ? 'Conversation 1 &mdash; With Your GP' : 'Conversation 1 &mdash; With Your GP';
-  var c1box = isP ?
-    '<div class="callout">What to say: <strong style="color:#F5F5F5">&ldquo;I'\'ve been struggling since the baby arrived. My partner is also having a difficult time and I'\'m finding it hard to manage everything. I need some support.&rdquo;</strong><br><br>What to ask: &ldquo;What support is available for partners of fathers with postnatal depression?&rdquo; &bull; &ldquo;How do I support someone who is resistant to seeking help?&rdquo; &bull; &ldquo;What should I watch for in my own mental health?&rdquo;</div>' :
-    '<div class="callout">What to say: <strong style="color:#F5F5F5">&ldquo;I'\'ve been struggling since my baby was born. I completed a validated depression screening and I'\'d like to understand what support is available.&rdquo;</strong><br><br>What to bring: Your toolkit document and assessment score.<br><br>What to ask: &ldquo;What are my options for treatment?&rdquo; &bull; &ldquo;Is talking therapy available on the NHS in my area?&rdquo; &bull; &ldquo;When should I come back for a review?&rdquo;<br><br>If dismissed: Ask to see a different GP or request a referral to your local perinatal mental health team. You are entitled to that referral.</div>';
-  var c2title = isP ? 'Conversation 2 &mdash; With Him' : 'Conversation 2 &mdash; With Your Partner';
-  var c2box = isP ?
-    '<div class="callout">When: Calm, private, low-stakes.<br><br>What to say: <strong style="color:#F5F5F5">&ldquo;I'\'ve noticed you'\'ve been struggling. I'\'m not angry. I'\'m worried about you. I want to help you find some support.&rdquo;</strong><br><br>If he denies it: &ldquo;I'\'m not asking you to agree. I just need you to know I'\'ve seen it.&rdquo;<br>If he gets angry: &ldquo;I'\'m going to give you some space. I'\'m not going anywhere.&rdquo;<br>If he breaks down: say nothing. Sit near him. Let it happen.</div>' :
-    '<div class="callout">When: When you are both calm. Not after an argument.<br><br>What to say: <strong style="color:#F5F5F5">&ldquo;I know I haven'\'t been myself since [baby] arrived. I'\'ve been struggling more than I'\'ve let on. I'\'m working on getting some help.&rdquo;</strong><br><br>What not to say: &ldquo;I'\'m fine&rdquo; &bull; &ldquo;It'\'s just tiredness&rdquo; &bull; &ldquo;I don'\'t want to talk about it&rdquo;</div>';
-  var q1label = isP ? 'What do you most need him to hear?' : 'What is the one true thing you most need your partner to understand?';
-  var q2label = isP ? 'What are you most afraid of saying to him?' : 'What are you most afraid will happen if you tell the truth?';
-  var q3label = isP ? 'What have you been telling yourself you should be able to handle alone?' : 'What story have you been telling yourself about why you shouldn'\'t need help?';
-  var q4label = isP ? 'What do you most need right now that you haven'\'t allowed yourself to ask for?' : 'What would you say to a close friend who described exactly what you are experiencing?';
-  var q5label = 'What is the one thing you have never said out loud about how you have been feeling?';
-  return '<div class="sec-num">SECTION 03 OF 05</div>' +
-  '<h2>The Conversation<br><em>Guide</em></h2>' +
-  '<div class="sec-intro">The conversations most people avoid for months or years. NHS active listening research recommends open questions, holding silence, and resisting the urge to give advice too early.</div>' +
-  '<h3>' + c1title + '</h3>' + c1box +
-  qOpen('s3gpneed','What is the one thing you most need your GP to understand?','Write it here before the appointment. This is your preparation.') +
-  qOpen('s3gpfear','What are you most worried your GP will say?','') +
-  '<div class="div-line"></div><h3>' + c2title + '</h3>' + c2box +
-  qOpen('s3p1', q1label, '') +
-  qOpen('s3p2', q2label, '') +
-  '<div class="div-line"></div><h3>Conversation 3 &mdash; With Yourself</h3>' +
-  '<div class="callout">This is the hardest conversation. The internal one that says you should be coping, that this is weakness. That conversation is wrong. Writing the truth of it here is the first step to changing it.</div>' +
-  qOpen('s3s1', q3label, '') +
-  qOpen('s3s2', q4label, '') +
-  qOpen('s3s3', q5label, 'You don'\'t have to say it out loud today. Writing it here is enough for now.') +
-  nav('s2', 's4');
-},
-
-s4: function() {
-  return '<div class="sec-num">SECTION 04 OF 05</div>' +
-  '<h2>Getting Through It<br><em>Together</em></h2>' +
-  '<div class="sec-intro">NHS-cited research confirms that partners and families have an important influence on perinatal mental health, access to care, and interactions with services &mdash; but services focus on individuals with little regard for the wider family context. Relationship satisfaction drops for up to 67% of couples in the first year after birth. That is not about failure.</div>' +
-  '<div class="callout"><strong>Honesty statement:</strong> These questions may be the most uncomfortable in the entire toolkit. If you find yourself writing the version that sounds okay &mdash; pause. The version that is true is the one that will help.</div>' +
-  qOpen('s4q1','What did your relationship look like before the baby arrived that you most want to get back?','') +
-  qOpen('s4q2','What has been most damaged by the last months?','') +
-  qOpen('s4q3','What has surprised you about your partner during this time &mdash; positively?','') +
-  qOpen('s4q4','What do you need from your partner in the next 30 days that you haven'\'t asked for?','') +
-  qOpen('s4q5','What are you willing to offer your partner in the next 30 days that you haven'\'t given?','') +
-  '<div class="div-line"></div><h3>Three Agreements</h3>' +
-  '<p class="body">These need to be specific. Not &ldquo;I will try to communicate better.&rdquo; Something with a timeframe and a clear action.</p>' +
-  qOpen('s4ag1','Agreement 1 &mdash; Something you will do together this week:','') +
-  qOpen('s4ag2','Agreement 2 &mdash; Something you will stop doing that is making things harder:','') +
-  qOpen('s4ag3','Agreement 3 &mdash; Something you will ask for help with from outside your relationship:','') +
-  nav('s3', 's5');
-},
-
-s5: function() {
-  return '<div class="sec-num">SECTION 05 OF 05</div>' +
-  '<h2>If It Gets<br><em>Worse</em></h2>' +
-  '<div class="sec-intro">This section is not a failure state. It is preparation. Knowing what to do if things deteriorate is part of having a plan.</div>' +
-  '<div class="crisis"><strong>Thresholds requiring immediate action:</strong><br><br>' +
-  'Thoughts of self-harm or not wanting to be here &bull; Thoughts of harming the baby or anyone else &bull; Complete inability to function &bull; Significant alcohol or substance use escalating daily &bull; Complete withdrawal from all contact for more than 48 hours<br><br>' +
-  'If any of these are present &mdash; stop. Contact support now.<br><br>' +
-  '<strong>Samaritans: 116 123</strong> &mdash; free, 24/7, no judgement<br>' +
-  '<strong>NHS 111</strong> &mdash; urgent mental health support<br>' +
-  '<strong>Your GP</strong> &mdash; call first thing. Use the word urgent.<br>' +
-  '<strong>A&amp;E</strong> &mdash; if there is immediate risk to life</div>' +
-  '<div class="callout"><strong>Warning signs the plan needs adjusting:</strong> Score would be higher now &bull; No week 1-2 actions completed after 4 weeks &bull; GP not contacted after 3 weeks &bull; Daily substance use &bull; Relationship deteriorating significantly.<br><br>If two or more apply &mdash; return to your GP. Tell them the plan is not working. That is accurate clinical reporting, not failure.</div>' +
-  '<div class="div-line"></div><h3>Your Personal Safety Plan</h3>' +
-  '<p class="body">Answer these now, while things are manageable. Having these answers ready means you don'\'t have to find them when you are least able to think clearly.</p>' +
-  qOpen('s5q1','If things get significantly worse, the first person I will contact is:','') +
-  qOpen('s5q2','The thing that has helped most when I have felt at my lowest is:','') +
-  qOpen('s5q3','The warning sign that tells me I need to reach out immediately is:','') +
-  qOpen('s5q4','I give permission for the following person to contact support on my behalf if I am unable to do so:','You do not have to share this with anyone. But writing it means it exists.') +
-  '<div class="div-line"></div><h3>Location &mdash; Optional</h3>' +
-  '<p class="body">To help us understand where paternal PPD support is most needed across the UK. Entirely voluntary. Never linked to your personal details.</p>' +
-  '<div class="q-block"><label class="q-label">What town or postcode district are you based in? <span style="color:var(--muted);font-size:.75rem;">(optional)</span></label><span class="q-hint">e.g. Cardiff, SW1, Leeds &mdash; or leave blank</span><input type="text" class="text-input" id="s5loc" placeholder="Town or postcode (optional)"><span class="q-reflect">No national UK data on regional paternal PPD distribution exists. Every entry contributes.</span></div>' +
-  nav('s4', 'complete');
-},
-
-complete: function() {
-  var isP = whoIs==='partner';
-  var retakeNote = deliveryChoice==='print' ?
-    'In 90 days you will receive a free invitation to retake this toolkit. Your answers from today will sit alongside your answers then. Any change &mdash; however small &mdash; is evidence of movement. There is no pass or fail.' :
-    'A discounted full retake will be available to you at &pound;47 in 90 days. You will receive details by email. Your answers from today form the baseline &mdash; the comparison in 90 days is the most powerful evidence of progress you can give yourself or a clinician.';
-  return '<div style="text-align:center;padding-top:2rem;">' +
-  '<div style="width:60px;height:60px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;color:var(--gold);font-size:1.4rem;">&#10003;</div>' +
-  '<h2>You completed<br>all five sections.</h2>' +
-  '<p class="body" style="max-width:480px;margin:1rem auto 0;">You answered questions most people never answer out loud. You made agreements, named fears, and built a plan. That is not nothing. That is exactly what this required.</p>' +
-  '<p style="font-family:Georgia,serif;font-size:.9rem;color:var(--gold);font-style:italic;margin:1.25rem auto;max-width:420px;line-height:1.6;">&ldquo;What should have taken weeks took years for the person who built this resource. It doesn'\'t have to take that long for you.&rdquo;</p>' +
-  '</div><div class="div-line"></div>' +
-  '<h3>How Would You Like to Receive Your Personalised Document?</h3>' +
-  '<p class="body" style="margin-bottom:1.25rem;">Your personalised toolkit document contains every question and every answer from this session &mdash; your words, your plan, your agreements.</p>' +
-  '<div class="del-opt' + (deliveryChoice==='digital'?' sel':'') + '" onclick="selDel('\'digital\'')">' +
-    '<label style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;">' +
-    '<input type="radio" name="del" ' + (deliveryChoice==='digital'?'checked':'') + ' style="margin-top:.2rem;accent-color:var(--gold);">' +
-    '<div><div class="del-label">Email only &mdash; <strong style="color:var(--gold);">&pound;97</strong><span>PDF delivered to your inbox within 5 minutes</span></div>' +
-    '<p class="del-note">Digital copy only. No printed copy. A discounted retake available at &pound;47 in 90 days.</p></div></label></div>' +
-  '<div class="del-opt' + (deliveryChoice==='print'?' sel':'') + '" onclick="selDel('\'print\'')">' +
-    '<label style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;">' +
-    '<input type="radio" name="del" ' + (deliveryChoice==='print'?'checked':'') + ' style="margin-top:.2rem;accent-color:var(--gold);">' +
-    '<div><div class="del-label">Email + Printed copy + Free retake &mdash; <strong style="color:var(--gold);">&pound;117</strong><span>PDF now &bull; Printed copy 3&ndash;5 working days &bull; Free retake at 90 days</span></div>' +
-    '<p class="del-note">Most people find a physical copy easier to return to. Your free retake in 90 days is included.</p></div></label></div>' +
-  (deliveryChoice==='print' ?
-    '<div style="margin-top:1rem;"><p style="font-family:Courier New,monospace;font-size:.6rem;letter-spacing:.18em;color:var(--gold);margin-bottom:.5rem;">DELIVERY ADDRESS</p>' +
-    '<div style="display:flex;flex-direction:column;gap:.5rem;">' +
-    '<input type="text" class="text-input" id="addr1" placeholder="Address line 1">' +
-    '<input type="text" class="text-input" id="addr2" placeholder="Address line 2 (optional)">' +
-    '<input type="text" class="text-input" id="addrcity" placeholder="Town / City">' +
-    '<input type="text" class="text-input" id="addrpc" placeholder="Postcode">' +
-    '<p style="font-family:Arial,sans-serif;font-size:.65rem;color:rgba(245,245,245,.25);line-height:1.5;margin-top:.35rem;">Your address is used only to send your printed copy. Never used for marketing. Delete at any time: hello@parents2beintl.com</p></div></div>' : '') +
-  '<div class="div-line"></div>' +
-  '<div class="q-block"><label class="q-label">Your email address <span style="color:var(--gold);">*</span></label><input type="email" class="text-input" id="final-email" placeholder="Your email address"></div>' +
-  '<div class="cta-stack"><button class="cta-primary" onclick="doCheckout()">Proceed to Checkout &rarr;</button></div>' +
-  '<div class="div-line"></div>' +
-  '<h3>In 90 Days</h3>' +
-  '<div class="callout" style="border-left-color:rgba(245,245,245,.2);">' + retakeNote + '</div>' +
-  '<p class="disclaimer">This toolkit is for self-guided informational support only. It does not constitute clinical diagnosis or treatment. Content is grounded in NHS perinatal mental health training and aligned with NICE guidelines.<br><br>If you are in crisis please contact your GP, <strong>NHS 111</strong>, or the <strong>Samaritans on 116 123</strong> immediately.<br><br>&copy; Parents2Be International &mdash; parents2beintl.com</p>';
-}
-};
-
-function qOpen(id, label, hint) {
-  var saved = localStorage.getItem('p2bi_'+id) || '';
-  return '<div class="q-block"><label class="q-label">' + label + '</label>' +
-    (hint ? '<span class="q-hint">' + hint + '</span>' : '') +
-    '<textarea id="' + id + '" onchange="autosave('\''+ id +'\'')" placeholder="Write what is true...">' + saved + '</textarea>' +
-    '<span class="q-reflect">Take your time. Save and return if you need to. Your answer only needs to be true.</span></div>';
-}
-
-function scale(name, label) {
-  var labels = ['Much worse','Slightly worse','Same','Slightly better','Much better'];
-  var saved = localStorage.getItem('p2bi_'+name) || '';
-  var html = '<div class="q-block"><label class="q-label">' + label + '</label><div class="scale-wrap">';
-  for (var i=0;i<5;i++) {
-    html += '<div class="scale-item"><input type="radio" name="'+name+'" id="'+name+i+'" value="'+i+'" '+
-      (saved===String(i)?'checked':'') + ' onchange="autosave('\''+ name +'\'')">' +
-      '<label for="'+name+i+'">'+labels[i]+'</label></div>';
-  }
-  return html + '</div></div>';
-}
-
-function track(label, text, action) {
-  return '<div class="track-block"><div class="track-label">' + label + '</div><div class="track-text">' + text + '</div><div class="track-action">' + action + '</div></div>';
-}
-
-function nav(back, next) {
-  var nextLabel = next==='complete' ? 'Complete Toolkit &rarr;' : 'Next Section &rarr;';
-  return '<div class="nav-row"><button class="btn-back" onclick="goTo('\''+ back +'\'')">&larr; Back</button>' +
-    '<button class="btn-save" onclick="saveAll()">Save Progress</button>' +
-    '<button class="btn-next" onclick="goTo('\''+ next +'\'')">' + nextLabel + '</button></div>' +
-    '<p class="save-note">Progress saved automatically in this browser session.</p>';
-}
-
-function render(id) {
-  var wrap = document.getElementById('main-wrap');
-  wrap.innerHTML = SCREENS[id]();
-  window.scrollTo(0,0);
-  var pct = {intro:0,s1:20,s2:40,s3:60,s4:80,s5:90,complete:100}[id] || 0;
-  document.getElementById('prog-fill').style.width = pct+'%';
-  var num = {intro:0,s1:1,s2:2,s3:3,s4:4,s5:5,complete:5}[id] || 0;
-  document.getElementById('prog-label').textContent = num+' / 5';
-}
-
-function goTo(id) {
-  saveAll();
-  navHistory.push(currentScreen);
-  currentScreen = id;
-  render(id);
-}
-
-function goBack() {
-  if (navHistory.length > 0) {
-    saveAll();
-    currentScreen = navHistory.pop();
-    render(currentScreen);
-  }
-}
-
-function selWho(who) {
-  whoIs = who;
-  localStorage.setItem('p2bi_who', who);
+function selWho(w){
+  WHO = w;
+  ls('who', w);
   render('intro');
 }
 
-function selDel(choice) {
-  deliveryChoice = choice;
-  localStorage.setItem('p2bi_del', choice);
+function selDel(d){
+  DEL = d;
+  ls('del', d);
   render('complete');
 }
 
-function autosave(id) {
-  var el = document.getElementById(id);
-  if (el) localStorage.setItem('p2bi_'+id, el.value);
+function goTo(id){
+  saveAll();
+  NAV.push(CUR);
+  CUR = id;
+  render(id);
 }
 
-function saveAll() {
-  var fields = ['s1q1','s1q2','s1q3','s1q4','s1q5',
-    's2gp','s2hard','s2easy','s2gp34','s2why34','s2daily','s2helped','s2tell','s2next90',
-    's3gpneed','s3gpfear','s3p1','s3p2','s3s1','s3s2','s3s3',
-    's4q1','s4q2','s4q3','s4q4','s4q5','s4ag1','s4ag2','s4ag3',
-    's5q1','s5q2','s5q3','s5q4','s5loc'];
-  fields.forEach(function(k){ autosave(k); });
-  var radios = ['s2prog34','s2prog58','s2prog912'];
-  radios.forEach(function(n){
+function goBack(){
+  if(NAV.length > 0){
+    saveAll();
+    CUR = NAV.pop();
+    render(CUR);
+  }
+}
+
+function autosave(id){
+  var el = g(id);
+  if(el) ls(id, el.value);
+}
+
+function saveAll(){
+  var ids = ['s1q1','s1q2','s1q3','s1q4','s1q5',
+    's2gp','s2hard','s2easy','s2gp34','s2why34','s2daily',
+    's2helped','s2tell','s2next90','s3gp1','s3gp2','s3p1','s3p2',
+    's3self1','s3self2','s3self3','s4q1','s4q2','s4q3','s4q4','s4q5',
+    's4ag1','s4ag2','s4ag3','s5q1','s5q2','s5q3','s5q4','s5loc',
+    'addr1','addr2','addrcity','addrpc'];
+  ids.forEach(function(k){ autosave(k); });
+  ['s2prog34','s2prog58','s2prog912'].forEach(function(n){
     var el = document.querySelector('input[name="'+n+'"]:checked');
-    if (el) localStorage.setItem('p2bi_'+n, el.value);
+    if(el) ls(n, el.value);
   });
   var btn = document.querySelector('.btn-save');
-  if (btn) { btn.textContent='Saved \u2713'; btn.style.color='var(--gold)'; setTimeout(function(){btn.textContent='Save Progress';btn.style.color='';},2000); }
+  if(btn){
+    btn.textContent = 'Saved!';
+    btn.style.color = 'var(--gold)';
+    setTimeout(function(){ btn.textContent='Save Progress'; btn.style.color=''; }, 2000);
+  }
 }
 
-function doCheckout() {
-  var email = document.getElementById('final-email');
-  if (!email || !email.value || email.value.indexOf('@')===-1) {
-    if (email) email.style.borderColor='#e07070';
+function doCheckout(){
+  var emailEl = g('final-email');
+  if(!emailEl || !emailEl.value || emailEl.value.indexOf('@') < 0){
+    if(emailEl) emailEl.style.borderColor = '#e07070';
     return;
   }
-  if (!deliveryChoice) { alert('Please select a delivery option above.'); return; }
-  localStorage.setItem('p2bi_email', email.value);
-  var url = deliveryChoice==='print'
+  if(!DEL){ alert('Please select a delivery option above.'); return; }
+  ls('email', emailEl.value);
+  var url = DEL === 'print'
     ? 'https://parents2beintl.lemonsqueezy.com/checkout/buy/b91d62b2-f492-4003-b9db-523506fa6e90'
     : 'https://parents2beintl.lemonsqueezy.com/checkout/buy/dd7e3029-babe-4365-87ec-953b82d28f16';
   window.location.href = url;
 }
 
-// Restore
-whoIs = localStorage.getItem('p2bi_who') || null;
-deliveryChoice = localStorage.getItem('p2bi_del') || null;
+function ta(id, placeholder){
+  var val = ls(id);
+  return '<textarea id="'+id+'" placeholder="'+placeholder+'" onchange="autosave(\''+id+'\')">'+val+'</textarea>';
+}
+
+function qOpen(id, label, hint, placeholder){
+  placeholder = placeholder || 'Write what is true...';
+  return '<div class="q-block">'
+    + '<label class="q-label">'+label+'</label>'
+    + (hint ? '<span class="q-hint">'+hint+'</span>' : '')
+    + ta(id, placeholder)
+    + '<span class="q-reflect">Take your time. Save and return if you need to. Your answer only needs to be true.</span>'
+    + '</div>';
+}
+
+function scale(name, label){
+  var opts = ['Much worse','Slightly worse','Same','Slightly better','Much better'];
+  var saved = ls(name);
+  var html = '<div class="q-block"><label class="q-label">'+label+'</label><div class="scale-wrap">';
+  opts.forEach(function(o,i){
+    html += '<div class="scale-item"><input type="radio" name="'+name+'" id="'+name+i+'" value="'+i+'"'
+      + (saved===String(i) ? ' checked' : '')
+      + ' onchange="ls(\''+name+'\',\''+i+'\')"><label for="'+name+i+'">'+o+'</label></div>';
+  });
+  return html + '</div></div>';
+}
+
+function track(label, text, action){
+  return '<div class="track-block"><div class="track-label">'+label+'</div>'
+    + '<div class="track-text">'+text+'</div>'
+    + '<div class="track-action">'+action+'</div></div>';
+}
+
+function navBar(back, next){
+  var nextLabel = next === 'complete' ? 'Complete Toolkit &rarr;' : 'Next Section &rarr;';
+  return '<div class="nav-row">'
+    + '<button class="btn-back" onclick="goBack()">&larr; Back</button>'
+    + '<button class="btn-save" onclick="saveAll()">Save Progress</button>'
+    + '<button class="btn-next" onclick="goTo(\''+next+'\')">'+nextLabel+'</button>'
+    + '</div><p class="save-note">Progress saved automatically in this browser.</p>';
+}
+
+function honesty(){
+  return '<div class="callout"><strong>Honesty statement:</strong> There are no right answers here. There is only what is true for you today. NHS research shows that hiding symptoms is one of the most common and most damaging responses to perinatal mental health difficulties. You do not have to keep paying that cost here.</div>';
+}
+
+function render(id){
+  var html = '';
+  var isP = WHO === 'partner';
+
+  if(id === 'intro'){
+    html = '<div class="brand">Parents2Be International</div>'
+      + '<h1>Paternal PPD<br>Recovery <em>Toolkit</em></h1>'
+      + '<p class="body-text">A self-guided 90-day recovery toolkit for paternal postpartum depression. Built on the evidence base referenced across all four NHS perinatal mental health training modules. For fathers experiencing it and partners living beside it.</p>'
+      + '<div class="callout"><strong>Before you begin:</strong> The NHS describes including fathers in perinatal mental health care as &ldquo;aspirational within the current context of services.&rdquo; This toolkit exists because aspirational is not good enough when families are fracturing right now.<br><br>The only thing this toolkit asks of you is honesty. Not performance. Not the version of fine you show everyone else.<br><br><strong style="color:var(--gold)">What you put in here is what you get back.</strong></div>'
+      + '<div class="callout" style="border-left-color:rgba(245,245,245,.2)"><strong style="color:var(--gold)">A note on cost:</strong> There is a cost to this toolkit. There is also a cost to not using it. One is paid in money. The other has the potential to be paid in time, in relationship, in the slow accumulation of distance that untreated paternal PPD can create in families. We know what that cost can look like. We have lived it.</div>'
+      + '<div class="div-line"></div>'
+      + '<p style="font-family:Courier New,monospace;font-size:.6rem;letter-spacing:.18em;color:var(--gold);margin-bottom:.75rem;">WHO IS COMPLETING THIS?</p>'
+      + '<div class="who-wrap">'
+      + '<button class="who-btn'+(WHO==='partner'?' sel':'')+'" onclick="selWho(\'partner\')">I am his partner<small>Completing about what I have observed</small></button>'
+      + '<button class="who-btn'+(WHO==='father'?' sel':'')+'" onclick="selWho(\'father\')">I am the father<small>Completing about my own experience</small></button>'
+      + '</div>'
+      + (WHO
+          ? '<button class="btn-next" onclick="goTo(\'s1\')" style="width:100%">Begin Toolkit &rarr;</button>'
+          : '<button class="btn-next" style="width:100%;background:rgba(201,168,76,.3);cursor:default">Select who is completing above</button>')
+      + '<div class="trust-row">'
+      + '<span class="trust-item">NHS PMH training &mdash; 4 modules, 100%</span>'
+      + '<span class="trust-item">Gotland Male Depression Scale</span>'
+      + '<span class="trust-item">Save &amp; return anytime</span>'
+      + '<span class="trust-item">GDPR compliant</span>'
+      + '</div>';
+  }
+
+  else if(id === 's1'){
+    var q1 = isP ? 'What have you observed that brought you here?' : 'What has changed since the baby arrived?';
+    var q2 = isP ? 'How long have you been noticing these changes?' : 'How long has this been happening?';
+    var q3 = isP ? 'Has he acknowledged that something is wrong &mdash; and what has he said?' : 'Who in your life has been closest to what has been happening &mdash; and what have they said?';
+    var q4 = isP ? 'What has been hardest about watching this happen &mdash; including what it has cost you personally?' : 'What has been hardest to talk about?';
+    var q5 = isP ? 'What would things looking better actually mean for your family?' : 'What would feeling better actually look like for you?';
+    var intro = isP
+      ? 'NHS-cited research confirms that partners have an important influence on a father\'s access to care. You noticing this and acting on it is clinically significant. You are not overreacting. You are also carrying something. Your experience belongs in this toolkit alongside his.'
+      : 'NHS perinatal mental health training identifies three core factors in the transition to fatherhood: identity formation, role conflict, and negative feelings and fears. What you are experiencing follows a documented pattern. In men, depression presents as irritability and withdrawal three times more often than sadness. Over 80% of fathers go undiagnosed. You are not weak for not having been found sooner.';
+    html = '<div class="sec-num">SECTION 01 OF 05</div>'
+      + '<h2>What Your Score<br><em>Actually Means</em></h2>'
+      + '<div class="sec-intro">'+intro+'</div>'
+      + honesty()
+      + qOpen('s1q1', q1, 'Start wherever feels true. "I don\'t know how to describe it" is a valid answer.')
+      + qOpen('s1q2', q2, 'Include what was happening around the time it started if you can.')
+      + qOpen('s1q3', q3, 'If nobody knows &mdash; that answer matters too. Write it.')
+      + qOpen('s1q4', q4, 'If the answer is "all of it" &mdash; write that.')
+      + qOpen('s1q5', q5, 'Not what you think you should say. What you actually want. What a good day would feel like.')
+      + navBar('intro', 's2');
+  }
+
+  else if(id === 's2'){
+    var t12, t34, t58, t912;
+    if(isP){
+      t12 = track('Track 1 &mdash; Your own mental health','Your own risk is significantly elevated if he is struggling. Your first action is to name your own state honestly.','Complete this sentence: &ldquo;The thing I am most exhausted by right now is...&rdquo;')
+          + track('Track 2 &mdash; The relationship','One low-stakes question, once: &ldquo;How are you actually doing?&rdquo; Then wait. NHS active listening: hold back, allow silence.','Ask him this week.')
+          + track('Track 3 &mdash; Practical','Identify one person who can provide practical support this week.','Ask them for one specific thing.');
+      t34 = track('Track 1 &mdash; Your own mental health','Speak to your own GP this week &mdash; about you. You are entitled to support independently of his situation.','Say: "I\'ve been struggling since the baby arrived and I\'m finding it hard to cope."')
+          + track('Track 2 &mdash; The relationship','Have the direct conversation: "I\'ve noticed you\'ve been really struggling. I\'m not angry. I\'m worried about you. I want to help you find support."','If he denies it: "I\'m not asking you to agree. I just need you to know I\'ve seen it."')
+          + track('Track 3 &mdash; Practical','If he will not engage &mdash; contact your GP for guidance. NHS services can advise on supporting a resistant partner.','You do not have to navigate this alone.');
+      t58 = track('Track 1 &mdash; Your own mental health','What can you sustainably give? Identify three things you will not compromise on for your own wellbeing.','Write your three non-negotiables in the check-in below.')
+          + track('Track 2 &mdash; The relationship','Protect one moment per week that belongs to your relationship &mdash; not to parenting, not to his mental health.','Consistent. Brief. Non-negotiable.')
+          + track('Track 3 &mdash; Practical','If his engagement has stalled &mdash; escalate. Return to your GP. Ask for a referral to the perinatal mental health team.','You are entitled to push for this.');
+      t912 = track('Track 1 &mdash; Your own mental health','What has the last 90 days cost you? Name it honestly.','Write it in the check-in below.')
+           + track('Track 2 &mdash; The relationship','Where are you compared to 90 days ago &mdash; honestly?','Write it below.')
+           + track('Track 3 &mdash; Practical','What do you need in the next 90 days?','Write it below.');
+    } else {
+      t12 = track('Track 1 &mdash; Individual','Tell one person the truth this week. Naming what is happening reduces its psychological weight measurably.','Say: "I haven\'t been okay since the baby arrived and I think I need some help."')
+          + track('Track 2 &mdash; Relational','Do not attempt to fix the relationship in weeks 1-2. Show up physically. Sit near your partner, no phone, no agenda. Three times this week.','Proximity is its own signal.')
+          + track('Track 3 &mdash; Systemic','Book a GP appointment this week. NHS guidance confirms prompt identification provides long-term gains for the individual, family, and wider society.','Say: "I\'ve been struggling since the baby was born and I need to talk about my mental health."');
+      t34 = track('Track 1 &mdash; Individual','Your GP appointment should happen this week. Take your toolkit document and assessment score.','Say: "I completed a validated depression screening. I\'d like to understand what support is available."')
+          + track('Track 2 &mdash; Relational','Have one honest conversation with your partner. One specific thing.','Say: "The thing I find hardest right now is..."')
+          + track('Track 3 &mdash; Systemic','If your workplace has an Employee Assistance Programme &mdash; access it this week. Free, confidential, no GP referral needed.','NHS options also include IAPT talking therapies &mdash; ask your GP.');
+      t58 = track('Track 1 &mdash; Individual','Establish one daily non-negotiable that belongs only to you. 20-30 minutes. The content matters less than the consistency.','Write yours in the check-in below.')
+          + track('Track 2 &mdash; Relational','One protected time per week &mdash; no logistics, no problem solving, just presence with your partner.','Consistent. Brief. Non-negotiable.')
+          + track('Track 3 &mdash; Systemic','If referred for talking therapy, your first appointment should happen in this window. Ask about IAPT if waiting times are long &mdash; NHS funded, no cost.','NHS guidance confirms non-pharmacological treatments are particularly important in the perinatal period.');
+      t912 = track('Track 1 &mdash; Individual','What is working? What is not? The plan is responsive, not fixed.','Write what needs to change below.')
+           + track('Track 2 &mdash; Relational','Revisit the week 3-4 conversation. What has changed? What still needs to be said?','Write it below.')
+           + track('Track 3 &mdash; Systemic','Return to your GP at week 10-12. Take your toolkit document. Show them what you said at the start and what you would say now. NHS guidance recommends regular review.','That comparison is clinical data.');
+    }
+    html = '<div class="sec-num">SECTION 02 OF 05</div>'
+      + '<h2>Your Next<br><em>90 Days</em></h2>'
+      + '<div class="sec-intro">This section gives you a structured plan. It is not a prescription &mdash; it is a framework. NHS guidance emphasises that earlier intervention produces faster recovery and reduces the impact on the whole family.</div>'
+      + honesty()
+      + '<h3>Weeks 1&ndash;2: Name It</h3>' + t12
+      + qOpen('s2gp','What happened with the GP appointment &mdash; or what got in the way?','')
+      + qOpen('s2hard','What was harder than expected?','')
+      + qOpen('s2easy','What was easier than expected?','')
+      + '<div class="div-line"><h3>Weeks 3&ndash;4: Understand It</h3>' + t34
+      + qOpen('s2gp34','What did the GP suggest &mdash; or what has happened so far?','')
+      + scale('s2prog34','How are you feeling compared to week 1?')
+      + qOpen('s2why34','What does that change &mdash; or lack of change &mdash; tell you?','')
+      + '<div class="div-line"></div><h3>Weeks 5&ndash;8: Build It</h3>' + t58
+      + qOpen('s2daily','What is your daily non-negotiable &mdash; and are you keeping it?','')
+      + scale('s2prog58','How would you rate your overall state compared to week 1?')
+      + '<div class="div-line"></div><h3>Weeks 9&ndash;12: Consolidate It</h3>' + t912
+      + qOpen('s2helped','What has helped most in the last 90 days?','')
+      + qOpen('s2tell','What would you tell yourself at week 1 if you could?','')
+      + scale('s2prog912','How would you rate your overall state compared to week 1?')
+      + qOpen('s2next90','What do you need in the next 90 days?','')
+      + navBar('s1','s3');
+  }
+
+  else if(id === 's3'){
+    var c1box = isP
+      ? '<div class="callout">What to say: <strong style="color:#F5F5F5">"I\'ve been struggling since the baby arrived. My partner is also having a difficult time and I\'m finding it hard to manage everything. I need some support."</strong><br><br>What to ask: "What support is available for partners of fathers with postnatal depression?" &bull; "How do I support someone who is resistant to seeking help?" &bull; "What should I watch for in my own mental health?"</div>'
+      : '<div class="callout">What to say: <strong style="color:#F5F5F5">"I\'ve been struggling since my baby was born. I completed a validated depression screening and I\'d like to understand what support is available."</strong><br><br>What to bring: Your toolkit document and assessment score.<br><br>What to ask: "What are my options for treatment?" &bull; "Is talking therapy available on the NHS in my area?" &bull; "When should I come back for a review?"<br><br>If you feel dismissed: Ask to see a different GP or request a referral to your local perinatal mental health team. You are entitled to that referral.</div>';
+    var c2title = isP ? 'Conversation 2 &mdash; With Him' : 'Conversation 2 &mdash; With Your Partner';
+    var c2box = isP
+      ? '<div class="callout">When: Calm, private, low-stakes.<br><br>What to say: <strong style="color:#F5F5F5">"I\'ve noticed you\'ve been struggling. I\'m not angry. I\'m worried about you. I want to help you find some support."</strong><br><br>If he denies it: "I\'m not asking you to agree. I just need you to know I\'ve seen it."<br>If he gets angry: "I\'m going to give you some space. I\'m not going anywhere."<br>If he breaks down: say nothing. Sit near him. Let it happen.</div>'
+      : '<div class="callout">When: When you are both calm. Not after an argument.<br><br>What to say: <strong style="color:#F5F5F5">"I know I haven\'t been myself since the baby arrived. I\'ve been struggling more than I\'ve let on. I\'m working on getting some help."</strong><br><br>What not to say: "I\'m fine" &bull; "It\'s just tiredness" &bull; "I don\'t want to talk about it"</div>';
+    var q1 = isP ? 'What do you most need him to hear?' : 'What is the one true thing you most need your partner to understand?';
+    var q2 = isP ? 'What are you most afraid of saying to him?' : 'What are you most afraid will happen if you tell the truth?';
+    var q3self = isP ? 'What have you been telling yourself you should be able to handle alone?' : 'What story have you been telling yourself about why you should not need help?';
+    var q4self = isP ? 'What do you most need right now that you have not allowed yourself to ask for?' : 'What would you say to a close friend who described exactly what you are experiencing?';
+    html = '<div class="sec-num">SECTION 03 OF 05</div>'
+      + '<h2>The Conversation<br><em>Guide</em></h2>'
+      + '<div class="sec-intro">The conversations most people avoid for months or years. NHS active listening research recommends open questions, holding silence, and resisting the urge to give advice too early.</div>'
+      + '<h3>Conversation 1 &mdash; With Your GP</h3>' + c1box
+      + qOpen('s3gp1','What is the one thing you most need your GP to understand?','Write it here before the appointment. This is your preparation.')
+      + qOpen('s3gp2','What are you most worried your GP will say?','')
+      + '<div class="div-line"></div><h3>'+c2title+'</h3>' + c2box
+      + qOpen('s3p1', q1, '')
+      + qOpen('s3p2', q2, '')
+      + '<div class="div-line"></div><h3>Conversation 3 &mdash; With Yourself</h3>'
+      + '<div class="callout">This is the hardest conversation. The internal one that says you should be coping, that this is weakness. That conversation is wrong. Writing the truth of it here is the first step to changing it.</div>'
+      + qOpen('s3self1', q3self, '')
+      + qOpen('s3self2', q4self, '')
+      + qOpen('s3self3','What is the one thing you have never said out loud about how you have been feeling?','You do not have to say it out loud today. Writing it here is enough for now.')
+      + navBar('s2','s4');
+  }
+
+  else if(id === 's4'){
+    html = '<div class="sec-num">SECTION 04 OF 05</div>'
+      + '<h2>Getting Through It<br><em>Together</em></h2>'
+      + '<div class="sec-intro">NHS-cited research confirms that partners and families have an important influence on perinatal mental health, access to care, and interactions with services &mdash; but services focus on individuals with little regard for the wider family context. Relationship satisfaction drops for up to 67% of couples in the first year after birth. That is not about failure.</div>'
+      + honesty()
+      + qOpen('s4q1','What did your relationship look like before the baby arrived that you most want to get back?','')
+      + qOpen('s4q2','What has been most damaged by the last months?','')
+      + qOpen('s4q3','What has surprised you about your partner during this time &mdash; positively?','')
+      + qOpen('s4q4','What do you need from your partner in the next 30 days that you have not asked for?','')
+      + qOpen('s4q5','What are you willing to offer your partner in the next 30 days that you have not given?','')
+      + '<div class="div-line"></div><h3>Three Agreements</h3>'
+      + '<p class="body-text">These need to be specific. Not "I will try to communicate better." Something with a timeframe and a clear action.</p>'
+      + qOpen('s4ag1','Agreement 1 &mdash; Something you will do together this week:','')
+      + qOpen('s4ag2','Agreement 2 &mdash; Something you will stop doing that is making things harder:','')
+      + qOpen('s4ag3','Agreement 3 &mdash; Something you will ask for help with from outside your relationship:','')
+      + navBar('s3','s5');
+  }
+
+  else if(id === 's5'){
+    html = '<div class="sec-num">SECTION 05 OF 05</div>'
+      + '<h2>If It Gets<br><em>Worse</em></h2>'
+      + '<div class="sec-intro">This section is not a failure state. It is preparation. Knowing what to do if things deteriorate is part of having a plan.</div>'
+      + '<div class="crisis"><strong>Thresholds requiring immediate action:</strong><br><br>'
+      + 'Thoughts of self-harm or not wanting to be here &bull; Thoughts of harming the baby or anyone else &bull; Complete inability to function &bull; Significant alcohol or substance use escalating daily &bull; Complete withdrawal from all contact for more than 48 hours<br><br>'
+      + 'If any of these are present &mdash; stop. Contact support now.<br><br>'
+      + '<strong>Samaritans: 116 123</strong> &mdash; free, 24/7, no judgement<br>'
+      + '<strong>NHS 111</strong> &mdash; urgent mental health support<br>'
+      + '<strong>Your GP</strong> &mdash; call first thing. Use the word urgent.<br>'
+      + '<strong>A&amp;E</strong> &mdash; if there is immediate risk to life</div>'
+      + '<div class="callout"><strong>Warning signs the plan needs adjusting:</strong> Score would be higher now &bull; No week 1-2 actions after 4 weeks &bull; GP not contacted after 3 weeks &bull; Daily substance use &bull; Relationship deteriorating significantly.<br><br>If two or more apply &mdash; return to your GP. Tell them the plan is not working. That is accurate clinical reporting, not failure.</div>'
+      + '<div class="div-line"></div><h3>Your Personal Safety Plan</h3>'
+      + '<p class="body-text">Answer these now, while things are manageable. Having these answers ready means you do not have to find them when you are least able to think clearly.</p>'
+      + qOpen('s5q1','If things get significantly worse, the first person I will contact is:','')
+      + qOpen('s5q2','The thing that has helped most when I have felt at my lowest is:','')
+      + qOpen('s5q3','The warning sign that tells me I need to reach out immediately is:','')
+      + qOpen('s5q4','I give permission for the following person to contact support on my behalf if I am unable to do so:','You do not have to share this with anyone. But writing it means it exists.')
+      + '<div class="div-line"></div><h3>Location &mdash; Optional</h3>'
+      + '<p class="body-text">To help us understand where paternal PPD support is most needed across the UK. Entirely voluntary. Never linked to your personal details.</p>'
+      + '<div class="q-block"><label class="q-label">What town or postcode district are you based in? <span style="color:var(--muted);font-size:.75rem;">(optional)</span></label>'
+      + '<span class="q-hint">e.g. Cardiff, SW1, Leeds &mdash; or leave blank</span>'
+      + '<input type="text" class="text-input" id="s5loc" value="'+ls('s5loc')+'" placeholder="Town or postcode (optional)" onchange="autosave(\'s5loc\')">'
+      + '<span class="q-reflect">No national UK data on regional paternal PPD distribution exists. Every entry contributes.</span></div>'
+      + navBar('s4','complete');
+  }
+
+  else if(id === 'complete'){
+    var retakeNote = DEL === 'print'
+      ? 'In 90 days you will receive a free invitation to retake this toolkit. Your answers from today will sit alongside your answers then. Any change &mdash; however small &mdash; is evidence of movement. There is no pass or fail.'
+      : 'A discounted full retake will be available to you at &pound;47 in 90 days. You will receive details by email. Your answers from today form the baseline &mdash; the comparison in 90 days is the most powerful evidence of progress you can give yourself or a clinician.';
+    html = '<div style="text-align:center;padding-top:2rem;">'
+      + '<div class="complete-icon">&#10003;</div>'
+      + '<h2>You completed<br>all five sections.</h2>'
+      + '<p class="body-text" style="max-width:480px;margin:1rem auto 0;">You answered questions most people never answer out loud. You made agreements, named fears, and built a plan. That is not nothing. That is exactly what this required.</p>'
+      + '<p style="font-family:Georgia,serif;font-size:.9rem;color:var(--gold);font-style:italic;margin:1.25rem auto;max-width:420px;line-height:1.6;">"What should have taken weeks took years for the person who built this resource. It does not have to take that long for you."</p>'
+      + '</div><div class="div-line"></div>'
+      + '<h3>How Would You Like to Receive Your Personalised Document?</h3>'
+      + '<p class="body-text" style="margin-bottom:1.25rem;">Your personalised toolkit document contains every question and every answer from this session &mdash; your words, your plan, your agreements.</p>'
+      + '<div class="del-opt'+(DEL==='digital'?' sel':'')+'" onclick="selDel(\'digital\')">'
+      + '<label style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;">'
+      + '<input type="radio" name="del" '+(DEL==='digital'?'checked':'')+' style="margin-top:.2rem;accent-color:var(--gold)">'
+      + '<div><div class="del-label">Email only &mdash; <strong style="color:var(--gold)">&pound;97</strong><span>PDF delivered to your inbox within 5 minutes</span></div>'
+      + '<p class="del-note">Digital copy only. A discounted retake available at &pound;47 in 90 days.</p></div></label></div>'
+      + '<div class="del-opt'+(DEL==='print'?' sel':'')+'" onclick="selDel(\'print\')">'
+      + '<label style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer;">'
+      + '<input type="radio" name="del" '+(DEL==='print'?'checked':'')+' style="margin-top:.2rem;accent-color:var(--gold)">'
+      + '<div><div class="del-label">Email + Printed copy + Free retake &mdash; <strong style="color:var(--gold)">&pound;117</strong><span>PDF now &bull; Printed copy 3&ndash;5 working days &bull; Free retake at 90 days</span></div>'
+      + '<p class="del-note">Most people find a physical copy easier to return to. Your free retake in 90 days is included.</p></div></label></div>'
+      + (DEL === 'print'
+          ? '<div class="addr-fields">'
+          + '<p style="font-family:Courier New,monospace;font-size:.6rem;letter-spacing:.18em;color:var(--gold);margin-bottom:.5rem;">DELIVERY ADDRESS</p>'
+          + '<input type="text" class="text-input" id="addr1" value="'+ls('addr1')+'" placeholder="Address line 1" onchange="autosave(\'addr1\')">'
+          + '<input type="text" class="text-input" id="addr2" value="'+ls('addr2')+'" placeholder="Address line 2 (optional)" onchange="autosave(\'addr2\')">'
+          + '<input type="text" class="text-input" id="addrcity" value="'+ls('addrcity')+'" placeholder="Town / City" onchange="autosave(\'addrcity\')">'
+          + '<input type="text" class="text-input" id="addrpc" value="'+ls('addrpc')+'" placeholder="Postcode" onchange="autosave(\'addrpc\')">'
+          + '<p style="font-family:Arial,sans-serif;font-size:.65rem;color:rgba(245,245,245,.25);line-height:1.5;margin-top:.35rem;">Your address is used only to send your printed copy. Never used for marketing. Delete at any time: hello@parents2beintl.com</p>'
+          + '</div>' : '')
+      + '<div class="div-line"></div>'
+      + '<div class="q-block"><label class="q-label">Your email address <span style="color:var(--gold)">*</span></label>'
+      + '<input type="email" class="text-input" id="final-email" value="'+ls('email')+'" placeholder="Your email address"></div>'
+      + '<button class="cta-btn" onclick="doCheckout()">Proceed to Checkout &rarr;</button>'
+      + '<div class="div-line"></div>'
+      + '<h3>In 90 Days</h3>'
+      + '<div class="callout" style="border-left-color:rgba(245,245,245,.2)">'+retakeNote+'</div>'
+      + '<p class="disclaimer">This toolkit is for self-guided informational support only. It does not constitute clinical diagnosis or treatment. Content is grounded in NHS perinatal mental health training and aligned with NICE guidelines.<br><br>If you are in crisis please contact your GP, <strong>NHS 111</strong>, or the <strong>Samaritans on 116 123</strong> immediately.<br><br>&copy; Parents2Be International &mdash; parents2beintl.com</p>';
+  }
+
+  g('app').innerHTML = html;
+  var pcts = {intro:0,s1:20,s2:40,s3:60,s4:80,s5:90,complete:100};
+  var nums = {intro:0,s1:1,s2:2,s3:3,s4:4,s5:5,complete:5};
+  g('prog-fill').style.width = (pcts[id]||0)+'%';
+  g('prog-label').textContent = (nums[id]||0)+' / 5';
+  window.scrollTo(0,0);
+}
+
+WHO = ls('who') || null;
+DEL = ls('del') || null;
 render('intro');
 </script>
 </body>
