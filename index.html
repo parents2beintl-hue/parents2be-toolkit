@@ -3,437 +3,1274 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paternal PPD Recovery Toolkit | Parents2Be International</title>
-<meta name="description" content="A self-guided 90-day recovery toolkit for paternal postpartum depression. NHS evidence-based. For fathers and partners.">
+<title>Paternal Postpartum Depression Assessment | Parents2Be International</title>
+<meta name="description" content="A clinically validated screening tool for paternal postpartum depression. Free, anonymous, evidence-based.">
+
+<!-- GA4 — fires pageview and completion events -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E0KTPZJX8Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-E0KTPZJX8Z');
+</script>
+
 <style>
-:root{--gold:#C9A84C;--gold-light:#e8c97a;--gold-dim:rgba(201,168,76,0.12);--muted:rgba(245,245,245,0.5);--border:rgba(201,168,76,0.25);}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html,body{background:#000;color:#F5F5F5;font-family:Georgia,serif;font-size:19px;line-height:1.7;min-height:100vh;}
-#prog-wrap{position:sticky;top:0;z-index:100;background:#000;border-bottom:1px solid var(--border);padding:.6rem 1.25rem;display:flex;align-items:center;gap:1rem;}
-#prog-track{flex:1;height:2px;background:rgba(201,168,76,.15);border-radius:2px;}
-#prog-fill{height:100%;background:var(--gold);border-radius:2px;width:0%;transition:width .5s ease;}
-#prog-label{font-family:'Courier New',monospace;font-size:.68rem;letter-spacing:.15em;color:var(--gold);white-space:nowrap;min-width:4rem;text-align:right;}
-.wrap{max-width:640px;margin:0 auto;padding:0 1.25rem 5rem;}
-h1{font-size:clamp(2.2rem,7vw,3.2rem);font-weight:normal;line-height:1.15;margin-bottom:1rem;}
-h1 em,h2 em{color:var(--gold);font-style:italic;}
-h2{font-size:clamp(1.6rem,5.5vw,2.4rem);font-weight:normal;line-height:1.2;margin-bottom:.75rem;}
-h3{font-size:1.3rem;font-weight:normal;color:var(--gold);margin-bottom:.5rem;}
-.brand{font-family:'Courier New',monospace;font-size:.9rem;letter-spacing:.18em;color:var(--gold);text-transform:uppercase;padding-top:2.5rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:.75rem;}
-.brand::after{content:'';flex:1;height:1px;background:var(--border);}
-.body-text{font-family:Georgia,serif;font-size:1.15rem;color:rgba(245,245,245,.65);line-height:1.85;margin-bottom:1.25rem;}
-.callout{background:rgba(201,168,76,.06);border-left:2px solid var(--gold);padding:.85rem 1rem;margin:1.25rem 0;font-family:Georgia,serif;font-size:1.1rem;color:rgba(245,245,245,.65);line-height:1.85;}
-.callout strong{color:var(--gold);font-weight:400;}
-.crisis{background:rgba(180,60,60,.08);border:1px solid rgba(180,60,60,.35);padding:.85rem 1rem;margin:1.25rem 0;font-family:Georgia,serif;font-size:1.1rem;color:rgba(245,245,245,.7);line-height:1.85;}
-.crisis strong{color:#F5F5F5;}
-.who-wrap{display:flex;gap:.6rem;margin-bottom:2rem;flex-wrap:wrap;}
-.who-btn{flex:1;min-width:140px;padding:1rem;background:var(--gold-dim);border:1px solid var(--border);color:#F5F5F5;font-family:Georgia,serif;font-size:1.05rem;cursor:pointer;transition:all .2s;text-align:center;border-radius:1px;}
-.who-btn small{display:block;font-size:1rem;color:var(--muted);margin-top:.3rem;}
-.who-btn.sel{background:rgba(201,168,76,.2);border-color:var(--gold);color:var(--gold);}
-.trust-row{display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border);}
-.trust-item{font-family:'Courier New',monospace;font-size:.82rem;letter-spacing:.08em;color:rgba(201,168,76,.5);}
-.sec-num{font-family:'Courier New',monospace;font-size:.85rem;letter-spacing:.15em;color:rgba(201,168,76,.4);margin-bottom:.4rem;}
-.sec-intro{font-family:Georgia,serif;font-size:1.1rem;color:rgba(245,245,245,.55);font-style:italic;line-height:1.85;padding:.9rem 1rem;border-left:2px solid var(--border);margin-bottom:1.75rem;}
-.q-block{margin-bottom:2rem;}
-.q-label{font-family:Georgia,serif;font-size:1.15rem;color:#F5F5F5;line-height:1.65;margin-bottom:.4rem;display:block;}
-.q-hint{font-family:Georgia,serif;font-size:1.1rem;color:var(--muted);font-style:italic;line-height:1.7;margin-bottom:.6rem;display:block;}
-.q-reflect{font-family:'Courier New',monospace;font-size:.8rem;letter-spacing:.06em;color:rgba(201,168,76,.4);margin-top:.35rem;display:block;}
-textarea{width:100%;background:rgba(201,168,76,.03);border:1px solid rgba(201,168,76,.2);color:#F5F5F5;font-family:Georgia,serif;font-size:1.1rem;padding:.85rem 1rem;border-radius:1px;outline:none;resize:vertical;min-height:100px;transition:border-color .2s;line-height:1.75;}
-textarea:focus{border-color:var(--gold);}
-textarea::placeholder{color:rgba(245,245,245,.2);}
-.text-input{width:100%;background:rgba(201,168,76,.03);border:1px solid rgba(201,168,76,.2);color:#F5F5F5;font-family:Georgia,serif;font-size:1.1rem;padding:.85rem 1rem;border-radius:1px;outline:none;transition:border-color .2s;}
-.text-input:focus{border-color:var(--gold);}
-.text-input::placeholder{color:rgba(245,245,245,.2);}
-.scale-wrap{display:flex;gap:.35rem;margin:.5rem 0;flex-wrap:wrap;}
-.scale-item{flex:1;min-width:80px;position:relative;}
-.scale-item input{position:absolute;opacity:0;width:0;height:0;}
-.scale-item label{display:flex;align-items:center;justify-content:center;min-height:48px;border:1px solid rgba(201,168,76,.2);background:rgba(201,168,76,.02);cursor:pointer;font-family:Georgia,serif;font-size:1rem;color:rgba(245,245,245,.5);transition:all .2s;border-radius:1px;text-align:center;padding:.4rem .2rem;}
-.scale-item input:checked+label{background:var(--gold);border-color:var(--gold);color:#000;}
-.track-block{background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.15);padding:1rem;margin-bottom:1rem;border-radius:1px;}
-.track-label{font-family:'Courier New',monospace;font-size:.9rem;letter-spacing:.1em;color:var(--gold);margin-bottom:.5rem;}
-.track-text{font-family:Georgia,serif;font-size:1.1rem;color:rgba(245,245,245,.7);line-height:1.85;}
-.track-action{font-family:Georgia,serif;font-size:1.1rem;color:#F5F5F5;font-style:italic;margin-top:.4rem;padding-left:.75rem;border-left:2px solid var(--gold);}
-.div-line{height:1px;background:linear-gradient(to right,transparent,var(--border),transparent);margin:2rem 0;}
-.nav-row{display:flex;gap:.75rem;padding-top:1.5rem;margin-top:1rem;border-top:1px solid var(--border);}
-.btn-back{padding:.85rem 1.25rem;background:transparent;border:1px solid var(--border);color:var(--muted);font-family:'Courier New',monospace;font-size:.95rem;letter-spacing:.1em;cursor:pointer;transition:all .2s;border-radius:1px;}
-.btn-back:hover{border-color:var(--gold);color:var(--gold);}
-.btn-next{flex:1;padding:.85rem;background:var(--gold);border:none;color:#000;font-family:'Courier New',monospace;font-size:.95rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:background .2s;border-radius:1px;}
-.btn-next:hover{background:var(--gold-light);}
-.btn-save{padding:.85rem 1.25rem;background:rgba(201,168,76,.08);border:1px solid var(--border);color:var(--muted);font-family:'Courier New',monospace;font-size:.82rem;letter-spacing:.08em;cursor:pointer;transition:all .2s;border-radius:1px;}
-.btn-save:hover{border-color:var(--gold);color:var(--gold);}
-.save-note{font-family:Georgia,serif;font-size:.9rem;letter-spacing:.06em;color:rgba(201,168,76,.3);margin-top:.5rem;text-align:center;}
-.cta-btn{display:block;padding:1rem;background:var(--gold);color:#000;text-align:center;font-family:'Courier New',monospace;font-size:1rem;letter-spacing:.15em;text-transform:uppercase;transition:background .2s;border-radius:1px;border:none;cursor:pointer;width:100%;margin-top:1rem;text-decoration:none;}
-.cta-btn:hover{background:var(--gold-light);}
-.disclaimer{font-family:Georgia,serif;font-size:1rem;color:rgba(245,245,245,.22);line-height:1.8;padding-top:1.5rem;border-top:1px solid rgba(201,168,76,.1);margin-top:2rem;}
-.disclaimer strong{color:rgba(245,245,245,.4);}
-.status-msg{font-family:Georgia,serif;font-size:1rem;letter-spacing:.08em;color:var(--gold);text-align:center;padding:.75rem;margin-top:.5rem;}
-.error-msg{font-family:Georgia,serif;font-size:1rem;letter-spacing:.08em;color:#e07070;text-align:center;padding:.75rem;margin-top:.5rem;}
-footer{max-width:640px;margin:0 auto;padding:1.5rem 1.25rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;}
-footer span{font-family:'Courier New',monospace;font-size:.85rem;letter-spacing:.08em;color:rgba(201,168,76,.3);}
+  :root {
+    --black: #000000;
+    --gold:  #C9A84C;
+    --gold-light: #e8c97a;
+    --gold-dim: rgba(201,168,76,0.12);
+    --white: #F5F5F5;
+    --muted: rgba(245,245,245,0.72);
+    --border: rgba(201,168,76,0.25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: #000;
+    color: #F5F5F5;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 18px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── PROGRESS ── */
+  #progress-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #000;
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  #progress-track {
+    flex: 1;
+    height: 3px;
+    background: rgba(201,168,76,0.15);
+    border-radius: 2px;
+  }
+  #progress-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.5s ease;
+  }
+  #progress-label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    white-space: nowrap;
+    min-width: 3.5rem;
+    text-align: right;
+  }
+
+  /* ── LAYOUT ── */
+  .wrap {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1.25rem 5rem;
+  }
+
+  .screen { display: none; }
+  .screen.active { display: block; animation: fadeUp 0.3s ease forwards; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── INTRO ── */
+  .brand-line {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    padding-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .brand-line::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    font-weight: normal;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+    color: #F5F5F5;
+  }
+  h1 em { color: var(--gold); font-style: italic; }
+
+  h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(1.4rem, 5vw, 2.2rem);
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  h2 em { color: var(--gold); font-style: italic; }
+
+  .body-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+
+  .who-label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .who-wrap {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .who-btn {
+    flex: 1;
+    min-width: 140px;
+    padding: 1rem;
+    background: var(--gold-dim);
+    border: 1px solid var(--border);
+    color: #F5F5F5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    border-radius: 2px;
+  }
+  .who-btn small {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+  .who-btn:hover, .who-btn.selected {
+    background: rgba(201,168,76,0.2);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  .btn-start {
+    width: 100%;
+    padding: 1.1rem;
+    background: var(--gold);
+    color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 2px;
+    display: none;
+  }
+  .btn-start:hover { background: var(--gold-light); }
+  .btn-start.show  { display: block; }
+
+  .trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .trust-item {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: rgba(201,168,76,0.65);
+  }
+  .trust-item::before { content: '✓ '; color: var(--gold); }
+
+  /* ── QUESTION SCREEN ── */
+  .q-meta {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: rgba(201,168,76,0.55);
+    padding-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .q-instruction {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    margin-bottom: 1.75rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    line-height: 1.6;
+  }
+  .q-instruction em { color: var(--gold); font-style: normal; font-weight: bold; }
+
+  .q-number {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    color: rgba(201,168,76,0.55);
+    margin-bottom: 0.5rem;
+  }
+  .q-text {
+    font-family: Georgia, serif;
+    font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+    font-weight: normal;
+    line-height: 1.4;
+    color: #F5F5F5;
+    margin-bottom: 2rem;
+    min-height: 2.5rem;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 2.5rem; }
+  .opt { position: relative; }
+  .opt input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+  }
+  .opt label {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(201,168,76,0.02);
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+    user-select: none;
+    min-height: 52px;
+  }
+  .opt-dot {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 2px solid rgba(201,168,76,0.4);
+    border-radius: 50%;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .opt-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    width: 10px; height: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+    transition: transform 0.15s ease;
+  }
+  .opt-label-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.4;
+    flex: 1;
+    transition: color 0.2s;
+  }
+  .opt input:checked + label { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+  .opt input:checked + label .opt-dot { border-color: var(--gold); }
+  .opt input:checked + label .opt-dot::after { transform: translate(-50%,-50%) scale(1); }
+  .opt input:checked + label .opt-label-text { color: #F5F5F5; }
+  .opt label:hover { border-color: rgba(201,168,76,0.4); background: rgba(201,168,76,0.05); }
+  .opt label:hover .opt-label-text { color: #F5F5F5; }
+
+  .q-nav {
+    display: flex;
+    gap: 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+  }
+  .btn-back {
+    padding: 0.9rem 1.25rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .btn-back:hover { border-color: var(--gold); color: var(--gold); }
+
+  .btn-next {
+    flex: 1;
+    padding: 0.9rem;
+    background: rgba(201,168,76,0.06);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .btn-next.ready { background: var(--gold); border-color: var(--gold); color: #000; }
+  .btn-next.ready:hover { background: var(--gold-light); }
+
+  /* ── RESULTS SCREEN ── */
+  .result-eyebrow {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    padding-top: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .score-display {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem;
+    background: rgba(201,168,76,0.06);
+    border: 1px solid var(--border);
+    margin: 1.5rem 0;
+  }
+  .score-number {
+    font-family: Georgia, serif;
+    font-size: 3.5rem;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 3rem;
+  }
+  .score-band {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+  .score-range {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .score-bar-wrap { margin: 1rem 0 1.75rem; }
+  .score-bar-track {
+    height: 6px;
+    background: rgba(201,168,76,0.1);
+    border-radius: 3px;
+    margin-bottom: 0.6rem;
+    position: relative;
+  }
+  .score-bar-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.9s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+  }
+  .score-bar-fill::after {
+    content: '';
+    position: absolute;
+    right: -5px; top: 50%;
+    transform: translateY(-50%);
+    width: 14px; height: 14px;
+    background: var(--gold);
+    border-radius: 50%;
+    border: 2px solid #000;
+  }
+  .score-bar-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.65rem;
+    color: rgba(201,168,76,0.45);
+    letter-spacing: 0.06em;
+  }
+
+  .result-block { margin-bottom: 1.75rem; }
+  .result-block-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .result-body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .result-body strong { color: #F5F5F5; }
+  .result-body p { margin-bottom: 0.85rem; }
+
+  .action-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem; }
+  .action-item {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    background: rgba(201,168,76,0.04);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 2px;
+  }
+  .action-num {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    min-width: 1.4rem;
+    padding-top: 0.15rem;
+  }
+  .action-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .action-text strong { color: #F5F5F5; }
+
+  .crisis-box {
+    background: rgba(180,60,60,0.08);
+    border: 1px solid rgba(180,60,60,0.45);
+    padding: 1.1rem 1.25rem;
+    margin: 1.5rem 0;
+    border-radius: 2px;
+  }
+  .crisis-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    color: #e07070;
+    margin-bottom: 0.65rem;
+  }
+  .crisis-box p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .crisis-box strong { color: #F5F5F5; }
+
+  /* ── CTA STACK ── */
+  .cta-stack { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 2rem; }
+  .cta-primary {
+    display: block;
+    padding: 1.1rem;
+    background: var(--gold);
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    border-radius: 2px;
+  }
+  .cta-primary:hover { background: var(--gold-light); }
+  .cta-secondary {
+    display: block;
+    padding: 0.9rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .cta-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── EMAIL CAPTURE (optional, below CTA) ── */
+  .email-capture-wrap {
+    margin-top: 2.5rem;
+    padding: 1.4rem;
+    border: 1px solid var(--border);
+    background: rgba(201,168,76,0.04);
+    border-radius: 2px;
+  }
+  .email-capture-label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+  .email-capture-desc {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 1rem;
+  }
+  .email-capture-desc strong { color: #F5F5F5; }
+  .email-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .email-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 0.9rem 1rem;
+    background: rgba(201,168,76,0.03);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: #F5F5F5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    outline: none;
+    border-radius: 2px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+  }
+  .email-input:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.12); }
+  .email-input::placeholder { color: rgba(245,245,245,0.28); }
+  .email-input.error { border-color: #e07070; }
+  .email-submit {
+    padding: 0.9rem 1.2rem;
+    background: var(--gold);
+    color: #000;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+    border-radius: 2px;
+    -webkit-appearance: none;
+  }
+  .email-submit:hover { background: var(--gold-light); }
+  .email-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+  .email-error-msg {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.88rem;
+    color: #e07070;
+    margin-top: 0.5rem;
+    display: none;
+  }
+  .email-error-msg.show { display: block; }
+  .email-privacy {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    color: rgba(245,245,245,0.35);
+    margin-top: 0.75rem;
+    line-height: 1.55;
+  }
+
+  /* ── DISCLAIMER ── */
+  .disclaimer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82rem;
+    color: rgba(245,245,245,0.35);
+    line-height: 1.7;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    margin-top: 2rem;
+  }
+  .disclaimer strong { color: rgba(245,245,245,0.6); }
+
+  .partner-note {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: var(--gold);
+    font-size: 1rem;
+    margin-bottom: 0.85rem;
+    line-height: 1.6;
+  }
+
+  /* ── TOOLKIT PANEL ── */
+  .toolkit-panel {
+    margin-top: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .toolkit-panel-header {
+    background: rgba(201,168,76,0.08);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.25rem;
+  }
+  .toolkit-panel-label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    margin-bottom: 0.35rem;
+  }
+  .toolkit-panel-intro {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .toolkit-panel-intro strong { color: #F5F5F5; }
+  .toolkit-what {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .toolkit-what-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: rgba(201,168,76,0.65);
+    margin-bottom: 0.75rem;
+  }
+  .toolkit-contents {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  }
+  .toolkit-contents li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.5;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .toolkit-contents li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.75rem;
+  }
+  .toolkit-contents li strong { color: #F5F5F5; }
+  .toolkit-options {
+    display: flex;
+    gap: 0;
+    flex-wrap: wrap;
+  }
+  .toolkit-option {
+    flex: 1;
+    min-width: 220px;
+    padding: 1.1rem 1.25rem;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .toolkit-option:last-child { border-right: none; }
+  .toolkit-option-name {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+  }
+  .toolkit-option-price {
+    font-family: Georgia, serif;
+    font-size: 1.5rem;
+    color: #F5F5F5;
+    line-height: 1;
+  }
+  .toolkit-option-price span {
+    font-family: Arial, sans-serif;
+    font-size: 0.82rem;
+    color: var(--muted);
+    display: block;
+    margin-top: 0.2rem;
+  }
+  .toolkit-option-includes {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .toolkit-option-includes strong { color: #F5F5F5; }
+  .toolkit-option-note {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.78rem;
+    color: rgba(201,168,76,0.6);
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .toolkit-buy-btn {
+    display: block;
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--gold);
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+    border-radius: 1px;
+    margin-top: auto;
+  }
+  .toolkit-buy-btn:hover { background: var(--gold-light); }
+  .toolkit-buy-btn.secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .toolkit-buy-btn.secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .toolkit-honest-note {
+    padding: 0.9rem 1.25rem;
+    border-top: 1px solid var(--border);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82rem;
+    color: rgba(245,245,245,0.4);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  footer span {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: rgba(201,168,76,0.35);
+  }
 </style>
 </head>
 <body>
-<div id="prog-wrap">
-  <div id="prog-track"><div id="prog-fill"></div></div>
-  <div id="prog-label">0 / 5</div>
+
+<div id="progress-wrap" role="progressbar" aria-valuemin="0" aria-valuemax="13" aria-valuenow="0" aria-label="Assessment progress">
+  <div id="progress-track"><div id="progress-fill"></div></div>
+  <div id="progress-label" aria-live="polite">0 / 13</div>
 </div>
-<main class="wrap" id="app"></main>
+
+<div class="wrap">
+
+  <!-- ══ INTRO ══ -->
+  <div id="screen-intro" class="screen active" role="main">
+    <div class="brand-line" aria-hidden="true">Parents2Be International</div>
+    <h1>Is He Experiencing<br>Paternal Postpartum<br><em>Depression?</em></h1>
+    <p class="body-text">
+      1 in 10 new fathers experience postnatal depression. Over 80% go undiagnosed —
+      not because it is rare, but because nobody checks.<br><br>
+      This assessment uses the <strong style="color:#F5F5F5">Gotland Male Depression Scale</strong>,
+      a clinically validated instrument specifically designed to detect depression in men,
+      whose symptoms present differently from women. It takes under 3 minutes.
+      Your responses are not stored.
+    </p>
+    <p class="who-label" id="who-label">WHO IS COMPLETING THIS?</p>
+    <div class="who-wrap" role="group" aria-labelledby="who-label">
+      <button class="who-btn" id="btn-partner" onclick="selectWho('partner')" aria-pressed="false">
+        I am his partner
+        <small>Answering about what I have observed</small>
+      </button>
+      <button class="who-btn" id="btn-father" onclick="selectWho('father')" aria-pressed="false">
+        I am the father
+        <small>Answering about my own experience</small>
+      </button>
+    </div>
+    <button class="btn-start" id="btn-start" onclick="startAssessment()">Begin Assessment &rarr;</button>
+    <div class="trust-row" aria-label="Trust indicators">
+      <span class="trust-item">Anonymous — no data stored</span>
+      <span class="trust-item">Clinically validated</span>
+      <span class="trust-item">Under 3 minutes</span>
+      <span class="trust-item">No email required</span>
+    </div>
+  </div>
+
+  <!-- ══ QUESTION ══ -->
+  <div id="screen-question" class="screen" role="main">
+    <div class="q-meta" aria-hidden="true">GOTLAND MALE DEPRESSION SCALE &middot; PARENTS2BE.INTL</div>
+    <p class="q-instruction">
+      Think about the last two weeks. For each statement, choose the response
+      that best describes how <em id="instr-subject">he has been</em>.
+    </p>
+    <div class="q-number" id="q-number" aria-live="polite">QUESTION 1 OF 13</div>
+    <div class="q-text" id="q-text" aria-live="polite"></div>
+    <div class="options" id="options" role="radiogroup" aria-label="Response options"></div>
+    <div class="q-nav">
+      <button class="btn-back" id="btn-back" onclick="prevQ()" aria-label="Previous question">&#8592; Back</button>
+      <button class="btn-next" id="btn-next" onclick="nextQ()" aria-label="Next question">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- ══ RESULTS — score shows immediately, no email required ══ -->
+  <div id="screen-results" class="screen" role="main">
+    <div class="result-eyebrow" aria-hidden="true">ASSESSMENT COMPLETE &middot; PARENTS2BE.INTL</div>
+    <h2 id="result-title"></h2>
+
+    <div class="score-display" role="region" aria-label="Your score">
+      <div class="score-number" id="score-number">0</div>
+      <div>
+        <div class="score-band" id="score-band"></div>
+        <div class="score-range" id="score-range"></div>
+      </div>
+    </div>
+
+    <div class="score-bar-wrap" aria-hidden="true">
+      <div class="score-bar-track">
+        <div class="score-bar-fill" id="score-bar-fill"></div>
+      </div>
+      <div class="score-bar-labels">
+        <span>0 &mdash; None</span>
+        <span>13 &mdash; Probable</span>
+        <span>27 &mdash; Significant</span>
+        <span>39</span>
+      </div>
+    </div>
+
+    <!-- Clinical content block -->
+    <div id="result-content"></div>
+
+    <!-- Primary CTA stack — no email wall -->
+    <div class="cta-stack" id="cta-stack"></div>
+
+    <!-- Email capture — optional, positioned as added value -->
+    <div class="email-capture-wrap" id="email-capture-wrap">
+      <span class="email-capture-label" id="email-capture-label">GET THE FREE GUIDE</span>
+      <p class="email-capture-desc" id="email-capture-desc">
+        The <strong>7 Signs of Paternal PPD</strong> guide explains what is happening and gives the language to describe it to a GP.
+        Enter your email and we will send it now. No account. No commitment.
+      </p>
+      <div class="email-row">
+        <input
+          type="email"
+          id="email-input"
+          class="email-input"
+          placeholder="Your email address"
+          autocomplete="email"
+          aria-label="Email address for free guide"
+        >
+        <button class="email-submit" id="email-submit-btn" onclick="submitEmail()">Send Guide &rarr;</button>
+      </div>
+      <div class="email-error-msg" id="email-error" role="alert">Please enter a valid email address.</div>
+      <p class="email-privacy">
+        Used only to send your guide. Assessment responses are never linked to your email. Unsubscribe anytime.
+      </p>
+    </div>
+
+    <p class="disclaimer">
+      This assessment is for informational purposes only and does not constitute a clinical diagnosis.
+      The Gotland Male Depression Scale (Zierau et al., 2002) is a validated screening instrument.
+      A positive screen indicates that professional assessment is warranted &mdash; not that a diagnosis has been made.
+      If you are concerned about immediate safety, contact your GP or call the Samaritans on
+      <strong>116 123</strong> (free, 24/7).
+    </p>
+  </div>
+
+</div><!-- /wrap -->
+
 <footer>
-  <span>&copy; Parents2Be International 2026</span>
-  <span>NHS PMH Trained &middot; Evidence-Based &middot; UK</span>
+  <span>&copy; Parents2Be International</span>
+  <span>Evidence-Based &middot; Anonymous &middot; UK-Focused</span>
   <span>parents2beintl.com</span>
 </footer>
+
 <script>
-var SB_URL = 'https://bphpsdzovrdpfrcmtyco.supabase.co';
-var SB_KEY = 'sb_publishable_FDLdSHOtw0z60DAPC2yRCg_zio7d7kt';
-var WHO = null;
-var NAV = [];
-var CUR = 'intro';
-var EMAIL = null;
-var SESSION_ID = null;
+/* ═══════════════════════════
+   CONFIG
+═══════════════════════════ */
+var ML_API_KEY       = 'eyJ0eXAiOwk7hxdTVIHuHxm-6MNImL2Xqs-R_k0l3R61TxEaGWE0eHzRpBQdQqAYMnkJiUmJCv36Ji9NQ8uSP15_frqwSc6D7qFcHtITcLbX_6qRb5GLAnok8oluEqw';
+var ML_GROUP_FATHER  = '183382900380534401';
+var ML_GROUP_PARTNER = '183382916886169384';
 
-function sbH() {
-  return {
-    'Content-Type': 'application/json',
-    'apikey': SB_KEY,
-    'Authorization': 'Bearer ' + SB_KEY,
-    'Prefer': 'return=representation'
-  };
-}
+/* ═══════════════════════════
+   STATE
+═══════════════════════════ */
+var whoIs    = null;
+var currentQ = 0;
+var answers  = [null,null,null,null,null,null,null,null,null,null,null,null,null];
+var resultTotal = 0;
 
-function sbGet(em) {
-  return fetch(SB_URL + '/rest/v1/toolkit_sessions?email=eq.' + encodeURIComponent(em) + '&order=created_at.desc&limit=1', {headers: sbH()}).then(function(r){return r.json();});
-}
+/* ═══════════════════════════
+   QUESTIONS
+═══════════════════════════ */
+var QUESTIONS = [
+  { f: "I have a lower stress threshold than usual — I feel more stressed out than normal.", p: "He seems to have a lower stress threshold than usual — he appears more stressed out than normal." },
+  { f: "I have been more aggressive, reactive, and I find it harder to control myself.", p: "He has been more aggressive, outward-reacting, and appears to have difficulty keeping himself in control." },
+  { f: "I have a feeling of being burned out and empty inside.", p: "He seems to have a feeling of being burned out and empty inside." },
+  { f: "I have been experiencing a constant, inexplicable tiredness.", p: "He has been experiencing what seems like a constant, inexplicable tiredness." },
+  { f: "I have been more irritable, restless, and frustrated than usual.", p: "He has been more irritable, restless, and frustrated than usual." },
+  { f: "I am finding it difficult to make ordinary, everyday decisions.", p: "He seems to have difficulty making ordinary, everyday decisions." },
+  { f: "I have had sleep problems — sleeping too much or too little, restlessly, difficulty falling asleep, or waking too early.", p: "He has had sleep problems — sleeping too much or too little, restlessly, difficulty falling asleep, or waking too early." },
+  { f: "In the morning especially, I have a feeling of disquiet, anxiety, or uneasiness.", p: "In the morning especially, he seems to have a feeling of disquiet, anxiety, or uneasiness." },
+  { f: "I have been over-consuming alcohol or using something to achieve a calming effect — or being hyperactive, overworking, exercising excessively, or significantly under or overeating.", p: "He has been over-consuming alcohol or using something to achieve a calming effect — or being hyperactive, overworking, exercising excessively, or significantly under or overeating." },
+  { f: "I feel my behaviour has changed in ways that neither I nor others can fully recognise — I feel difficult to be around.", p: "His behaviour has changed in ways that neither he nor others can recognise — he seems difficult to deal with." },
+  { f: "I have felt gloomy, negative, or as though everything looks bleak and hopeless.", p: "He has seemed gloomy, negative, or characterised by hopelessness — as though everything looks bleak." },
+  { f: "I have noticed in myself a tendency toward self-pity, complaining, or feeling pathetic.", p: "He has shown a tendency toward self-pity, complaining, or seeming unusually low or pathetic." },
+  { f: "In my biological family, is there any tendency toward abuse, depression, low moods, suicide attempts, or risk-taking behaviour?", p: "In his biological family, is there any tendency toward abuse, depression, low moods, suicide attempts, or risk-taking behaviour?" }
+];
 
-function sbPatch(data) {
-  if (!SESSION_ID) return;
-  fetch(SB_URL + '/rest/v1/toolkit_sessions?id=eq.' + SESSION_ID, {method:'PATCH', headers:sbH(), body:JSON.stringify(data)});
-}
+var OPTS = [
+  { label: "Not at all",     score: 0 },
+  { label: "To some extent", score: 1 },
+  { label: "Very true",      score: 2 },
+  { label: "Extremely so",   score: 3 }
+];
 
-function sbPost(em, who) {
-  return fetch(SB_URL + '/rest/v1/toolkit_sessions', {method:'POST', headers:sbH(), body:JSON.stringify({email:em, who:who, activated_at:new Date().toISOString()})}).then(function(r){return r.json();});
-}
-
-function showMsg(type, msg) {
-  var el = document.getElementById('smsg');
-  if (!el) return;
-  el.className = type === 'error' ? 'error-msg' : 'status-msg';
-  el.textContent = msg;
-}
-
-function startSession() {
-  var emailEl = document.getElementById('start-email');
-  if (!emailEl || !emailEl.value || emailEl.value.indexOf('@') < 0) { showMsg('error', 'Please enter a valid email address.'); return; }
-  if (!WHO) { showMsg('error', 'Please select who is completing this toolkit.'); return; }
-  EMAIL = emailEl.value.trim().toLowerCase();
-  showMsg('status', 'Looking up your session...');
-  sbGet(EMAIL).then(function(rows) {
-    if (rows && rows.length > 0) {
-      SESSION_ID = rows[0].id;
-      WHO = rows[0].who || WHO;
-      showMsg('status', 'Welcome back. Restoring your progress...');
-      setTimeout(function(){ goTo('s1'); }, 600);
-    } else {
-      sbPost(EMAIL, WHO).then(function(newRows) {
-        if (newRows && newRows.length > 0) {
-          SESSION_ID = newRows[0].id;
-          showMsg('status', 'Session created. Starting your toolkit...');
-          setTimeout(function(){ goTo('s1'); }, 600);
-        } else {
-          showMsg('error', 'Something went wrong. Please try again or email hello@parents2beintl.com');
-        }
-      }).catch(function(){ showMsg('error', 'Connection error. Please try again.'); });
-    }
-  }).catch(function(){ showMsg('error', 'Connection error. Please check your internet and try again.'); });
-}
-
-function collectAnswers() {
-  var data = {who: WHO};
-  var ids = ['s1q1','s1q2','s1q3','s1q4','s1q5','s2gp','s2hard','s2easy','s2gp34','s2why34','s2daily','s2helped','s2tell','s2next90','s3gp1','s3gp2','s3p1','s3p2','s3self1','s3self2','s3self3','s4q1','s4q2','s4q3','s4q4','s4q5','s4ag1','s4ag2','s4ag3','s5q1','s5q2','s5q3','s5q4','s5loc'];
-  ids.forEach(function(k){ var el = document.getElementById(k); if (el) data[k] = el.value; });
-  ['s2prog34','s2prog58','s2prog912'].forEach(function(n){ var el = document.querySelector('input[name="' + n + '"]:checked'); if (el) data[n] = el.value; });
-  return data;
-}
-
-function saveProgress() {
-  if (!SESSION_ID) return;
-  sbPatch(collectAnswers());
-  var btn = document.querySelector('.btn-save');
-  if (btn) { var o = btn.textContent; btn.textContent = 'Saved!'; btn.style.color = 'var(--gold)'; setTimeout(function(){ btn.textContent = o; btn.style.color = ''; }, 2000); }
-}
-
-function autoSave() {
-  if (!SESSION_ID) return;
-  var el = document.activeElement;
-  if (!el || !el.id) return;
-  var p = {}; p[el.id] = el.value;
-  sbPatch(p);
-}
-
-function restoreAnswers(row) {
-  var ids = ['s1q1','s1q2','s1q3','s1q4','s1q5','s2gp','s2hard','s2easy','s2gp34','s2why34','s2daily','s2helped','s2tell','s2next90','s3gp1','s3gp2','s3p1','s3p2','s3self1','s3self2','s3self3','s4q1','s4q2','s4q3','s4q4','s4q5','s4ag1','s4ag2','s4ag3','s5q1','s5q2','s5q3','s5q4','s5loc'];
-  ids.forEach(function(k){ var el = document.getElementById(k); if (el && row[k]) el.value = row[k]; });
-  ['s2prog34','s2prog58','s2prog912'].forEach(function(n){ if (row[n]) { var el = document.getElementById(n + row[n]); if (el) el.checked = true; } });
-}
-
-function goTo(id) {
-  saveProgress();
-  NAV.push(CUR);
-  CUR = id;
-  render(id);
-  if (SESSION_ID) { sbGet(EMAIL).then(function(rows){ if (rows && rows.length > 0) restoreAnswers(rows[0]); }); }
-}
-
-function goBack() {
-  if (NAV.length > 0) { saveProgress(); CUR = NAV.pop(); render(CUR); }
-}
-
-function selWho(w) { WHO = w; render('intro'); }
-
-function qOpen(id, label, hint) {
-  var h = '<div class="q-block">';
-  h += '<label class="q-label">' + label + '</label>';
-  if (hint) h += '<span class="q-hint">' + hint + '</span>';
-  h += '<textarea id="' + id + '" placeholder="Write what is true..." onchange="autoSave()"></textarea>';
-  h += '<span class="q-reflect">Take your time. Save and return if you need to. Your answer only needs to be true.</span>';
-  h += '</div>';
-  return h;
-}
-
-function scale(name, label) {
-  var opts = ['Much worse','Slightly worse','Same','Slightly better','Much better'];
-  var h = '<div class="q-block"><label class="q-label">' + label + '</label><div class="scale-wrap">';
-  for (var i = 0; i < opts.length; i++) {
-    h += '<div class="scale-item">';
-    h += '<input type="radio" name="' + name + '" id="' + name + i + '" value="' + i + '">';
-    h += '<label for="' + name + i + '">' + opts[i] + '</label>';
-    h += '</div>';
-  }
-  return h + '</div></div>';
-}
-
-function track(label, text, action) {
-  return '<div class="track-block"><div class="track-label">' + label + '</div><div class="track-text">' + text + '</div><div class="track-action">' + action + '</div></div>';
-}
-
-function navBar(next) {
-  var nl = next === 'complete' ? 'Complete Toolkit &rarr;' : 'Next Section &rarr;';
-  var h = '<div class="nav-row">';
-  h += '<button class="btn-back" onclick="goBack()">&larr; Back</button>';
-  h += '<button class="btn-save" onclick="saveProgress()">Save Progress</button>';
-  h += '<button class="btn-next" onclick="goTo(\'' + next + '\')">' + nl + '</button>';
-  h += '</div>';
-  h += '<p class="save-note">Progress saves automatically. Return on any device using your email.</p>';
-  return h;
-}
-
-function honesty() {
-  return '<div class="callout"><strong>Honesty statement:</strong> There are no right answers here. There is only what is true for you today. NHS research shows that hiding symptoms is one of the most common and most damaging responses to perinatal mental health difficulties. You do not have to keep paying that cost here.</div>';
-}
-
-function getTracks(isP) {
-  if (isP) {
-    return {
-      t12: track('Track 1 - Your own mental health','Your own risk is significantly elevated if he is struggling. Your first action is to name your own state honestly.','Complete this: The thing I am most exhausted by right now is...')
-         + track('Track 2 - The relationship','One low-stakes question, once: How are you actually doing? Then wait. NHS active listening: hold back, allow silence.','Ask him this week.')
-         + track('Track 3 - Practical','Identify one person who can provide practical support this week.','Ask them for one specific thing.'),
-      t34: track('Track 1 - Your own mental health','Speak to your own GP this week about you. You are entitled to support independently of his situation.','Say: I have been struggling since the baby arrived and I am finding it hard to cope.')
-         + track('Track 2 - The relationship','Have the direct conversation: I have noticed you have been struggling. I am not angry. I am worried about you. I want to help you find support.','If he denies it: I am not asking you to agree. I just need you to know I have seen it.')
-         + track('Track 3 - Practical','If he will not engage, contact your GP for guidance on supporting a resistant partner.','You do not have to navigate this alone.'),
-      t58: track('Track 1 - Your own mental health','What can you sustainably give? Identify three things you will not compromise on for your own wellbeing.','Write your three non-negotiables in the check-in below.')
-         + track('Track 2 - The relationship','Protect one moment per week that belongs to your relationship, not to parenting or his mental health.','Consistent. Brief. Non-negotiable.')
-         + track('Track 3 - Practical','If his engagement has stalled, escalate. Return to your GP. Ask for a referral to the perinatal mental health team.','You are entitled to push for this.'),
-      t912: track('Track 1 - Your own mental health','What has the last 90 days cost you? Name it honestly.','Write it below.')
-           + track('Track 2 - The relationship','Where are you compared to 90 days ago, honestly?','Write it below.')
-           + track('Track 3 - Practical','What do you need in the next 90 days?','Write it below.')
-    };
-  } else {
-    return {
-      t12: track('Track 1 - Individual','Tell one person the truth this week. Naming what is happening reduces its psychological weight measurably.','Say: I have not been okay since the baby arrived and I think I need some help.')
-         + track('Track 2 - Relational','Do not attempt to fix the relationship in weeks 1-2. Show up physically. Sit near your partner without your phone. Three times this week.','Proximity is its own signal.')
-         + track('Track 3 - Systemic','Book a GP appointment this week. NHS guidance confirms prompt identification provides long-term gains for the individual, family, and wider society.','Say: I have been struggling since the baby was born and I need to talk about my mental health.'),
-      t34: track('Track 1 - Individual','Your GP appointment should happen this week. Take your toolkit document and assessment score.','Say: I completed a validated depression screening. I would like to understand what support is available.')
-         + track('Track 2 - Relational','Have one honest conversation with your partner. One specific thing.','Say: The thing I find hardest right now is...')
-         + track('Track 3 - Systemic','If your workplace has an Employee Assistance Programme, access it this week. Free, confidential, no GP referral needed.','NHS options also include IAPT talking therapies. Ask your GP.'),
-      t58: track('Track 1 - Individual','Establish one daily non-negotiable that belongs only to you. 20-30 minutes. The content matters less than the consistency.','Write yours in the check-in below.')
-         + track('Track 2 - Relational','One protected time per week. No logistics, no problem solving, just presence with your partner.','Consistent. Brief. Non-negotiable.')
-         + track('Track 3 - Systemic','If referred for talking therapy, your first appointment should happen in this window. Ask about IAPT if waiting times are long. NHS funded, no cost.','NHS guidance confirms non-pharmacological treatments are particularly important in the perinatal period.'),
-      t912: track('Track 1 - Individual','What is working? What is not? The plan is responsive, not fixed.','Write what needs to change below.')
-           + track('Track 2 - Relational','Revisit the week 3-4 conversation. What has changed? What still needs to be said?','Write it below.')
-           + track('Track 3 - Systemic','Return to your GP at week 10-12. Take your toolkit document. Show them what you said at the start and what you would say now.','That comparison is clinical data.')
-    };
-  }
-}
-
-function render(id) {
-  var isP = (WHO === 'partner');
-  var h = '';
-
-  if (id === 'intro') {
-    h += '<div class="brand">Parents2Be International</div>';
-    h += '<h1>Paternal PPD<br>Recovery <em>Toolkit</em></h1>';
-    h += '<p class="body-text">A self-guided 90-day recovery toolkit for paternal postpartum depression. Built on the evidence base referenced across all four NHS perinatal mental health training modules.</p>';
-    h += '<div class="callout"><strong>Before you begin:</strong> The NHS describes including fathers in perinatal mental health care as aspirational within the current context of services. This toolkit exists because aspirational is not good enough when families are fracturing right now.<br><br>The only thing this toolkit asks of you is honesty. What you put in here is what you get back.</div>';
-    h += '<div class="callout" style="border-left-color:rgba(245,245,245,.2)"><strong style="color:var(--gold)">A note on cost:</strong> There is a cost to this toolkit. There is also a cost to not using it. One is paid in money. The other has the potential to be paid in time, in relationship, in the slow accumulation of distance that untreated paternal PPD can create in families. We know what that cost can look like. We have lived it.</div>';
-    h += '<div class="callout" style="border-left-color:rgba(100,180,100,.4)"><strong style="color:rgba(150,220,150,.9)">Your privacy:</strong> Your answers are saved securely and privately. They are linked only to your email address and can only be accessed by entering that email. No password required. Your answers are never shared, never used for marketing, and can be deleted at any time by emailing hello@parents2beintl.com. If you experience any technical difficulty, email us and we will restore your progress manually.</div>';
-    h += '<div class="div-line"></div>';
-    h += '<p style="font-family:Courier New,monospace;font-size:.7rem;letter-spacing:.18em;color:var(--gold);margin-bottom:.75rem;">WHO IS COMPLETING THIS?</p>';
-    h += '<div class="who-wrap">';
-    h += '<button class="who-btn' + (WHO === 'partner' ? ' sel' : '') + '" onclick="selWho(\x27partner\x27)">I am his partner<small>Completing about what I have observed</small></button>';
-    h += '<button class="who-btn' + (WHO === 'father' ? ' sel' : '') + '" onclick="selWho(\x27father\x27)">I am the father<small>Completing about my own experience</small></button>';
-    h += '</div>';
-    h += '<div class="q-block"><label class="q-label">Your email address <span style="color:var(--gold)">*</span></label>';
-    h += '<span class="q-hint">Use the same email you used when purchasing. This is how your progress is saved and restored on any device.</span>';
-    h += '<input type="email" class="text-input" id="start-email" placeholder="Your purchase email address"></div>';
-    h += '<div id="smsg"></div>';
-    if (WHO) {
-      h += '<button class="btn-next" onclick="startSession()" style="width:100%">Begin Toolkit &rarr;</button>';
-    } else {
-      h += '<button class="btn-next" style="width:100%;background:rgba(201,168,76,.3);cursor:default" disabled>Select who is completing above</button>';
-    }
-    h += '<div class="trust-row">';
-    h += '<span class="trust-item">NHS PMH training - 4 modules, 100%</span>';
-    h += '<span class="trust-item">Gotland Male Depression Scale</span>';
-    h += '<span class="trust-item">Save and return on any device</span>';
-    h += '<span class="trust-item">GDPR compliant</span>';
-    h += '<span class="trust-item">Alternative formats incl. Braille: hello@parents2beintl.com</span>';
-    h += '</div>';
-  }
-
-  else if (id === 's1') {
-    var q1 = isP ? 'What have you observed that brought you here?' : 'What has changed since the baby arrived?';
-    var q2 = isP ? 'How long have you been noticing these changes?' : 'How long has this been happening?';
-    var q3 = isP ? 'Has he acknowledged that something is wrong and what has he said?' : 'Who in your life has been closest to what has been happening and what have they said?';
-    var q4 = isP ? 'What has been hardest about watching this happen including what it has cost you personally?' : 'What has been hardest to talk about?';
-    var q5 = isP ? 'What would things looking better actually mean for your family?' : 'What would feeling better actually look like for you?';
-    var intro = isP ? 'NHS-cited research confirms that partners have an important influence on a father\'s access to care. You noticing this and acting on it is clinically significant. You are not overreacting. You are also carrying something. Your experience belongs in this toolkit alongside his.' : 'NHS perinatal mental health training identifies three core factors in the transition to fatherhood: identity formation, role conflict, and negative feelings and fears. What you are experiencing follows a documented pattern. In men, depression presents as irritability and withdrawal three times more often than sadness. Over 80% of fathers go undiagnosed.';
-    h += '<div class="sec-num">SECTION 01 OF 05</div>';
-    h += '<h2>What Your Score<br><em>Actually Means</em></h2>';
-    h += '<div class="sec-intro">' + intro + '</div>';
-    h += honesty();
-    h += qOpen('s1q1', q1, 'Start wherever feels true.');
-    h += qOpen('s1q2', q2, 'Include what was happening around the time it started if you can.');
-    h += qOpen('s1q3', q3, 'If nobody knows, that answer matters too. Write it.');
-    h += qOpen('s1q4', q4, 'If the answer is all of it, write that.');
-    h += qOpen('s1q5', q5, 'Not what you think you should say. What you actually want. What a good day would feel like.');
-    h += navBar('s2');
-  }
-
-  else if (id === 's2') {
-    var T = getTracks(isP);
-    h += '<div class="sec-num">SECTION 02 OF 05</div>';
-    h += '<h2>Your Next<br><em>90 Days</em></h2>';
-    h += '<div class="sec-intro">This section gives you a structured plan. It is not a prescription. NHS guidance emphasises that earlier intervention produces faster recovery and reduces the impact on the whole family.</div>';
-    h += honesty();
-    h += '<h3>Weeks 1-2: Name It</h3>' + T.t12;
-    h += qOpen('s2gp', 'What happened with the GP appointment or what got in the way?', '');
-    h += qOpen('s2hard', 'What was harder than expected?', '');
-    h += qOpen('s2easy', 'What was easier than expected?', '');
-    h += '<div class="div-line"></div><h3>Weeks 3-4: Understand It</h3>' + T.t34;
-    h += qOpen('s2gp34', 'What did the GP suggest or what has happened so far?', '');
-    h += scale('s2prog34', 'How are you feeling compared to week 1?');
-    h += qOpen('s2why34', 'What does that change or lack of change tell you?', '');
-    h += '<div class="div-line"></div><h3>Weeks 5-8: Build It</h3>' + T.t58;
-    h += qOpen('s2daily', 'What is your daily non-negotiable and are you keeping it?', '');
-    h += scale('s2prog58', 'How would you rate your overall state compared to week 1?');
-    h += '<div class="div-line"></div><h3>Weeks 9-12: Consolidate It</h3>' + T.t912;
-    h += qOpen('s2helped', 'What has helped most in the last 90 days?', '');
-    h += qOpen('s2tell', 'What would you tell yourself at week 1 if you could?', '');
-    h += scale('s2prog912', 'How would you rate your overall state compared to week 1?');
-    h += qOpen('s2next90', 'What do you need in the next 90 days?', '');
-    h += navBar('s3');
-  }
-
-  else if (id === 's3') {
-    var c1box = isP ? '<div class="callout">What to say: I have been struggling since the baby arrived. My partner is also having a difficult time. I need some support.<br><br>What to ask: What support is available for partners of fathers with postnatal depression? How do I support someone who is resistant to seeking help?</div>' : '<div class="callout">What to say: I have been struggling since my baby was born. I completed a validated depression screening and I would like to understand what support is available.<br><br>What to bring: Your toolkit document and assessment score.<br><br>If you feel dismissed: Ask to see a different GP or request a referral to your local perinatal mental health team. You are entitled to that referral.</div>';
-    var c2title = isP ? 'Conversation 2 - With Him' : 'Conversation 2 - With Your Partner';
-    var c2box = isP ? '<div class="callout">When: Calm, private, low-stakes.<br><br>What to say: I have noticed you have been struggling. I am not angry. I am worried about you. I want to help you find some support.<br><br>If he denies it: I am not asking you to agree. I just need you to know I have seen it.<br>If he breaks down: say nothing. Sit near him. Let it happen.</div>' : '<div class="callout">When: When you are both calm. Not after an argument.<br><br>What to say: I know I have not been myself since the baby arrived. I have been struggling more than I have let on. I am working on getting some help.<br><br>What not to say: I am fine. It is just tiredness.</div>';
-    var q1 = isP ? 'What do you most need him to hear?' : 'What is the one true thing you most need your partner to understand?';
-    var q2 = isP ? 'What are you most afraid of saying to him?' : 'What are you most afraid will happen if you tell the truth?';
-    var q3self = isP ? 'What have you been telling yourself you should be able to handle alone?' : 'What story have you been telling yourself about why you should not need help?';
-    var q4self = isP ? 'What do you most need right now that you have not allowed yourself to ask for?' : 'What would you say to a close friend who described exactly what you are experiencing?';
-    h += '<div class="sec-num">SECTION 03 OF 05</div>';
-    h += '<h2>The Conversation<br><em>Guide</em></h2>';
-    h += '<div class="sec-intro">The conversations most people avoid for months or years. NHS active listening research recommends open questions, holding silence, and resisting the urge to give advice too early.</div>';
-    h += '<h3>Conversation 1 - With Your GP</h3>' + c1box;
-    h += qOpen('s3gp1', 'What is the one thing you most need your GP to understand?', 'Write it here before the appointment.');
-    h += qOpen('s3gp2', 'What are you most worried your GP will say?', '');
-    h += '<div class="div-line"></div><h3>' + c2title + '</h3>' + c2box;
-    h += qOpen('s3p1', q1, '');
-    h += qOpen('s3p2', q2, '');
-    h += '<div class="div-line"></div><h3>Conversation 3 - With Yourself</h3>';
-    h += '<div class="callout">This is the hardest conversation. The internal one that says you should be coping, that this is weakness. That conversation is wrong. Writing the truth of it here is the first step to changing it.</div>';
-    h += qOpen('s3self1', q3self, '');
-    h += qOpen('s3self2', q4self, '');
-    h += qOpen('s3self3', 'What is the one thing you have never said out loud about how you have been feeling?', 'You do not have to say it out loud today. Writing it here is enough for now.');
-    h += navBar('s4');
-  }
-
-  else if (id === 's4') {
-    h += '<div class="sec-num">SECTION 04 OF 05</div>';
-    h += '<h2>Getting Through It<br><em>Together</em></h2>';
-    h += '<div class="sec-intro">NHS-cited research confirms that partners and families have an important influence on perinatal mental health, access to care, and interactions with services, but services focus on individuals with little regard for the wider family context. Relationship satisfaction drops for up to 67% of couples in the first year after birth. That is not about failure.</div>';
-    h += honesty();
-    h += qOpen('s4q1', 'What did your relationship look like before the baby arrived that you most want to get back?', '');
-    h += qOpen('s4q2', 'What has been most damaged by the last months?', '');
-    h += qOpen('s4q3', 'What has surprised you about your partner during this time, positively?', '');
-    h += qOpen('s4q4', 'What do you need from your partner in the next 30 days that you have not asked for?', '');
-    h += qOpen('s4q5', 'What are you willing to offer your partner in the next 30 days that you have not given?', '');
-    h += '<div class="div-line"></div><h3>Three Agreements</h3>';
-    h += '<p class="body-text">These need to be specific. Not I will try to communicate better. Something with a timeframe and a clear action.</p>';
-    h += qOpen('s4ag1', 'Agreement 1: Something you will do together this week', '');
-    h += qOpen('s4ag2', 'Agreement 2: Something you will stop doing that is making things harder', '');
-    h += qOpen('s4ag3', 'Agreement 3: Something you will ask for help with from outside your relationship', '');
-    h += navBar('s5');
-  }
-
-  else if (id === 's5') {
-    h += '<div class="sec-num">SECTION 05 OF 05</div>';
-    h += '<h2>If It Gets<br><em>Worse</em></h2>';
-    h += '<div class="sec-intro">This section is not a failure state. It is preparation. Knowing what to do if things deteriorate is part of having a plan.</div>';
-    h += '<div class="crisis"><strong>Thresholds requiring immediate action:</strong><br><br>Thoughts of self-harm or not wanting to be here &bull; Thoughts of harming the baby or anyone else &bull; Complete inability to function &bull; Significant alcohol or substance use escalating daily &bull; Complete withdrawal from all contact for more than 48 hours<br><br>If any of these are present, stop. Contact support now.<br><br><strong>Samaritans: 116 123</strong> - free, 24/7, no judgement<br><strong>NHS 111</strong> - urgent mental health support<br><strong>Your GP</strong> - call first thing. Use the word urgent.<br><strong>A&amp;E</strong> - if there is immediate risk to life</div>';
-    h += '<div class="callout"><strong>Warning signs the plan needs adjusting:</strong> Score would be higher now &bull; No week 1-2 actions after 4 weeks &bull; GP not contacted after 3 weeks &bull; Daily substance use &bull; Relationship deteriorating significantly.<br><br>If two or more apply, return to your GP. Tell them the plan is not working. That is accurate clinical reporting, not failure.</div>';
-    h += '<div class="div-line"></div><h3>Your Personal Safety Plan</h3>';
-    h += '<p class="body-text">Answer these now, while things are manageable. Having these answers ready means you do not have to find them when you are least able to think clearly.</p>';
-    h += qOpen('s5q1', 'If things get significantly worse, the first person I will contact is:', '');
-    h += qOpen('s5q2', 'The thing that has helped most when I have felt at my lowest is:', '');
-    h += qOpen('s5q3', 'The warning sign that tells me I need to reach out immediately is:', '');
-    h += qOpen('s5q4', 'I give permission for the following person to contact support on my behalf if I am unable to do so:', 'You do not have to share this with anyone. But writing it means it exists.');
-    h += '<div class="div-line"></div><h3>Location - Optional</h3>';
-    h += '<p class="body-text">To help us understand where paternal PPD support is most needed across the UK. Entirely voluntary. Never linked to your personal details.</p>';
-    h += '<div class="q-block"><label class="q-label">What town or postcode district are you based in? <span style="color:var(--muted);font-size:.75rem;">(optional)</span></label>';
-    h += '<span class="q-hint">e.g. Cardiff, SW1, Leeds or leave blank</span>';
-    h += '<input type="text" class="text-input" id="s5loc" placeholder="Town or postcode (optional)" onchange="autoSave()"></div>';
-    h += navBar('complete');
-  }
-
-  else if (id === 'complete') {
-    h += '<div style="text-align:center;padding-top:2rem;">';
-    h += '<div style="width:60px;height:60px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;color:var(--gold);font-size:1.4rem;">&#10003;</div>';
-    h += '<h2>You completed<br>all five sections.</h2>';
-    h += '<p class="body-text" style="max-width:480px;margin:1rem auto 0;">You answered questions most people never answer out loud. You made agreements, named fears, and built a plan. That is not nothing. That is exactly what this required.</p>';
-    h += '<p style="font-family:Georgia,serif;font-size:1rem;color:var(--gold);font-style:italic;margin:1.25rem auto;max-width:420px;line-height:1.65;">What should have taken weeks took years for the person who built this resource. It does not have to take that long for you.</p>';
-    h += '</div><div class="div-line"></div>';
-    h += '<h3>Your Personalised Document</h3>';
-    h += '<p class="body-text">Your personalised toolkit document is being compiled from your answers. It will be emailed to <strong style="color:#F5F5F5">' + (EMAIL || 'your email address') + '</strong> within 5 minutes.</p>';
-    h += '<div class="callout">Your document contains every question and every answer from this session. Your words, your plan, your agreements. Take it to your GP. Share it with your partner if you choose to. Return to it when things are hard.</div>';
-    h += '<div class="callout" style="border-left-color:rgba(245,245,245,.2)">If you purchased the <strong style="color:var(--gold)">Print + Retake edition (&pound;117)</strong>: your blank printed copy will arrive within 3-5 working days. Your completed printed copy will be posted once your document is generated. Your free retake invitation will arrive at 90 days.<br><br>If you purchased the <strong style="color:var(--gold)">Digital edition (&pound;97)</strong>: your PDF is on its way. A discounted retake is available at &pound;47 in 90 days. You will receive details by email.</div>';
-    h += '<div class="div-line"></div>';
-    h += '<h3>In 90 Days</h3>';
-    h += '<div class="callout" style="border-left-color:rgba(245,245,245,.2)">You will receive an invitation to retake this toolkit. Your answers from today will sit alongside your answers then. Any change, however small, is evidence of movement. There is no pass or fail. There is only where you were and where you are. Both matter.</div>';
-    h += '<a href="https://parents2beintl.com" class="cta-btn">Return to Parents2Be International</a>';
-    h += '<p class="disclaimer">This toolkit is for self-guided informational support only. It does not constitute clinical diagnosis or treatment. Content is grounded in NHS perinatal mental health training and aligned with NICE guidelines.<br><br>If you are in crisis please contact your GP, <strong>NHS 111</strong>, or the <strong>Samaritans on 116 123</strong> immediately.<br><br>&copy; Parents2Be International 2026. All rights reserved. Reproduction or distribution of any content in this toolkit without written permission is prohibited.</p>';
-    if (SESSION_ID) sbPatch({completed_at: new Date().toISOString()});
-  }
-
-  document.getElementById('app').innerHTML = h;
-  var pcts = {intro:0,s1:20,s2:40,s3:60,s4:80,s5:90,complete:100};
-  var nums = {intro:0,s1:1,s2:2,s3:3,s4:4,s5:5,complete:5};
-  document.getElementById('prog-fill').style.width = (pcts[id] || 0) + '%';
-  document.getElementById('prog-label').textContent = (nums[id] || 0) + ' / 5';
+/* ═══════════════════════════
+   NAVIGATION
+═══════════════════════════ */
+function showScreen(id) {
+  var screens = document.querySelectorAll('.screen');
+  for (var i = 0; i < screens.length; i++) { screens[i].classList.remove('active'); }
+  document.getElementById(id).classList.add('active');
   window.scrollTo(0, 0);
 }
 
-render('intro');
+function setProgress(n) {
+  var pct = n <= 0 ? 0 : Math.round((n / 13) * 100);
+  document.getElementById('progress-fill').style.width = pct + '%';
+  document.getElementById('progress-label').textContent = (n < 0 ? 0 : n) + ' / 13';
+  document.getElementById('progress-wrap').setAttribute('aria-valuenow', n < 0 ? 0 : n);
+}
+
+function selectWho(who) {
+  whoIs = who;
+  document.getElementById('btn-father').classList.toggle('selected', who === 'father');
+  document.getElementById('btn-partner').classList.toggle('selected', who === 'partner');
+  document.getElementById('btn-father').setAttribute('aria-pressed', who === 'father' ? 'true' : 'false');
+  document.getElementById('btn-partner').setAttribute('aria-pressed', who === 'partner' ? 'true' : 'false');
+  document.getElementById('btn-start').classList.add('show');
+  document.getElementById('instr-subject').textContent = who === 'father' ? 'you have been' : 'he has been';
+}
+
+function startAssessment() {
+  if (!whoIs) return;
+  showScreen('screen-question');
+  renderQ(0);
+  setProgress(0);
+  // GA4: assessment started
+  gtag('event', 'assessment_started', { who: whoIs });
+}
+
+function renderQ(index) {
+  currentQ = index;
+  var q    = QUESTIONS[index];
+  var text = whoIs === 'father' ? q.f : q.p;
+  document.getElementById('q-number').textContent = 'QUESTION ' + (index + 1) + ' OF 13';
+  document.getElementById('q-text').textContent   = text;
+  var list = document.getElementById('options');
+  list.innerHTML = '';
+  OPTS.forEach(function(opt, i) {
+    var div   = document.createElement('div');
+    div.className = 'opt';
+    var id    = 'opt-' + index + '-' + i;
+    var input = document.createElement('input');
+    input.type  = 'radio';
+    input.name  = 'q' + index;
+    input.id    = id;
+    input.value = opt.score;
+    if (answers[index] === opt.score) input.checked = true;
+    var label = document.createElement('label');
+    label.htmlFor = id;
+    var dot = document.createElement('span'); dot.className = 'opt-dot'; dot.setAttribute('aria-hidden','true');
+    var txt = document.createElement('span'); txt.className = 'opt-label-text'; txt.textContent = opt.label;
+    label.appendChild(dot); label.appendChild(txt);
+    div.appendChild(input); div.appendChild(label);
+    list.appendChild(div);
+    input.addEventListener('change', function() {
+      answers[index] = parseInt(this.value);
+      var nb = document.getElementById('btn-next');
+      nb.classList.add('ready');
+      nb.textContent = index < 12 ? 'Next \u2192' : 'See My Results \u2192';
+    });
+  });
+  var back = document.getElementById('btn-back');
+  back.style.display = index === 0 ? 'none' : 'block';
+  var nb = document.getElementById('btn-next');
+  nb.classList.toggle('ready', answers[index] !== null);
+  nb.textContent = index < 12 ? 'Next \u2192' : 'See My Results \u2192';
+  setProgress(index);
+  window.scrollTo(0, 0);
+}
+
+function nextQ() {
+  if (answers[currentQ] === null) return;
+  if (currentQ < 12) { renderQ(currentQ + 1); } else { showResults(); }
+}
+
+function prevQ() {
+  if (currentQ > 0) { renderQ(currentQ - 1); } else { showScreen('screen-intro'); setProgress(-1); }
+}
+
+/* ═══════════════════════════
+   TOOLKIT PANEL BUILDER
+   Honest, transparent side-by-side
+   of both options — no hidden upsell
+═══════════════════════════ */
+function buildToolkitPanel(band) {
+  var introText = {
+    low:  'This toolkit is not a crisis resource — it is a <strong>structured framework</strong> for fathers and partners who want to understand what is happening and get ahead of it before it escalates.',
+    mid:  'This toolkit is built specifically for this score range. It gives <strong>structured support for the next 90 days</strong> — not generic mental health content, but a framework written for paternal PPD.',
+    high: 'This toolkit was built for exactly this score. It does not replace your GP. It works alongside clinical support — giving <strong>a structured daily framework</strong> for the 90 days ahead.'
+  }[band];
+
+  return '' +
+    '<div class="toolkit-panel">' +
+
+      '<div class="toolkit-panel-header">' +
+        '<div class="toolkit-panel-label">THE 90-DAY PATERNAL PPD RECOVERY TOOLKIT</div>' +
+        '<p class="toolkit-panel-intro">' + introText + '</p>' +
+      '</div>' +
+
+      '<div class="toolkit-what">' +
+        '<div class="toolkit-what-title">WHAT IS INSIDE</div>' +
+        '<ul class="toolkit-contents">' +
+          '<li><strong>Section 1 — Understanding It:</strong> The clinical picture of paternal PPD explained plainly, with NHS-cited context</li>' +
+          '<li><strong>Section 2 — The 90-Day Framework:</strong> A week-by-week structure for recovery, not generic advice</li>' +
+          '<li><strong>Section 3 — The Partner Guide:</strong> How the people closest to him can help without making it worse</li>' +
+          '<li><strong>Section 4 — GP Preparation:</strong> Scripts and language for the clinical conversation most fathers dread</li>' +
+          '<li><strong>Section 5 — Progress Tracking:</strong> A simple weekly check-in system built around the Gotland scale</li>' +
+        '</ul>' +
+      '</div>' +
+
+      '<div class="toolkit-options">' +
+
+        '<div class="toolkit-option">' +
+          '<div class="toolkit-option-name">DIGITAL EDITION</div>' +
+          '<div class="toolkit-option-price">&pound;97 <span>One-time. No subscription.</span></div>' +
+          '<div class="toolkit-option-includes">' +
+            'Full five-section toolkit as an interactive digital resource. ' +
+            'Access immediately after purchase. ' +
+            '<strong>Retake this assessment at any time — your score tracked against your progress.</strong>' +
+          '</div>' +
+          '<div class="toolkit-option-note">This is the complete toolkit. Nothing is held back in the print edition.</div>' +
+          '<a href="https://parents2beintl.lemonsqueezy.com/checkout/buy/dd7e3029-babe-4365-87ec-953b82d28f16" class="toolkit-buy-btn">Get Digital Edition &mdash; &pound;97 &rarr;</a>' +
+        '</div>' +
+
+        '<div class="toolkit-option">' +
+          '<div class="toolkit-option-name">PRINT + DIGITAL EDITION</div>' +
+          '<div class="toolkit-option-price">&pound;117 <span>One-time. No subscription.</span></div>' +
+          '<div class="toolkit-option-includes">' +
+            'Everything in the digital edition, plus a <strong>printed copy sent to your address.</strong> ' +
+            'Some people find a physical resource easier to engage with. ' +
+            'Includes one free assessment retake to track progress.' +
+          '</div>' +
+          '<div class="toolkit-option-note">The print edition costs more because it costs more to produce. That is the only reason.</div>' +
+          '<a href="https://parents2beintl.lemonsqueezy.com/checkout/buy/b91d62b2-f492-4003-b9db-523506fa6e90" class="toolkit-buy-btn secondary">Get Print + Digital &mdash; &pound;117 &rarr;</a>' +
+        '</div>' +
+
+      '</div>' +
+
+      '<div class="toolkit-honest-note">' +
+        'Both options contain identical content. The difference is format only. There is no premium tier, no upsell after purchase, and no subscription. If you are not sure, start with the free 7 Signs guide below.' +
+      '</div>' +
+
+    '</div>';
+}
+
+/* ═══════════════════════════
+   RESULTS — immediate, no email wall
+═══════════════════════════ */
+function showResults() {
+  var total = 0;
+  for (var i = 0; i < answers.length; i++) { total += (answers[i] || 0); }
+  resultTotal = total;
+  var pct = Math.min((total / 39) * 100, 100);
+
+  var isPartner = whoIs === 'partner';
+  var he   = isPartner ? 'he'   : 'you';
+  var his  = isPartner ? 'his'  : 'your';
+  var him  = isPartner ? 'him'  : 'you';
+  var hes  = isPartner ? "he's" : "you're";
+
+  var pNote = isPartner
+    ? '<p class="partner-note">You completed this on behalf of your partner. What you have observed matters — partners are often the first and only people to notice.</p>'
+    : '';
+
+  var band, bandLabel, titleHTML, contentHTML, ctaHTML;
+
+  /* ── 0–12 ── */
+  if (total <= 12) {
+    band      = 'NO SIGNIFICANT INDICATION';
+    bandLabel = 'Score 0\u201312 — No significant indication of depression at this time';
+    titleHTML = 'At This Score, <em>No Significant Indication</em> Is Present.';
+    contentHTML =
+      '<div class="result-block"><div class="result-block-title">WHAT THIS MEANS</div><div class="result-body">' + pNote +
+      '<p>A score of <strong>' + total + '</strong> out of 39 does not currently indicate a significant level of depression. This is a positive result. It suggests that ' + he + ' ' + (he === 'you' ? 'are' : 'is') + ' not showing the pattern of symptoms associated with paternal postpartum depression right now.</p>' +
+      '<p>Symptoms can emerge or worsen across the first 12 months postpartum. It is worth returning to this assessment in 4\u20136 weeks, or sooner if things change.</p>' +
+      '</div></div>' +
+      '<div class="result-block"><div class="result-block-title">WHAT TO DO NOW</div><div class="action-list">' +
+      '<div class="action-item"><span class="action-num">01</span><span class="action-text">Download the free 7 Signs guide — understand what to watch for even when things seem okay right now.</span></div>' +
+      '<div class="action-item"><span class="action-num">02</span><span class="action-text">Return to this assessment in 4\u20136 weeks. Paternal PPD often peaks between 3 and 6 months postpartum.</span></div>' +
+      '<div class="action-item"><span class="action-num">03</span><span class="action-text">If ' + his + ' mood or behaviour changes significantly, take the assessment again or speak to a GP.</span></div>' +
+      '</div></div>';
+    ctaHTML = buildToolkitPanel('low') +
+      '<a href="https://subscribepage.io/W3WGYX" class="cta-secondary" style="margin-top:1rem;">Start free — download the 7 Signs guide first &rarr;</a>' +
+      '<a href="https://parents2beintl.com" class="cta-secondary">Return to Parents2Be International &rarr;</a>';
+
+  /* ── 13–26 ── */
+  } else if (total <= 26) {
+    band      = 'PROBABLE DEPRESSION';
+    bandLabel = 'Score 13\u201326 — Probable depression. Professional assessment is recommended.';
+    titleHTML = 'This Score Indicates <em>Probable Depression.</em>';
+    contentHTML =
+      '<div class="result-block"><div class="result-block-title">WHAT THIS MEANS</div><div class="result-body">' + pNote +
+      '<p>A score of <strong>' + total + '</strong> out of 39 falls in the range that clinically indicates <strong>probable depression</strong>. The Gotland Male Depression Scale places this score in a band that warrants professional assessment. It should not be ignored.</p>' +
+      '<p>This is not failure. ' + (isPartner ? 'His' : 'Your') + ' brain and body are responding to conditions — hormonal, sleep-related, identity-related — that are genuinely hard. This is clinical. It has a name. It is treatable.</p>' +
+      '<p>The most important step right now is a conversation with a GP.</p>' +
+      '</div></div>' +
+      '<div class="result-block"><div class="result-block-title">WHAT TO DO — IN ORDER</div><div class="action-list">' +
+      '<div class="action-item"><span class="action-num">01</span><span class="action-text"><strong>Book a GP appointment this week.</strong> The words to use: "I have been struggling since the baby was born and I need to talk about my mental health." Those exact words are enough.</span></div>' +
+      '<div class="action-item"><span class="action-num">02</span><span class="action-text">The free 7 Signs guide explains what is happening biologically and gives ' + him + ' language to describe it to a clinician. Enter your email below and we will send it immediately.</span></div>' +
+      '<div class="action-item"><span class="action-num">03</span><span class="action-text">If ' + hes + ' not ready for the GP yet, read the guide tonight. Then share it with one person ' + (he === 'you' ? 'you trust' : 'he trusts') + '.</span></div>' +
+      '</div></div>';
+    ctaHTML = buildToolkitPanel('mid') +
+      '<a href="https://subscribepage.io/W3WGYX" class="cta-secondary" style="margin-top:1rem;">Not ready yet — start with the free 7 Signs guide &rarr;</a>' +
+      '<a href="https://parents2beintl.com" class="cta-secondary">Return to Parents2Be International &rarr;</a>';
+
+  /* ── 27–39 ── */
+  } else {
+    band      = 'SIGNIFICANT \u2014 ACT TODAY';
+    bandLabel = 'Score 27\u201339 — Significant depression. Professional support is needed now.';
+    titleHTML = 'This Score Is <em>Significant.</em> Please Act Today.';
+    contentHTML =
+      '<div class="crisis-box" role="alert"><div class="crisis-title">&#9888; IMMEDIATE SUPPORT AVAILABLE</div>' +
+      '<p>If there are any thoughts of self-harm or not wanting to be here, please stop and contact support now.<br><br>' +
+      '<strong>Samaritans: 116 123</strong> — free, 24/7, no judgement<br>' +
+      '<strong>NHS 111</strong> — urgent mental health support<br>' +
+      '<strong>Your GP</strong> — call first thing and say it is urgent</p></div>' +
+      '<div class="result-block"><div class="result-block-title">WHAT THIS SCORE MEANS</div><div class="result-body">' + pNote +
+      '<p>A score of <strong>' + total + '</strong> out of 39 falls in the range that clinically indicates <strong>significant depression requiring professional support</strong>. This is the upper band of the Gotland Male Depression Scale.</p>' +
+      '<p>This is not a character failing. This is not weakness. This is a clinical condition that responds to treatment — but it does not improve without action.</p>' +
+      '</div></div>' +
+      '<div class="result-block"><div class="result-block-title">WHAT TO DO — TODAY, NOT TOMORROW</div><div class="action-list">' +
+      '<div class="action-item"><span class="action-num">01</span><span class="action-text"><strong>Contact a GP today or first thing tomorrow.</strong> Say: "I have completed a validated depression screening and scored in the significant range. I need an urgent appointment." That framing will be heard differently.</span></div>' +
+      '<div class="action-item"><span class="action-num">02</span><span class="action-text">' + (isPartner ? 'Show him this result. Say: "I am worried about you and I need you to take this seriously."' : 'Share this result with one person you trust. You do not need to explain everything — just show them the number.') + '</span></div>' +
+      '<div class="action-item"><span class="action-num">03</span><span class="action-text">Enter your email below and we will send the free 7 Signs guide immediately — it confirms you are not alone and gives language to describe this to a clinician.</span></div>' +
+      '<div class="action-item"><span class="action-num">04</span><span class="action-text">If alcohol or substances are part of the picture, tell the GP. This is clinical information, not a confession.</span></div>' +
+      '</div></div>';
+    ctaHTML = buildToolkitPanel('high') +
+      '<a href="https://subscribepage.io/W3WGYX" class="cta-secondary" style="margin-top:1rem;">Start with the free 7 Signs guide first &rarr;</a>' +
+      '<a href="https://parents2beintl.com" class="cta-secondary">Return to Parents2Be International &rarr;</a>';
+  }
+
+  document.getElementById('score-number').textContent = total;
+  document.getElementById('score-band').textContent   = band;
+  document.getElementById('score-range').textContent  = bandLabel;
+  document.getElementById('result-title').innerHTML   = titleHTML;
+  document.getElementById('result-content').innerHTML = contentHTML;
+  document.getElementById('cta-stack').innerHTML      = ctaHTML;
+
+  // Partner-specific email label
+  if (whoIs === 'partner') {
+    document.getElementById('email-capture-desc').innerHTML =
+      'The <strong>7 Signs of Paternal PPD</strong> guide is written for partners — it explains what you may be seeing and how to talk to him about it. Enter your email and we will send it now.';
+  }
+
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('progress-label').textContent = '13 / 13';
+  document.getElementById('progress-wrap').setAttribute('aria-valuenow', '13');
+
+  showScreen('screen-results');
+
+  setTimeout(function() {
+    document.getElementById('score-bar-fill').style.width = pct + '%';
+  }, 120);
+
+  // GA4: assessment completed — score and band visible without email
+  var bandKey = total <= 12 ? 'none' : total <= 26 ? 'probable' : 'significant';
+  gtag('event', 'assessment_completed', {
+    score: total,
+    band: bandKey,
+    who: whoIs
+  });
+}
+
+/* ═══════════════════════════
+   EMAIL SUBMIT — optional, routes to correct ML group
+═══════════════════════════ */
+function submitEmail() {
+  var emailEl  = document.getElementById('email-input');
+  var errorEl  = document.getElementById('email-error');
+  var submitEl = document.getElementById('email-submit-btn');
+  var email    = emailEl.value.trim();
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    emailEl.classList.add('error');
+    errorEl.classList.add('show');
+    emailEl.focus();
+    return;
+  }
+  emailEl.classList.remove('error');
+  errorEl.classList.remove('show');
+  submitEl.disabled = true;
+  submitEl.textContent = 'Sending\u2026';
+
+  var band    = resultTotal <= 12 ? 'none' : resultTotal <= 26 ? 'probable' : 'significant';
+  var groupId = whoIs === 'partner' ? ML_GROUP_PARTNER : ML_GROUP_FATHER;
+
+  var payload = {
+    email: email,
+    resubscribe: true,
+    groups: [groupId],
+    fields: {
+      score: String(resultTotal),
+      band: band,
+      who: whoIs
+    }
+  };
+
+  fetch('https://api.mailerlite.com/api/v2/subscribers', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-MailerLite-ApiKey': ML_API_KEY
+    },
+    body: JSON.stringify(payload)
+  })
+  .then(function(res) {
+    if (!res.ok) { res.text().then(function(t){ console.warn('ML:', res.status, t); }); }
+    showEmailConfirmed(email);
+  })
+  .catch(function(err) {
+    console.warn('ML error:', err);
+    showEmailConfirmed(email); // don't block user on network fault
+  });
+
+  // GA4: email submitted
+  gtag('event', 'email_submitted', { band: band, who: whoIs });
+}
+
+function showEmailConfirmed(email) {
+  document.getElementById('email-capture-wrap').innerHTML =
+    '<div style="text-align:center;padding:0.75rem 0;">' +
+    '<div style="font-family:\'Courier New\',monospace;font-size:0.72rem;letter-spacing:0.2em;color:#C9A84C;margin-bottom:0.6rem;">GUIDE ON ITS WAY</div>' +
+    '<p style="font-family:Arial,sans-serif;font-size:0.95rem;color:rgba(245,245,245,0.65);line-height:1.7;">' +
+    'Sent to <strong style="color:#F5F5F5">' + email + '</strong>.<br>' +
+    'Check your inbox \u2014 and your spam folder if it does not arrive within 5 minutes.</p></div>';
+}
 </script>
 </body>
 </html>
