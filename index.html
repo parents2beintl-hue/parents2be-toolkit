@@ -38,7 +38,6 @@
     min-height: 100vh;
   }
 
-  /* ── SKIP LINK ── */
   .skip-link {
     position: absolute;
     top: -100px;
@@ -54,7 +53,6 @@
   }
   .skip-link:focus { top: 1rem; }
 
-  /* ── NAV ── */
   nav {
     position: sticky;
     top: 0;
@@ -90,14 +88,12 @@
   }
   .nav-cta:hover { background: var(--gold-light); }
 
-  /* ── LAYOUT ── */
   .wrap {
     max-width: 660px;
     margin: 0 auto;
     padding: 0 1.25rem 6rem;
   }
 
-  /* ── HERO ── */
   .hero {
     padding-top: 3rem;
     padding-bottom: 2.5rem;
@@ -173,7 +169,6 @@
     text-transform: uppercase;
   }
 
-  /* ── SECTION MARKER ── */
   .section-marker {
     display: flex;
     align-items: center;
@@ -194,7 +189,6 @@
   }
   .section-line { flex: 1; height: 1px; background: var(--gold-border); }
 
-  /* ── WHAT'S INSIDE — preview only ── */
   .contents-list {
     display: flex;
     flex-direction: column;
@@ -241,7 +235,6 @@
     white-space: nowrap;
   }
 
-  /* ── WHO IT IS FOR ── */
   .for-grid {
     display: flex;
     gap: 0.6rem;
@@ -271,7 +264,6 @@
   }
   .for-card-body strong { color: #F5F5F5; }
 
-  /* ── TRUST SIGNALS ── */
   .trust-row {
     display: flex;
     flex-wrap: wrap;
@@ -290,7 +282,6 @@
   }
   .trust-item::before { content: '✓ '; color: var(--gold); }
 
-  /* ── PRICING PANEL ── */
   .pricing-panel {
     border: 1px solid var(--gold-border);
     border-radius: 2px;
@@ -396,7 +387,6 @@
     font-style: italic;
   }
 
-  /* ── NOT READY BLOCK ── */
   .not-ready {
     border: 1px solid var(--gold-border);
     border-radius: 2px;
@@ -439,14 +429,12 @@
   }
   .not-ready-btn:hover { border-color: var(--gold); color: var(--gold); }
 
-  /* ── DIVIDER ── */
   hr {
     border: none;
     border-top: 1px solid rgba(201,168,76,0.1);
     margin: 2.5rem 0;
   }
 
-  /* ── DISCLAIMER ── */
   .disclaimer {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.8rem;
@@ -458,7 +446,6 @@
   }
   .disclaimer strong { color: rgba(245,245,245,0.5); }
 
-  /* ── FOOTER ── */
   footer {
     max-width: 660px;
     margin: 0 auto;
@@ -476,7 +463,6 @@
     color: rgba(201,168,76,0.3);
   }
 
-  /* ── FOCUS ── */
   :focus-visible {
     outline: 2px solid var(--gold);
     outline-offset: 3px;
@@ -496,7 +482,7 @@
 
 <nav aria-label="Site navigation">
   <a href="https://parents2beintl.com" class="nav-brand" aria-label="Parents2Be International home">Parents2Be International</a>
-  <a
+  
     href="https://parents2beintl.lemonsqueezy.com/checkout/buy/dd7e3029-babe-4365-87ec-953b82d28f16"
     class="nav-cta"
     aria-label="Get the toolkit for £97"
@@ -507,7 +493,6 @@
 <main id="main-content">
 <div class="wrap">
 
-  <!-- HERO -->
   <header class="hero">
     <div class="eyebrow" aria-hidden="true">90-Day Paternal PPD Recovery Toolkit</div>
     <h1>The Framework That<br>Didn't Exist.<br><em>Until Now.</em></h1>
@@ -537,7 +522,6 @@
     </div>
   </header>
 
-  <!-- WHO IT IS FOR -->
   <section aria-labelledby="for-heading">
     <div class="section-marker" aria-hidden="true">
       <span class="section-num">WHO THIS IS FOR</span>
@@ -562,7 +546,6 @@
     </div>
   </section>
 
-  <!-- WHAT'S INSIDE -->
   <section aria-labelledby="contents-heading">
     <div class="section-marker" aria-hidden="true">
       <span class="section-num">WHAT IS INSIDE</span>
@@ -628,10 +611,10 @@
       <div class="contents-item">
         <span class="contents-item-num" aria-hidden="true">05</span>
         <div class="contents-item-body">
-          <div class="contents-item-title">PROGRESS TRACKER + ASSESSMENT RETAKE</div>
+          <div class="contents-item-title">PROGRESS TRACKING</div>
           <div class="contents-item-desc">
-            Weekly check-in system built around the Gotland scale.
-            <strong>Retake the validated assessment to track your score over time.</strong>
+            A simple weekly check-in system built around the Gotland scale.
+            <strong>Structure for the long game.</strong>
           </div>
         </div>
         <span class="contents-lock" aria-label="Included in purchase">INCLUDED</span>
@@ -640,7 +623,6 @@
     </div>
   </section>
 
-  <!-- TRUST SIGNALS -->
   <div class="trust-row" aria-label="Trust indicators">
     <span class="trust-item">Clinically validated Gotland scale</span>
     <span class="trust-item">NHS-cited throughout</span>
@@ -650,7 +632,6 @@
     <span class="trust-item">Immediate access on purchase</span>
   </div>
 
-  <!-- PRICING -->
   <section aria-labelledby="pricing-heading">
     <div class="section-marker" aria-hidden="true">
       <span class="section-num">YOUR OPTIONS</span>
@@ -666,8 +647,7 @@
       <div class="pricing-header">
         <div class="pricing-header-label">THE 90-DAY PATERNAL PPD RECOVERY TOOLKIT</div>
         <p class="pricing-header-desc">
-          Five sections. Week-by-week framework. Partner guide. GP scripts.
-          Progress tracker. Assessment retake.
+          Five sections. Week-by-week framework. Partner guide. GP scripts. Progress tracker.
           <strong>Built for paternal PPD. Not adapted from generic mental health content.</strong>
         </p>
       </div>
@@ -681,10 +661,10 @@
           <div class="pricing-option-includes">
             Complete five-section toolkit delivered digitally.
             <strong>Immediate access after purchase.</strong>
-            Includes Gotland assessment retake to track your progress.
+            Use alongside the free P2BI assessment to measure where you started and how far you've come.
           </div>
           <div class="pricing-option-note">This is the complete toolkit. Nothing is held back in the print edition.</div>
-          <a
+          
             href="https://parents2beintl.lemonsqueezy.com/checkout/buy/dd7e3029-babe-4365-87ec-953b82d28f16"
             class="pricing-buy-btn"
             aria-label="Buy digital edition for £97"
@@ -701,10 +681,9 @@
             Everything in the digital edition, plus a
             <strong>printed copy sent to your address.</strong>
             Some people find a physical resource easier to work through.
-            Includes one free Gotland assessment retake.
           </div>
           <div class="pricing-option-note">Costs more because it costs more to produce. That is the only reason.</div>
-          <a
+          
             href="https://parents2beintl.lemonsqueezy.com/checkout/buy/b91d62b2-f492-4003-b9db-523506fa6e90"
             class="pricing-buy-btn outline"
             aria-label="Buy print and digital edition for £117"
@@ -723,7 +702,6 @@
 
   <hr>
 
-  <!-- NOT READY OPTIONS -->
   <section aria-labelledby="not-ready-heading">
     <div class="section-marker" aria-hidden="true">
       <span class="section-num">NOT READY YET?</span>
@@ -738,7 +716,7 @@
           If it resonates, the toolkit will still be here.
         </p>
       </div>
-      <a
+      
         href="https://subscribepage.io/W3WGYX"
         class="not-ready-btn"
         aria-label="Download the free 7 Signs guide"
@@ -754,7 +732,7 @@
           3 minutes. No email required. Your score may answer the question.
         </p>
       </div>
-      <a
+      
         href="https://parents2beintl-hue.github.io/parents2be-assessment"
         class="not-ready-btn"
         aria-label="Take the free Gotland assessment"
@@ -769,7 +747,7 @@
           Articles, resources, and more at Parents2Be International.
         </p>
       </div>
-      <a
+      
         href="https://parents2beintl.com"
         class="not-ready-btn"
         aria-label="Return to Parents2Be International"
