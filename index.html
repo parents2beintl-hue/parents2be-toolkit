@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>90-Day Paternal PPD Recovery Toolkit | Parents2Be International</title>
 <meta name="description" content="A structured 90-day recovery framework for paternal postpartum depression. NHS-cited. Evidence-based. Built for fathers and the partners who love them.">
-
-<!-- GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0KTPZJX8Z"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -14,10 +12,9 @@
   gtag('js', new Date());
   gtag('config', 'G-E0KTPZJX8Z');
 </script>
-
 <style>
   :root {
-    --gold:  #C9A84C;
+    --gold: #C9A84C;
     --gold-light: #e8c97a;
     --gold-dim: rgba(201,168,76,0.12);
     --gold-border: rgba(201,168,76,0.25);
@@ -25,11 +22,8 @@
     --muted: rgba(245,245,245,0.72);
     --muted-low: rgba(245,245,245,0.42);
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { font-size: 18px; scroll-behavior: smooth; }
-
   body {
     background: #000;
     color: #F5F5F5;
@@ -37,7 +31,6 @@
     line-height: 1.7;
     min-height: 100vh;
   }
-
   .skip-link {
     position: absolute;
     top: -100px;
@@ -52,7 +45,6 @@
     z-index: 9999;
   }
   .skip-link:focus { top: 1rem; }
-
   nav {
     position: sticky;
     top: 0;
@@ -87,13 +79,11 @@
     white-space: nowrap;
   }
   .nav-cta:hover { background: var(--gold-light); }
-
   .wrap {
     max-width: 660px;
     margin: 0 auto;
     padding: 0 1.25rem 6rem;
   }
-
   .hero {
     padding-top: 3rem;
     padding-bottom: 2.5rem;
@@ -117,7 +107,6 @@
     height: 1px;
     background: var(--gold-border);
   }
-
   h1 {
     font-family: Georgia, serif;
     font-size: clamp(1.9rem, 6vw, 3rem);
@@ -127,7 +116,6 @@
     margin-bottom: 1.25rem;
   }
   h1 em { color: var(--gold); font-style: italic; }
-
   h2 {
     font-family: Georgia, serif;
     font-size: clamp(1.4rem, 4.5vw, 2rem);
@@ -137,7 +125,6 @@
     margin-bottom: 0.85rem;
   }
   h2 em { color: var(--gold); font-style: italic; }
-
   .hero-body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
@@ -146,7 +133,6 @@
     margin-bottom: 1.75rem;
   }
   .hero-body strong { color: #F5F5F5; }
-
   .hero-stats {
     display: flex;
     gap: 1.5rem;
@@ -168,7 +154,6 @@
     color: var(--muted-low);
     text-transform: uppercase;
   }
-
   .section-marker {
     display: flex;
     align-items: center;
@@ -188,7 +173,6 @@
     white-space: nowrap;
   }
   .section-line { flex: 1; height: 1px; background: var(--gold-border); }
-
   .contents-list {
     display: flex;
     flex-direction: column;
@@ -227,550 +211,4 @@
   }
   .contents-item-desc strong { color: #F5F5F5; }
   .contents-lock {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
-    color: rgba(201,168,76,0.4);
-    padding-top: 0.2rem;
-    white-space: nowrap;
-  }
-
-  .for-grid {
-    display: flex;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.75rem;
-  }
-  .for-card {
-    flex: 1;
-    min-width: 220px;
-    padding: 1.1rem 1.25rem;
-    border: 1px solid var(--gold-border);
-    background: rgba(201,168,76,0.03);
-    border-radius: 2px;
-  }
-  .for-card-label {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-  }
-  .for-card-body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.65;
-  }
-  .for-card-body strong { color: #F5F5F5; }
-
-  .trust-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.85rem;
-    margin-bottom: 2rem;
-    padding: 1.1rem 1.25rem;
-    border: 1px solid var(--gold-border);
-    background: rgba(201,168,76,0.03);
-    border-radius: 2px;
-  }
-  .trust-item {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: rgba(201,168,76,0.65);
-  }
-  .trust-item::before { content: '✓ '; color: var(--gold); }
-
-  .pricing-panel {
-    border: 1px solid var(--gold-border);
-    border-radius: 2px;
-    overflow: hidden;
-    margin: 2rem 0;
-  }
-  .pricing-header {
-    background: rgba(201,168,76,0.08);
-    border-bottom: 1px solid var(--gold-border);
-    padding: 1.1rem 1.4rem;
-  }
-  .pricing-header-label {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    color: var(--gold);
-    margin-bottom: 0.35rem;
-  }
-  .pricing-header-desc {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.95rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-  .pricing-header-desc strong { color: #F5F5F5; }
-  .pricing-options {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .pricing-option {
-    flex: 1;
-    min-width: 220px;
-    padding: 1.25rem 1.4rem;
-    border-right: 1px solid var(--gold-border);
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  .pricing-option:last-child { border-right: none; }
-  .pricing-option-name {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-  }
-  .pricing-option-price {
-    font-family: Georgia, serif;
-    font-size: 1.75rem;
-    color: #F5F5F5;
-    line-height: 1;
-  }
-  .pricing-option-price small {
-    font-family: Arial, sans-serif;
-    font-size: 0.8rem;
-    color: var(--muted-low);
-    display: block;
-    margin-top: 0.25rem;
-  }
-  .pricing-option-includes {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.65;
-  }
-  .pricing-option-includes strong { color: #F5F5F5; }
-  .pricing-option-note {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.78rem;
-    color: rgba(201,168,76,0.55);
-    font-style: italic;
-    line-height: 1.5;
-  }
-  .pricing-buy-btn {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    background: var(--gold);
-    color: #000;
-    text-decoration: none;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    transition: background 0.2s;
-    border-radius: 2px;
-    margin-top: auto;
-  }
-  .pricing-buy-btn:hover { background: var(--gold-light); }
-  .pricing-buy-btn.outline {
-    background: transparent;
-    border: 1px solid var(--gold-border);
-    color: var(--muted);
-  }
-  .pricing-buy-btn.outline:hover { border-color: var(--gold); color: var(--gold); }
-  .pricing-honest {
-    padding: 0.9rem 1.4rem;
-    border-top: 1px solid var(--gold-border);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.82rem;
-    color: rgba(245,245,245,0.38);
-    line-height: 1.65;
-    font-style: italic;
-  }
-
-  .not-ready {
-    border: 1px solid var(--gold-border);
-    border-radius: 2px;
-    padding: 1.25rem 1.4rem;
-    margin: 1.5rem 0;
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-  .not-ready-text { flex: 1; min-width: 200px; }
-  .not-ready-label {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    margin-bottom: 0.4rem;
-  }
-  .not-ready-desc {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-  .not-ready-btn {
-    display: inline-block;
-    padding: 0.75rem 1.1rem;
-    background: transparent;
-    border: 1px solid var(--gold-border);
-    color: var(--muted);
-    text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: all 0.2s;
-    white-space: nowrap;
-    align-self: center;
-  }
-  .not-ready-btn:hover { border-color: var(--gold); color: var(--gold); }
-
-  hr {
-    border: none;
-    border-top: 1px solid rgba(201,168,76,0.1);
-    margin: 2.5rem 0;
-  }
-
-  .disclaimer {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.8rem;
-    color: rgba(245,245,245,0.3);
-    line-height: 1.7;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(201,168,76,0.08);
-    margin-top: 3rem;
-  }
-  .disclaimer strong { color: rgba(245,245,245,0.5); }
-
-  footer {
-    max-width: 660px;
-    margin: 0 auto;
-    padding: 1.5rem 1.25rem;
-    border-top: 1px solid var(--gold-border);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  footer span {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    color: rgba(201,168,76,0.3);
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
-
-  @media (max-width: 480px) {
-    .pricing-option { border-right: none; border-bottom: 1px solid var(--gold-border); }
-    .pricing-option:last-child { border-bottom: none; }
-    .hero-stats { gap: 1rem; }
-  }
-</style>
-</head>
-<body>
-
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
-<nav aria-label="Site navigation">
-  <a href="https://parents2beintl.com" class="nav-brand" aria-label="Parents2Be International home">Parents2Be International</a>
-  
-    href="https://parents2beintl.lemonsqueezy.com/checkout/buy/dd7e3029-babe-4365-87ec-953b82d28f16"
-    class="nav-cta"
-    aria-label="Get the toolkit for £97"
-    onclick="gtag('event','toolkit_nav_cta_click')"
-  >Get the Toolkit &rarr;</a>
-</nav>
-
-<main id="main-content">
-<div class="wrap">
-
-  <header class="hero">
-    <div class="eyebrow" aria-hidden="true">90-Day Paternal PPD Recovery Toolkit</div>
-    <h1>The Framework That<br>Didn't Exist.<br><em>Until Now.</em></h1>
-    <p class="hero-body">
-      1 in 10 new fathers experience postnatal depression. <strong>Over 80% go undiagnosed.</strong>
-      Not because it is rare — but because no structured resource existed to help them through it.
-      This is that resource. Five sections. Ninety days. Built for the father experiencing it
-      and the partner watching it happen.
-    </p>
-    <div class="hero-stats" aria-label="Key facts">
-      <div class="stat">
-        <span class="stat-number">1 in 10</span>
-        <span class="stat-label">New fathers affected</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">80%+</span>
-        <span class="stat-label">Go undiagnosed</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">90</span>
-        <span class="stat-label">Day framework</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">5</span>
-        <span class="stat-label">Sections, NHS-cited</span>
-      </div>
-    </div>
-  </header>
-
-  <section aria-labelledby="for-heading">
-    <div class="section-marker" aria-hidden="true">
-      <span class="section-num">WHO THIS IS FOR</span>
-      <span class="section-line"></span>
-    </div>
-    <div class="for-grid">
-      <div class="for-card">
-        <div class="for-card-label">THE FATHER</div>
-        <div class="for-card-body">
-          Something changed after the baby arrived and you cannot name it.
-          <strong>You are not broken.</strong> This is clinical, it has a mechanism,
-          and it responds to structured support.
-        </div>
-      </div>
-      <div class="for-card">
-        <div class="for-card-label">THE PARTNER</div>
-        <div class="for-card-body">
-          You have been watching him disappear and you do not know how to reach him.
-          <strong>What you have observed matters.</strong> This toolkit is for both of you.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section aria-labelledby="contents-heading">
-    <div class="section-marker" aria-hidden="true">
-      <span class="section-num">WHAT IS INSIDE</span>
-      <span class="section-line"></span>
-    </div>
-    <p style="font-family:Arial,sans-serif;font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;">
-      Five sections delivered as a complete digital resource. Everything below is included.
-      Nothing is sold separately.
-    </p>
-
-    <div class="contents-list" aria-label="Toolkit contents">
-
-      <div class="contents-item">
-        <span class="contents-item-num" aria-hidden="true">01</span>
-        <div class="contents-item-body">
-          <div class="contents-item-title">UNDERSTANDING IT</div>
-          <div class="contents-item-desc">
-            The clinical picture of paternal PPD — why it presents differently in men,
-            the biology behind it, and when it typically emerges.
-            <strong>NHS-cited. Written plainly.</strong>
-          </div>
-        </div>
-        <span class="contents-lock" aria-label="Included in purchase">INCLUDED</span>
-      </div>
-
-      <div class="contents-item">
-        <span class="contents-item-num" aria-hidden="true">02</span>
-        <div class="contents-item-body">
-          <div class="contents-item-title">THE 90-DAY FRAMEWORK</div>
-          <div class="contents-item-desc">
-            Four phases. Week by week. Built around how paternal PPD actually moves —
-            not how wellness content assumes it should.
-            <strong>Structured without being rigid.</strong>
-          </div>
-        </div>
-        <span class="contents-lock" aria-label="Included in purchase">INCLUDED</span>
-      </div>
-
-      <div class="contents-item">
-        <span class="contents-item-num" aria-hidden="true">03</span>
-        <div class="contents-item-body">
-          <div class="contents-item-title">THE PARTNER GUIDE</div>
-          <div class="contents-item-desc">
-            The 7 signs explained in full. How to approach him without pushing him further in.
-            <strong>Written for the person watching it happen.</strong>
-          </div>
-        </div>
-        <span class="contents-lock" aria-label="Included in purchase">INCLUDED</span>
-      </div>
-
-      <div class="contents-item">
-        <span class="contents-item-num" aria-hidden="true">04</span>
-        <div class="contents-item-body">
-          <div class="contents-item-title">GP PREPARATION</div>
-          <div class="contents-item-desc">
-            Exact scripts for the GP conversation — for the father and the partner.
-            <strong>The framing that gets heard differently.</strong>
-          </div>
-        </div>
-        <span class="contents-lock" aria-label="Included in purchase">INCLUDED</span>
-      </div>
-
-      <div class="contents-item">
-        <span class="contents-item-num" aria-hidden="true">05</span>
-        <div class="contents-item-body">
-          <div class="contents-item-title">PROGRESS TRACKING</div>
-          <div class="contents-item-desc">
-            A simple weekly check-in system built around the Gotland scale.
-            <strong>Structure for the long game.</strong>
-          </div>
-        </div>
-        <span class="contents-lock" aria-label="Included in purchase">INCLUDED</span>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="trust-row" aria-label="Trust indicators">
-    <span class="trust-item">Clinically validated Gotland scale</span>
-    <span class="trust-item">NHS-cited throughout</span>
-    <span class="trust-item">Written for paternal PPD specifically</span>
-    <span class="trust-item">One-time payment</span>
-    <span class="trust-item">No subscription</span>
-    <span class="trust-item">Immediate access on purchase</span>
-  </div>
-
-  <section aria-labelledby="pricing-heading">
-    <div class="section-marker" aria-hidden="true">
-      <span class="section-num">YOUR OPTIONS</span>
-      <span class="section-line"></span>
-    </div>
-    <h2 id="pricing-heading">Two Formats.<br><em>Identical Content.</em></h2>
-    <p style="font-family:Arial,sans-serif;font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;">
-      The only difference between these two options is how the toolkit is delivered.
-      Every word, every section, every resource is the same.
-    </p>
-
-    <div class="pricing-panel">
-      <div class="pricing-header">
-        <div class="pricing-header-label">THE 90-DAY PATERNAL PPD RECOVERY TOOLKIT</div>
-        <p class="pricing-header-desc">
-          Five sections. Week-by-week framework. Partner guide. GP scripts. Progress tracker.
-          <strong>Built for paternal PPD. Not adapted from generic mental health content.</strong>
-        </p>
-      </div>
-
-      <div class="pricing-options">
-        <div class="pricing-option">
-          <div class="pricing-option-name">DIGITAL EDITION</div>
-          <div class="pricing-option-price">&pound;97
-            <small>One-time. No subscription.</small>
-          </div>
-          <div class="pricing-option-includes">
-            Complete five-section toolkit delivered digitally.
-            <strong>Immediate access after purchase.</strong>
-            Use alongside the free P2BI assessment to measure where you started and how far you've come.
-          </div>
-          <div class="pricing-option-note">This is the complete toolkit. Nothing is held back in the print edition.</div>
-          
-            href="https://parents2beintl.lemonsqueezy.com/checkout/buy/dd7e3029-babe-4365-87ec-953b82d28f16"
-            class="pricing-buy-btn"
-            aria-label="Buy digital edition for £97"
-            onclick="gtag('event','toolkit_purchase_click',{edition:'digital',price:97})"
-          >Get Digital Edition &mdash; &pound;97 &rarr;</a>
-        </div>
-
-        <div class="pricing-option">
-          <div class="pricing-option-name">PRINT + DIGITAL EDITION</div>
-          <div class="pricing-option-price">&pound;117
-            <small>One-time. No subscription.</small>
-          </div>
-          <div class="pricing-option-includes">
-            Everything in the digital edition, plus a
-            <strong>printed copy sent to your address.</strong>
-            Some people find a physical resource easier to work through.
-          </div>
-          <div class="pricing-option-note">Costs more because it costs more to produce. That is the only reason.</div>
-          
-            href="https://parents2beintl.lemonsqueezy.com/checkout/buy/b91d62b2-f492-4003-b9db-523506fa6e90"
-            class="pricing-buy-btn outline"
-            aria-label="Buy print and digital edition for £117"
-            onclick="gtag('event','toolkit_purchase_click',{edition:'print',price:117})"
-          >Get Print + Digital &mdash; &pound;117 &rarr;</a>
-        </div>
-      </div>
-
-      <div class="pricing-honest">
-        Both options contain identical content. The difference is format only.
-        No premium tier. No upsell after purchase. No subscription.
-        If you are not sure yet, start with the free 7 Signs guide below.
-      </div>
-    </div>
-  </section>
-
-  <hr>
-
-  <section aria-labelledby="not-ready-heading">
-    <div class="section-marker" aria-hidden="true">
-      <span class="section-num">NOT READY YET?</span>
-      <span class="section-line"></span>
-    </div>
-
-    <div class="not-ready">
-      <div class="not-ready-text">
-        <div class="not-ready-label">START WITH THE FREE GUIDE</div>
-        <p class="not-ready-desc">
-          The 7 Signs of Paternal PPD — free, no commitment.
-          If it resonates, the toolkit will still be here.
-        </p>
-      </div>
-      
-        href="https://subscribepage.io/W3WGYX"
-        class="not-ready-btn"
-        aria-label="Download the free 7 Signs guide"
-        onclick="gtag('event','free_guide_click',{source:'toolkit_page'})"
-      >Free Guide &rarr;</a>
-    </div>
-
-    <div class="not-ready">
-      <div class="not-ready-text">
-        <div class="not-ready-label">TAKE THE FREE ASSESSMENT FIRST</div>
-        <p class="not-ready-desc">
-          Not sure if this applies? The Gotland Male Depression Scale takes under
-          3 minutes. No email required. Your score may answer the question.
-        </p>
-      </div>
-      
-        href="https://parents2beintl-hue.github.io/parents2be-assessment"
-        class="not-ready-btn"
-        aria-label="Take the free Gotland assessment"
-        onclick="gtag('event','assessment_click',{source:'toolkit_page'})"
-      >Take Assessment &rarr;</a>
-    </div>
-
-    <div class="not-ready">
-      <div class="not-ready-text">
-        <div class="not-ready-label">RETURN TO THE MAIN SITE</div>
-        <p class="not-ready-desc">
-          Articles, resources, and more at Parents2Be International.
-        </p>
-      </div>
-      
-        href="https://parents2beintl.com"
-        class="not-ready-btn"
-        aria-label="Return to Parents2Be International"
-      >Main Site &rarr;</a>
-    </div>
-  </section>
-
-  <p class="disclaimer">
-    <strong>Clinical disclaimer:</strong> This toolkit is an educational and supportive resource.
-    It does not constitute clinical diagnosis, treatment, or professional mental health advice.
-    Always consult a qualified healthcare professional for clinical concerns.
-    If you are concerned about immediate safety, contact your GP, call NHS 111,
-    or call the Samaritans on <strong>116 123</strong> (free, 24 hours, no judgement).
-  </p>
-
-</div>
-</main>
-
-<footer>
-  <span>&copy; 2026 Parents2Be International</span>
-  <span>Evidence-Based &middot; NHS-Cited &middot; UK-Focused</span>
-  <span>parents2beintl.com</span>
-</footer>
-
-</body>
-</html>
+    font-fa
