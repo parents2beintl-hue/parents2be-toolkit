@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>90-Day Paternal PPD Recovery Toolkit | Parents2Be International</title>
-<meta name="description" content="A structured 90-day recovery framework for paternal postpartum depression. NHS-cited. Evidence-based. Built for fathers and the partners who love them.">
+<meta name="description" content="Your complete 90-day recovery framework for paternal postpartum depression. Five sections. NHS-cited. Evidence-based. Save this page to your device.">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E0KTPZJX8Z"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -13,24 +13,679 @@
   gtag('config', 'G-E0KTPZJX8Z');
 </script>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400;500&display=swap');
+
   :root {
     --gold: #C9A84C;
     --gold-light: #e8c97a;
-    --gold-dim: rgba(201,168,76,0.12);
-    --gold-border: rgba(201,168,76,0.25);
+    --gold-dim: rgba(201,168,76,0.10);
+    --gold-border: rgba(201,168,76,0.22);
     --white: #F5F5F5;
-    --muted: rgba(245,245,245,0.72);
-    --muted-low: rgba(245,245,245,0.42);
+    --muted: rgba(245,245,245,0.70);
+    --muted-low: rgba(245,245,245,0.40);
+    --crisis: #cc4444;
   }
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { font-size: 18px; scroll-behavior: smooth; }
+  html { font-size: 18px; overflow-x: hidden; }
   body {
     background: #000;
     color: #F5F5F5;
-    font-family: Georgia, 'Times New Roman', serif;
-    line-height: 1.7;
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.8;
     min-height: 100vh;
+    overflow-x: hidden;
   }
+
+  /* ── SCROLL PROGRESS ── */
+  #scroll-progress-wrap {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: rgba(201,168,76,0.12);
+    z-index: 200;
+  }
+  #scroll-progress-fill {
+    height: 100%;
+    background: var(--gold);
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #000;
+    border-bottom: 1px solid var(--gold-border);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .nav-brand {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-sections {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+  .nav-pill {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    color: var(--muted-low);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav-pill:hover { color: var(--gold); border-color: var(--gold-border); }
+  @media (max-width: 600px) { .nav-sections { display: none; } }
+
+  /* ── LAYOUT ── */
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 1.25rem 6rem;
+  }
+
+  /* ── COVER ── */
+  .cover {
+    padding: 4rem 0 3rem;
+    border-bottom: 1px solid var(--gold-border);
+    margin-bottom: 3rem;
+  }
+  .cover-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .cover-eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold-border);
+  }
+  .cover-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #F5F5F5;
+    margin-bottom: 1.5rem;
+  }
+  .cover-title em { color: var(--gold); font-style: italic; }
+  .cover-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .cover-body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    max-width: 560px;
+  }
+  .cover-body strong { color: #F5F5F5; }
+
+  .save-notice {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--gold-border);
+    background: var(--gold-dim);
+    border-radius: 2px;
+    margin-bottom: 2rem;
+  }
+  .save-notice-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    padding-top: 0.1rem;
+    flex-shrink: 0;
+  }
+  .save-notice-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .save-notice-text strong { color: #F5F5F5; }
+
+  .cover-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--gold-border);
+  }
+  .stat { display: flex; flex-direction: column; gap: 0.2rem; }
+  .stat-num {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1.7rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    color: var(--muted-low);
+    text-transform: uppercase;
+  }
+
+  /* ── SECTION MARKERS ── */
+  .section-marker {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    padding-top: 3.5rem;
+  }
+  .section-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    white-space: nowrap;
+  }
+  .section-line { flex: 1; height: 1px; background: var(--gold-border); }
+
+  /* ── HEADINGS ── */
+  h2 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.5rem, 5vw, 2.2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #F5F5F5;
+    margin-bottom: 1rem;
+  }
+  h2 em { color: var(--gold); font-style: italic; }
+  h3 {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  /* ── BODY TEXT ── */
+  .body-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+  .body-text strong { color: #F5F5F5; }
+  .body-text + .body-text { margin-top: -0.5rem; }
+
+  /* ── CONTENT BLOCKS ── */
+  .content-block {
+    border: 1px solid var(--gold-border);
+    border-radius: 2px;
+    padding: 1.25rem 1.4rem;
+    margin-bottom: 1.1rem;
+    background: rgba(201,168,76,0.02);
+  }
+  .content-block-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .content-block-body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .content-block-body strong { color: #F5F5F5; }
+  .content-block-body p + p { margin-top: 0.75rem; }
+
+  /* ── WEEK BLOCKS ── */
+  .week-block {
+    border-top: 1px solid var(--gold-border);
+    padding-top: 2rem;
+    margin-top: 2rem;
+  }
+  .week-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: var(--muted-low);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .week-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.2rem, 4vw, 1.65rem);
+    font-weight: 400;
+    color: #F5F5F5;
+    margin-bottom: 0.35rem;
+    line-height: 1.25;
+  }
+  .week-focus {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  /* ── TOOL BLOCKS ── */
+  .tool-block {
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    border-radius: 2px;
+    padding: 1.1rem 1.25rem;
+    margin: 1rem 0;
+  }
+  .tool-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .tool-body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .tool-body strong { color: #F5F5F5; }
+
+  /* ── CHECKIN ── */
+  .checkin {
+    border: 1px solid rgba(201,168,76,0.3);
+    border-left: 3px solid var(--gold);
+    padding: 1.1rem 1.25rem;
+    margin: 1.25rem 0;
+    background: rgba(201,168,76,0.04);
+  }
+  .checkin-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.65rem;
+  }
+  .checkin-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .checkin-list li {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.65;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .checkin-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 0.75rem;
+  }
+
+  /* ── REMEMBER ── */
+  .remember {
+    background: #000;
+    border: 1px solid var(--gold-border);
+    border-radius: 2px;
+    padding: 1.1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .remember-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    color: var(--muted-low);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .remember-text {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    color: var(--gold);
+    line-height: 1.65;
+    font-style: italic;
+  }
+
+  /* ── NOTICE ── */
+  .notice {
+    border: 1px solid var(--gold-border);
+    border-radius: 2px;
+    padding: 1.1rem 1.25rem;
+    margin: 1.25rem 0;
+  }
+  .notice-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .notice-body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .notice-body strong { color: #F5F5F5; }
+
+  /* ── PHASE HEADER ── */
+  .phase-header {
+    background: var(--gold-dim);
+    border: 1px solid var(--gold-border);
+    border-radius: 2px;
+    padding: 1.4rem 1.6rem;
+    margin: 2.5rem 0 1.5rem;
+  }
+  .phase-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .phase-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: clamp(1.3rem, 4.5vw, 1.9rem);
+    font-weight: 400;
+    color: #F5F5F5;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+  .phase-title em { color: var(--gold); font-style: italic; }
+  .phase-desc {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ── PARTNER SECTION ── */
+  .partner-block {
+    border: 1px solid var(--gold-border);
+    border-top: 3px solid var(--gold);
+    border-radius: 2px;
+    padding: 1.25rem 1.4rem;
+    margin: 1.5rem 0;
+  }
+  .partner-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.65rem;
+  }
+  .partner-body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .partner-body strong { color: #F5F5F5; }
+  .partner-body p + p { margin-top: 0.75rem; }
+
+  /* ── SCRIPT BLOCK ── */
+  .script-block {
+    border: 1px solid var(--gold-border);
+    border-left: 3px solid var(--gold);
+    padding: 1.1rem 1.4rem;
+    margin: 1rem 0;
+    background: rgba(201,168,76,0.03);
+  }
+  .script-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--muted-low);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .script-text {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 1rem;
+    color: #F5F5F5;
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* ── TRACKER ── */
+  .tracker-wrap {
+    border: 1px solid var(--gold-border);
+    border-radius: 2px;
+    overflow: hidden;
+    margin: 1.5rem 0;
+  }
+  .tracker-header {
+    background: var(--gold-dim);
+    border-bottom: 1px solid var(--gold-border);
+    padding: 0.9rem 1.25rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .tracker-body { padding: 1.25rem; }
+  .tracker-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .tracker-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: var(--muted-low);
+    text-transform: uppercase;
+    min-width: 80px;
+  }
+  .tracker-score-btns {
+    display: flex;
+    gap: 0.4rem;
+  }
+  .score-btn {
+    width: 2.2rem;
+    height: 2.2rem;
+    background: transparent;
+    border: 1px solid var(--gold-border);
+    color: var(--muted-low);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.15s;
+  }
+  .score-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .score-btn.selected { background: var(--gold); color: #000; border-color: var(--gold); }
+  .tracker-total {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid var(--gold-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .tracker-save-btn {
+    padding: 0.6rem 1.1rem;
+    background: var(--gold);
+    color: #000;
+    border: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+  .tracker-save-btn:hover { background: var(--gold-light); }
+  .tracker-history {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--gold-border);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    color: var(--muted-low);
+    line-height: 1.9;
+    min-height: 2.5rem;
+  }
+  .tracker-history-entry { color: var(--muted); }
+  .tracker-history-entry span { color: var(--gold); }
+
+  /* ── CRISIS ── */
+  .crisis {
+    border: 1px solid var(--crisis);
+    border-radius: 2px;
+    padding: 1.25rem 1.4rem;
+    margin: 1.5rem 0;
+    background: rgba(204,68,68,0.05);
+  }
+  .crisis-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--crisis);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+  .crisis-body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .crisis-body strong { color: #F5F5F5; }
+  .crisis-body p + p { margin-top: 0.75rem; }
+
+  /* ── SEVEN SIGNS ── */
+  .sign-block {
+    display: flex;
+    gap: 1rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--gold-border);
+    border-radius: 2px;
+    margin-bottom: 0.65rem;
+    background: rgba(201,168,76,0.02);
+    align-items: flex-start;
+  }
+  .sign-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--gold);
+    min-width: 1.6rem;
+    padding-top: 0.2rem;
+    flex-shrink: 0;
+  }
+  .sign-body { flex: 1; }
+  .sign-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.35rem;
+  }
+  .sign-desc {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .sign-desc strong { color: #F5F5F5; }
+
+  /* ── FOOTER ── */
+  .disclaimer {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+    color: rgba(245,245,245,0.3);
+    line-height: 1.75;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(201,168,76,0.08);
+    margin-top: 4rem;
+  }
+  .disclaimer strong { color: rgba(245,245,245,0.5); }
+  footer {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+    border-top: 1px solid var(--gold-border);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  footer span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    color: rgba(201,168,76,0.3);
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    margin: 3rem 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
   .skip-link {
     position: absolute;
     top: -100px;
@@ -45,679 +700,835 @@
     z-index: 9999;
   }
   .skip-link:focus { top: 1rem; }
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: #000;
-    border-bottom: 1px solid var(--gold-border);
-    padding: 0.85rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-  .nav-brand {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    color: var(--gold);
-    text-transform: uppercase;
-    text-decoration: none;
-  }
-  .nav-cta {
-    padding: 0.55rem 1.1rem;
-    background: var(--gold);
-    color: #000;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-radius: 2px;
-    transition: background 0.2s;
-    white-space: nowrap;
-  }
-  .nav-cta:hover { background: var(--gold-light); }
-  .wrap {
-    max-width: 660px;
-    margin: 0 auto;
-    padding: 0 1.25rem 6rem;
-  }
-  .hero {
-    padding-top: 3rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--gold-border);
-    margin-bottom: 2.5rem;
-  }
-  .eyebrow {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.22em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .eyebrow::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--gold-border);
-  }
-  h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(1.9rem, 6vw, 3rem);
-    font-weight: normal;
-    line-height: 1.12;
-    color: #F5F5F5;
-    margin-bottom: 1.25rem;
-  }
-  h1 em { color: var(--gold); font-style: italic; }
-  h2 {
-    font-family: Georgia, serif;
-    font-size: clamp(1.4rem, 4.5vw, 2rem);
-    font-weight: normal;
-    line-height: 1.2;
-    color: #F5F5F5;
-    margin-bottom: 0.85rem;
-  }
-  h2 em { color: var(--gold); font-style: italic; }
-  .hero-body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    color: var(--muted);
-    line-height: 1.8;
-    margin-bottom: 1.75rem;
-  }
-  .hero-body strong { color: #F5F5F5; }
-  .hero-stats {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--gold-border);
-  }
-  .stat { display: flex; flex-direction: column; gap: 0.2rem; }
-  .stat-number {
-    font-family: Georgia, serif;
-    font-size: 1.6rem;
-    color: var(--gold);
-    line-height: 1;
-  }
-  .stat-label {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.6rem;
-    letter-spacing: 0.12em;
-    color: var(--muted-low);
-    text-transform: uppercase;
-  }
-  .section-marker {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-top: 2.5rem;
-  }
-  .section-num {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    color: var(--gold);
-    background: var(--gold-dim);
-    border: 1px solid var(--gold-border);
-    padding: 0.3rem 0.6rem;
-    border-radius: 2px;
-    white-space: nowrap;
-  }
-  .section-line { flex: 1; height: 1px; background: var(--gold-border); }
-  .contents-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-    margin-bottom: 1.75rem;
-  }
-  .contents-item {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem 1.1rem;
-    border: 1px solid var(--gold-border);
-    background: rgba(201,168,76,0.03);
-    border-radius: 2px;
-    align-items: flex-start;
-  }
-  .contents-item-num {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    color: var(--gold);
-    min-width: 1.4rem;
-    padding-top: 0.2rem;
-  }
-  .contents-item-body { flex: 1; }
-  .contents-item-title {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    color: var(--gold);
-    margin-bottom: 0.3rem;
-  }
-  .contents-item-desc {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-  .contents-item-desc strong { color: #F5F5F5; }
-  .contents-lock {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.58rem;
-    letter-spacing: 0.1em;
-    color: rgba(201,168,76,0.4);
-    padding-top: 0.2rem;
-    white-space: nowrap;
-  }
-  .for-grid {
-    display: flex;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-    margin-bottom: 1.75rem;
-  }
-  .for-card {
-    flex: 1;
-    min-width: 220px;
-    padding: 1.1rem 1.25rem;
-    border: 1px solid var(--gold-border);
-    background: rgba(201,168,76,0.03);
-    border-radius: 2px;
-  }
-  .for-card-label {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-  }
-  .for-card-body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.65;
-  }
-  .for-card-body strong { color: #F5F5F5; }
-  .trust-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.85rem;
-    margin-bottom: 2rem;
-    padding: 1.1rem 1.25rem;
-    border: 1px solid var(--gold-border);
-    background: rgba(201,168,76,0.03);
-    border-radius: 2px;
-  }
-  .trust-item {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    color: rgba(201,168,76,0.65);
-  }
-  .trust-item::before { content: '✓ '; color: var(--gold); }
-  .pricing-panel {
-    border: 1px solid var(--gold-border);
-    border-radius: 2px;
-    overflow: hidden;
-    margin: 2rem 0;
-  }
-  .pricing-header {
-    background: rgba(201,168,76,0.08);
-    border-bottom: 1px solid var(--gold-border);
-    padding: 1.1rem 1.4rem;
-  }
-  .pricing-header-label {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    color: var(--gold);
-    margin-bottom: 0.35rem;
-  }
-  .pricing-header-desc {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.95rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-  .pricing-header-desc strong { color: #F5F5F5; }
-  .pricing-options {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .pricing-option {
-    flex: 1;
-    min-width: 220px;
-    padding: 1.25rem 1.4rem;
-    border-right: 1px solid var(--gold-border);
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
-  .pricing-option:last-child { border-right: none; }
-  .pricing-option-name {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-  }
-  .pricing-option-price {
-    font-family: Georgia, serif;
-    font-size: 1.75rem;
-    color: #F5F5F5;
-    line-height: 1;
-  }
-  .pricing-option-price small {
-    font-family: Arial, sans-serif;
-    font-size: 0.8rem;
-    color: var(--muted-low);
-    display: block;
-    margin-top: 0.25rem;
-  }
-  .pricing-option-includes {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.65;
-  }
-  .pricing-option-includes strong { color: #F5F5F5; }
-  .pricing-option-note {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.78rem;
-    color: rgba(201,168,76,0.55);
-    font-style: italic;
-    line-height: 1.5;
-  }
-  .pricing-buy-btn {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    background: var(--gold);
-    color: #000;
-    text-decoration: none;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    transition: background 0.2s;
-    border-radius: 2px;
-    margin-top: auto;
-  }
-  .pricing-buy-btn:hover { background: var(--gold-light); }
-  .pricing-buy-btn.outline {
-    background: transparent;
-    border: 1px solid var(--gold-border);
-    color: var(--muted);
-  }
-  .pricing-buy-btn.outline:hover { border-color: var(--gold); color: var(--gold); }
-  .pricing-honest {
-    padding: 0.9rem 1.4rem;
-    border-top: 1px solid var(--gold-border);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.82rem;
-    color: rgba(245,245,245,0.38);
-    line-height: 1.65;
-    font-style: italic;
-  }
-  .not-ready {
-    border: 1px solid var(--gold-border);
-    border-radius: 2px;
-    padding: 1.25rem 1.4rem;
-    margin: 1.5rem 0;
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-  .not-ready-text { flex: 1; min-width: 200px; }
-  .not-ready-label {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--gold);
-    margin-bottom: 0.4rem;
-  }
-  .not-ready-desc {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-  .not-ready-btn {
-    display: inline-block;
-    padding: 0.75rem 1.1rem;
-    background: transparent;
-    border: 1px solid var(--gold-border);
-    color: var(--muted);
-    text-decoration: none;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    border-radius: 2px;
-    transition: all 0.2s;
-    white-space: nowrap;
-    align-self: center;
-  }
-  .not-ready-btn:hover { border-color: var(--gold); color: var(--gold); }
-  hr {
-    border: none;
-    border-top: 1px solid rgba(201,168,76,0.1);
-    margin: 2.5rem 0;
-  }
-  .disclaimer {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.8rem;
-    color: rgba(245,245,245,0.3);
-    line-height: 1.7;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(201,168,76,0.08);
-    margin-top: 3rem;
-  }
-  .disclaimer strong { color: rgba(245,245,245,0.5); }
-  footer {
-    max-width: 660px;
-    margin: 0 auto;
-    padding: 1.5rem 1.25rem;
-    border-top: 1px solid var(--gold-border);
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  footer span {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    color: rgba(201,168,76,0.3);
-  }
-  :focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
+
   @media (max-width: 480px) {
-    .pricing-option { border-right: none; border-bottom: 1px solid var(--gold-border); }
-    .pricing-option:last-child { border-bottom: none; }
-    .hero-stats { gap: 1rem; }
+    .cover-stats { gap: 1.25rem; }
+    .tracker-row { flex-direction: column; align-items: flex-start; }
   }
 </style>
 </head>
 <body>
 
+<div id="scroll-progress-wrap" aria-hidden="true"><div id="scroll-progress-fill"></div></div>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<nav aria-label="Site navigation">
-  <a href="https://parents2beintl.com" class="nav-brand" aria-label="Parents2Be International home">Parents2Be International</a>
-  <a href="https://parents2beintl.lemonsqueezy.com/checkout/buy/dd7e3029-babe-4365-87ec-953b82d28f16" class="nav-cta" aria-label="Get the toolkit for £97" onclick="gtag('event','toolkit_nav_cta_click')">Get the Toolkit &rarr;</a>
+<nav aria-label="Toolkit navigation">
+  <a href="https://parents2beintl.com" class="nav-brand" aria-label="Parents2Be International">Parents2Be International</a>
+  <div class="nav-sections" role="list" aria-label="Toolkit sections">
+    <a href="#section-1" class="nav-pill" role="listitem">Understanding It</a>
+    <a href="#section-2" class="nav-pill" role="listitem">90-Day Framework</a>
+    <a href="#section-3" class="nav-pill" role="listitem">Partner Guide</a>
+    <a href="#section-4" class="nav-pill" role="listitem">GP Preparation</a>
+    <a href="#section-5" class="nav-pill" role="listitem">Progress Tracker</a>
+  </div>
 </nav>
 
 <main id="main-content">
 <div class="wrap">
 
-  <header class="hero">
-    <div class="eyebrow" aria-hidden="true">90-Day Paternal PPD Recovery Toolkit</div>
-    <h1>The Framework That<br>Didn't Exist.<br><em>Until Now.</em></h1>
-    <p class="hero-body">
-      1 in 10 new fathers experience postnatal depression. <strong>Over 80% go undiagnosed.</strong>
-      Not because it is rare — but because no structured resource existed to help them through it.
-      This is that resource. Five sections. Ninety days. Built for the father experiencing it
-      and the partner watching it happen.
+  <!-- COVER -->
+  <header class="cover">
+    <div class="cover-eyebrow" aria-hidden="true">90-Day Paternal PPD Recovery Toolkit</div>
+    <h1 class="cover-title">The Framework<br>That Didn't Exist.<br><em>Until Now.</em></h1>
+    <div class="cover-sub">Parents2Be International — Version 1.0 — April 2026</div>
+    <p class="cover-body">
+      You have this because you took the assessment. What you scored is not a verdict —
+      it is a starting point. <strong>This toolkit is the structured support that comes next.</strong>
+      Five sections. Ninety days. Built for the father experiencing it and the partner watching it happen.
     </p>
-    <div class="hero-stats" aria-label="Key facts">
-      <div class="stat">
-        <span class="stat-number">1 in 10</span>
-        <span class="stat-label">New fathers affected</span>
+
+    <div class="save-notice" role="note">
+      <div class="save-notice-icon">⬇</div>
+      <div class="save-notice-text">
+        <strong>Save this page now.</strong> Bookmark it, add to your home screen, or save to your device.
+        On mobile: tap the Share button → Add to Home Screen.
+        On desktop: Ctrl+D (Windows) or Cmd+D (Mac).
+        You will want to return to this. Make it easy to find.
       </div>
-      <div class="stat">
-        <span class="stat-number">80%+</span>
-        <span class="stat-label">Go undiagnosed</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">90</span>
-        <span class="stat-label">Day framework</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number">5</span>
-        <span class="stat-label">Sections, NHS-cited</span>
-      </div>
+    </div>
+
+    <div class="cover-stats" aria-label="Key facts">
+      <div class="stat"><span class="stat-num">1 in 10</span><span class="stat-label">New fathers affected</span></div>
+      <div class="stat"><span class="stat-num">80%+</span><span class="stat-label">Go undiagnosed</span></div>
+      <div class="stat"><span class="stat-num">90</span><span class="stat-label">Day framework</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Sections, NHS-cited</span></div>
     </div>
   </header>
 
-  <section aria-labelledby="for-heading">
+  <!-- ══ SECTION 1 — UNDERSTANDING IT ══ -->
+  <section id="section-1" aria-labelledby="s1-heading">
     <div class="section-marker" aria-hidden="true">
-      <span class="section-num">WHO THIS IS FOR</span>
+      <span class="section-tag">Section 01</span>
       <span class="section-line"></span>
     </div>
-    <div class="for-grid">
-      <div class="for-card">
-        <div class="for-card-label">THE FATHER</div>
-        <div class="for-card-body">
-          Something changed after the baby arrived and you cannot name it.
-          <strong>You are not broken.</strong> This is clinical, it has a mechanism,
-          and it responds to structured support.
-        </div>
+    <h2 id="s1-heading">Understanding It.<br><em>What Is Actually Happening.</em></h2>
+
+    <p class="body-text">
+      Paternal postpartum depression is real, it is clinical, and it is distinct from
+      maternal postnatal depression — not a lesser version of it, not a sympathy response,
+      not weakness. It has its own presentation, its own trajectory, and its own mechanism.
+      <strong>Understanding it changes how you navigate it.</strong>
+    </p>
+
+    <h3>The Biology</h3>
+    <div class="content-block">
+      <div class="content-block-title">What Is Happening In His Body</div>
+      <div class="content-block-body">
+        <p>Research published in PNAS (Gettler et al., 2011) established that testosterone levels in new fathers drop significantly in the first weeks postpartum — a hormonal shift linked to caregiving behaviour but also to increased vulnerability to low mood, irritability, and emotional blunting.</p>
+        <p>Cortisol — the stress hormone — rises. Prolactin levels shift. Sleep deprivation compounds everything. A 2000 study in Occupational and Environmental Medicine found that moderate sleep deprivation produces cognitive and emotional impairment equivalent to legal intoxication. <strong>He is not functioning from a baseline state. He is functioning under load.</strong></p>
+        <p>This is not metaphor. This is physiology. The brain under sustained sleep deprivation and hormonal disruption does not regulate emotion the same way. The irritability, the withdrawal, the numbness — these are not personality. They are symptoms.</p>
       </div>
-      <div class="for-card">
-        <div class="for-card-label">THE PARTNER</div>
-        <div class="for-card-body">
-          You have been watching him disappear and you do not know how to reach him.
-          <strong>What you have observed matters.</strong> This toolkit is for both of you.
-        </div>
+    </div>
+
+    <h3>Why It Presents Differently In Men</h3>
+    <div class="content-block">
+      <div class="content-block-title">The Male Presentation</div>
+      <div class="content-block-body">
+        <p>Martin, Neighbors and Griffith (2013) in JAMA Psychiatry documented that men experiencing depression more commonly present with externalised symptoms — irritability, anger, risk-taking, increased alcohol use, withdrawal — rather than the sadness and tearfulness associated with classical depression.</p>
+        <p>This matters because the standard depression screening tools were not designed around male presentation. A father scoring below threshold on a standard questionnaire may still be significantly depressed. <strong>The Gotland Male Depression Scale — which you have already completed — was specifically designed to capture this.</strong></p>
+        <p>The symptoms most commonly missed in fathers: increased irritability or anger, emotional numbing, feeling like a stranger in your own home, obsessive worrying about providing or protecting, withdrawal from the baby rather than connection, increased alcohol or screen use as escape.</p>
       </div>
+    </div>
+
+    <h3>When It Typically Emerges</h3>
+    <div class="content-block">
+      <div class="content-block-title">The Timeline</div>
+      <div class="content-block-body">
+        <p>Paulson and Bazemore's 2010 meta-analysis in JAMA — the largest of its kind — found that paternal PPD affects approximately 10% of new fathers, with peak prevalence between 3 and 6 months postpartum. It can emerge earlier, particularly when there are pre-existing vulnerabilities, relationship strain, financial pressure, or a history of depression.</p>
+        <p>It does not resolve automatically with time. Without recognition and structured support, it tends to persist or worsen. <strong>The fact that you are here — that you took the assessment, that you are reading this — puts you ahead of most.</strong></p>
+      </div>
+    </div>
+
+    <div class="notice">
+      <div class="notice-title">What This Toolkit Is — And What It Is Not</div>
+      <div class="notice-body">
+        This is an educational and structured support resource. It is not clinical treatment. It does not replace your GP, a therapist, or a psychiatrist. It is designed to work alongside professional support — or to be the thing that gets you to professional support if you are not there yet. <strong>If at any point your symptoms feel urgent or overwhelming, go to Section 4 (GP Preparation) and Section 5 (Crisis Escalation) first.</strong>
+      </div>
+    </div>
+
+    <div class="remember">
+      <div class="remember-label">Remember</div>
+      <p class="remember-text">You are not broken. Your brain and body are responding to conditions that are genuinely hard. This has a name, a mechanism, and a documented path through it.</p>
     </div>
   </section>
 
-  <section aria-labelledby="contents-heading">
+  <hr>
+
+  <!-- ══ SECTION 2 — 90-DAY FRAMEWORK ══ -->
+  <section id="section-2" aria-labelledby="s2-heading">
     <div class="section-marker" aria-hidden="true">
-      <span class="section-num">WHAT IS INSIDE</span>
+      <span class="section-tag">Section 02</span>
       <span class="section-line"></span>
     </div>
-    <p style="font-family:Arial,sans-serif;font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;">
-      Five sections delivered as a complete digital resource. Everything below is included.
-      Nothing is sold separately.
-    </p>
-    <div class="contents-list" aria-label="Toolkit contents">
+    <h2 id="s2-heading">The 90-Day Framework.<br><em>Week by Week.</em></h2>
 
-      <div class="contents-item">
-        <span class="contents-item-num" aria-hidden="true">01</span>
-        <div class="contents-item-body">
-          <div class="contents-item-title">UNDERSTANDING IT</div>
-          <div class="contents-item-desc">
-            The clinical picture of paternal PPD — why it presents differently in men,
-            the biology behind it, and when it typically emerges.
-            <strong>NHS-cited. Written plainly.</strong>
-          </div>
-        </div>
-        <span class="contents-lock" aria-label="Included in purchase">INCLUDED</span>
-      </div>
-
-      <div class="contents-item">
-        <span class="contents-item-num" aria-hidden="true">02</span>
-        <div class="contents-item-body">
-          <div class="contents-item-title">THE 90-DAY FRAMEWORK</div>
-          <div class="contents-item-desc">
-            Four phases. Week by week. Built around how paternal PPD actually moves —
-            not how wellness content assumes it should.
-            <strong>Structured without being rigid.</strong>
-          </div>
-        </div>
-        <span class="contents-lock" aria-label="Included in purchase">INCLUDED</span>
-      </div>
-
-      <div class="contents-item">
-        <span class="contents-item-num" aria-hidden="true">03</span>
-        <div class="contents-item-body">
-          <div class="contents-item-title">THE PARTNER GUIDE</div>
-          <div class="contents-item-desc">
-            The 7 signs explained in full. How to approach him without pushing him further in.
-            <strong>Written for the person watching it happen.</strong>
-          </div>
-        </div>
-        <span class="contents-lock" aria-label="Included in purchase">INCLUDED</span>
-      </div>
-
-      <div class="contents-item">
-        <span class="contents-item-num" aria-hidden="true">04</span>
-        <div class="contents-item-body">
-          <div class="contents-item-title">GP PREPARATION</div>
-          <div class="contents-item-desc">
-            Exact scripts for the GP conversation — for the father and the partner.
-            <strong>The framing that gets heard differently.</strong>
-          </div>
-        </div>
-        <span class="contents-lock" aria-label="Included in purchase">INCLUDED</span>
-      </div>
-
-      <div class="contents-item">
-        <span class="contents-item-num" aria-hidden="true">05</span>
-        <div class="contents-item-body">
-          <div class="contents-item-title">PROGRESS TRACKING</div>
-          <div class="contents-item-desc">
-            A simple weekly check-in system built around the Gotland scale.
-            <strong>Structure for the long game.</strong>
-          </div>
-        </div>
-        <span class="contents-lock" aria-label="Included in purchase">INCLUDED</span>
-      </div>
-
-    </div>
-  </section>
-
-  <div class="trust-row" aria-label="Trust indicators">
-    <span class="trust-item">Clinically validated Gotland scale</span>
-    <span class="trust-item">NHS-cited throughout</span>
-    <span class="trust-item">Written for paternal PPD specifically</span>
-    <span class="trust-item">One-time payment</span>
-    <span class="trust-item">No subscription</span>
-    <span class="trust-item">Immediate access on purchase</span>
-  </div>
-
-  <section aria-labelledby="pricing-heading">
-    <div class="section-marker" aria-hidden="true">
-      <span class="section-num">YOUR OPTIONS</span>
-      <span class="section-line"></span>
-    </div>
-    <h2 id="pricing-heading">Two Formats.<br><em>Identical Content.</em></h2>
-    <p style="font-family:Arial,sans-serif;font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;">
-      The only difference between these two options is how the toolkit is delivered.
-      Every word, every section, every resource is the same.
+    <p class="body-text">
+      Four phases. Thirteen weeks. Three tracks running simultaneously:
+      <strong>Individual</strong> (what you do), <strong>Relational</strong> (what you do together),
+      and <strong>Systemic</strong> (what you engage with — GP, workplace, support structures).
+      Each week has a focus, an action, and a check-in. Progress is measurable.
     </p>
 
-    <div class="pricing-panel">
-      <div class="pricing-header">
-        <div class="pricing-header-label">THE 90-DAY PATERNAL PPD RECOVERY TOOLKIT</div>
-        <p class="pricing-header-desc">
-          Five sections. Week-by-week framework. Partner guide. GP scripts. Progress tracker.
-          <strong>Built for paternal PPD. Not adapted from generic mental health content.</strong>
-        </p>
+    <div class="notice">
+      <div class="notice-title">How To Use This Framework</div>
+      <div class="notice-body">
+        Start at Week 1 regardless of where you are in your postpartum journey. If you are reading this at month four, Week 1 still applies — it is about foundation, not chronology. Work through one week at a time. Do not skip ahead. The structure exists for a reason.
       </div>
+    </div>
 
-      <div class="pricing-options">
+    <!-- PHASE 1 -->
+    <div class="phase-header">
+      <div class="phase-label">Phase One — Weeks 1–3</div>
+      <div class="phase-title">Recognition.<br><em>Naming What Is Happening.</em></div>
+      <p class="phase-desc">The first phase is not about fixing anything. It is about stopping the pretence that everything is fine, naming what is happening, and creating the conditions for the next phase to work.</p>
+    </div>
 
-        <div class="pricing-option">
-          <div class="pricing-option-name">DIGITAL EDITION</div>
-          <div class="pricing-option-price">&pound;97
-            <small>One-time. No subscription.</small>
-          </div>
-          <div class="pricing-option-includes">
-            Complete five-section toolkit delivered digitally.
-            <strong>Immediate access after purchase.</strong>
-            Use alongside the free P2BI assessment to measure where you started and how far you have come.
-          </div>
-          <div class="pricing-option-note">This is the complete toolkit. Nothing is held back in the print edition.</div>
-          <a href="https://parents2beintl.lemonsqueezy.com/checkout/buy/dd7e3029-babe-4365-87ec-953b82d28f16" class="pricing-buy-btn" aria-label="Buy digital edition for £97" onclick="gtag('event','toolkit_purchase_click',{edition:'digital',price:97})">Get Digital Edition &mdash; &pound;97 &rarr;</a>
-        </div>
-
-        <div class="pricing-option">
-          <div class="pricing-option-name">PRINT + DIGITAL EDITION</div>
-          <div class="pricing-option-price">&pound;117
-            <small>One-time. No subscription.</small>
-          </div>
-          <div class="pricing-option-includes">
-            Everything in the digital edition, plus a
-            <strong>printed copy sent to your address.</strong>
-            Some people find a physical resource easier to work through.
-          </div>
-          <div class="pricing-option-note">Costs more because it costs more to produce. That is the only reason.</div>
-          <a href="https://parents2beintl.lemonsqueezy.com/checkout/buy/b91d62b2-f492-4003-b9db-523506fa6e90" class="pricing-buy-btn outline" aria-label="Buy print and digital edition for £117" onclick="gtag('event','toolkit_purchase_click',{edition:'print',price:117})">Get Print + Digital &mdash; &pound;117 &rarr;</a>
-        </div>
-
+    <div class="week-block" id="week1">
+      <div class="week-label">Week 1</div>
+      <div class="week-title">Naming It</div>
+      <div class="week-focus">Individual: Recognition · Relational: Disclosure · Systemic: GP Contact</div>
+      <p class="body-text">You have a score from the Gotland assessment. That score is information, not a verdict. This week, your only job is to sit with that information without minimising it.</p>
+      <div class="tool-block">
+        <div class="tool-title">Individual Action — The Written Account</div>
+        <div class="tool-body">Write down — not to share, just for yourself — three ways your behaviour or mood has changed since the baby arrived. Be specific. Not "I've been stressed" but "I snapped at my partner twice this week over nothing and then felt nothing about it." Specificity is what makes this useful later — at the GP, with a therapist, with yourself.</div>
       </div>
+      <div class="tool-block">
+        <div class="tool-title">Relational Action — One Honest Sentence</div>
+        <div class="tool-body">Tell your partner — or one person you trust — one true thing about how you have been feeling. Not the full picture. One sentence. Something like: "I haven't been feeling like myself and I'm trying to get a handle on it." That is enough. You do not need to have answers to start the conversation.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Systemic Action — Book The Appointment</div>
+        <div class="tool-body">Book a GP appointment this week. Not next week. If the thought of that feels too much, go to Section 4 of this toolkit for the exact words to use. The appointment does not need to happen this week — it just needs to be booked.</div>
+      </div>
+      <div class="checkin">
+        <div class="checkin-title">Week 1 Check-In</div>
+        <ul class="checkin-list">
+          <li>Did you write the three specific observations?</li>
+          <li>Did you say one true thing to someone?</li>
+          <li>Is the GP appointment booked?</li>
+        </ul>
+      </div>
+      <div class="remember">
+        <div class="remember-label">Remember</div>
+        <p class="remember-text">You do not need to understand this fully to start. Recognition precedes understanding. Start here.</p>
+      </div>
+    </div>
 
-      <div class="pricing-honest">
-        Both options contain identical content. The difference is format only.
-        No premium tier. No upsell after purchase. No subscription.
-        If you are not sure yet, start with the free 7 Signs guide below.
+    <div class="week-block" id="week2">
+      <div class="week-label">Week 2</div>
+      <div class="week-title">Understanding The Pattern</div>
+      <div class="week-focus">Individual: Pattern recognition · Relational: What she needs to know · Systemic: GP appointment</div>
+      <p class="body-text">Depression does not arrive randomly. It has triggers, cycles, and patterns. This week is about starting to see yours.</p>
+      <div class="tool-block">
+        <div class="tool-title">Individual Action — The Pattern Map</div>
+        <div class="tool-body">Look at the past two weeks. When did you feel worst? What was happening before those moments — sleep, food, interaction, isolation? What (if anything) made it slightly more bearable? You are not solving this. You are mapping it. A pattern you can see is a pattern you can begin to interrupt.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Relational Action — Give Her This Section</div>
+        <div class="tool-body">Ask your partner to read Section 3 of this toolkit — The Partner Guide. You do not need to explain it. Just ask her to read it. What she learns there will change how she is able to support you, without either of you needing to have a difficult conversation about it.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Systemic Action — The GP Appointment</div>
+        <div class="tool-body">If your appointment is this week, go to Section 4 now and prepare. Read the scripts. Know what you are going to say before you walk in. If the appointment is next week, the systemic task this week is to tell one person outside your household — a friend, a sibling, a colleague — that you have a GP appointment. Accountability is a support structure.</div>
+      </div>
+      <div class="checkin">
+        <div class="checkin-title">Week 2 Check-In</div>
+        <ul class="checkin-list">
+          <li>Can you name two or three specific triggers from the past two weeks?</li>
+          <li>Has your partner read Section 3?</li>
+          <li>Has the GP appointment happened or is it imminent?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week-block" id="week3">
+      <div class="week-label">Week 3</div>
+      <div class="week-title">Stabilising The Basics</div>
+      <div class="week-focus">Individual: Sleep, food, movement · Relational: One hour · Systemic: Post-GP follow-through</div>
+      <p class="body-text">Before anything else can work, the basics need to be as stable as they can be. Not perfect. Stable enough.</p>
+      <div class="tool-block">
+        <div class="tool-title">Individual Action — The Minimum Viable Baseline</div>
+        <div class="tool-body">Identify one small thing in each of three categories you can do consistently this week: sleep (one agreed night where your partner takes the baby so you get a longer stretch), food (one proper meal a day, not snacks), movement (a ten-minute walk, alone, daily). These are not wellness goals. They are the floor below which recovery becomes significantly harder.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Relational Action — One Hour That Is Not About The Baby</div>
+        <div class="tool-body">Agree with your partner on one hour this week that is not about the baby, logistics, or how either of you is feeling. Watch something. Eat something. Sit somewhere. The relationship existed before this. It needs small acts of maintenance to survive this phase.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Systemic Action — Post-GP Follow-Through</div>
+        <div class="tool-body">If you have seen a GP and been referred or given a plan — follow it this week. If you were dismissed or not taken seriously, go back to Section 4. The escalation scripts are there for this exact situation. A single dismissal is not the end of the road.</div>
+      </div>
+      <div class="checkin">
+        <div class="checkin-title">Week 3 Check-In</div>
+        <ul class="checkin-list">
+          <li>Are the three basics in place at even a minimum level?</li>
+          <li>Did you have the one hour that was not about the baby?</li>
+          <li>Is the clinical pathway in motion?</li>
+        </ul>
+      </div>
+      <div class="remember">
+        <div class="remember-label">Remember</div>
+        <p class="remember-text">Three weeks of recognition is enough. Phase Two is about building — not fixing everything at once, but laying the structure that makes the next twelve weeks possible.</p>
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="phase-header">
+      <div class="phase-label">Phase Two — Weeks 4–7</div>
+      <div class="phase-title">Structure.<br><em>Building The Container.</em></div>
+      <p class="phase-desc">Recognition without structure becomes rumination. Phase Two is about building the daily and weekly habits that give recovery something to attach to. Not dramatic changes — incremental ones that compound.</p>
+    </div>
+
+    <div class="week-block" id="week4">
+      <div class="week-label">Week 4</div>
+      <div class="week-title">The Daily Anchor</div>
+      <div class="week-focus">Individual: One consistent daily action · Relational: Regular check-in · Systemic: Support structure</div>
+      <div class="tool-block">
+        <div class="tool-title">Individual Action — Choose Your Anchor</div>
+        <div class="tool-body">Pick one thing you will do every day this week without exception. It can be a ten-minute walk, five minutes of writing, a cold shower, a specific time you put your phone down. It does not matter what it is. What matters is that it happens at the same time every day and that it is yours — not about the baby, not about the house. The anchor is the beginning of agency. Agency is the opposite of depression.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Relational Action — The Weekly Check-In Conversation</div>
+        <div class="tool-body">Agree with your partner on a weekly five-minute check-in. Not a big conversation — just five minutes, same time each week, where you both answer: "What do I need from you this week that I am not getting?" Keep it brief. Keep it honest. This conversation, done consistently, prevents the accumulation of resentment that makes everything harder.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Systemic Action — Tell One More Person</div>
+        <div class="tool-body">Corrigan et al. (2012) found that first-person disclosure is more effective at reducing the stigma of mental illness than any media campaign. You do not need to tell the world. Tell one more person this week. A friend who has had kids. A brother. A colleague. The phrase "I've been struggling since the baby arrived and I'm getting some help with it" is enough. You are building a support structure, one person at a time.</div>
+      </div>
+      <div class="checkin">
+        <div class="checkin-title">Week 4 Check-In</div>
+        <ul class="checkin-list">
+          <li>Did the anchor happen every day?</li>
+          <li>Did the weekly check-in conversation happen?</li>
+          <li>Did you tell one more person?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week-block" id="week5">
+      <div class="week-label">Week 5</div>
+      <div class="week-title">The Relationship With The Baby</div>
+      <div class="week-focus">Individual: One daily moment · Relational: Parallel presence · Systemic: Review clinical support</div>
+      <p class="body-text">Sarkadi et al. (2008) found in a systematic review that paternal involvement in the first year is one of the strongest predictors of developmental outcome for the child. This is not guilt — it is information. The relationship with the baby does not need to be perfect. It needs to be present.</p>
+      <div class="tool-block">
+        <div class="tool-title">Individual Action — Five Minutes, Fully Present</div>
+        <div class="tool-body">Once a day, for five minutes, be with your baby without your phone, without the TV, without doing anything else. You do not need to feel bonded. You do not need to feel anything. Just be there. Presence precedes connection. Connection follows presence, not the other way around.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Relational Action — Parallel Presence</div>
+        <div class="tool-body">Find one thing each week you and your partner do with the baby at the same time — not tag-teaming, not one watching while the other does it, but both present simultaneously. Bath time. A walk. Reading. It does not need to be long. The shared experience builds something that divided caregiving does not.</div>
+      </div>
+      <div class="checkin">
+        <div class="checkin-title">Week 5 Check-In</div>
+        <ul class="checkin-list">
+          <li>Did the five minutes of presence happen daily?</li>
+          <li>Was there at least one moment of parallel presence with your partner?</li>
+          <li>Are you still seeing the GP or following the clinical pathway?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week-block" id="week6">
+      <div class="week-label">Week 6</div>
+      <div class="week-title">Managing The Inner Voice</div>
+      <div class="week-focus">Individual: The critic · Relational: What you say out loud · Systemic: Workplace</div>
+      <div class="tool-block">
+        <div class="tool-title">Individual Action — The Externalising Exercise</div>
+        <div class="tool-body">Pennebaker and Beall (1986) established that writing about difficult emotions reduces their physiological and psychological impact significantly. This week, for ten minutes on three separate days, write about what the inner critic says — the voice that tells you you are failing, that you are a bad father, that this is your fault. Write it as if it is a character speaking, not you. Externalising the critic is the first step to recognising that it is a symptom, not a truth.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Relational Action — Watch What You Say Out Loud</div>
+        <div class="tool-body">Negative self-talk said aloud shapes the people around you. When your partner hears "I'm useless at this" repeatedly, she absorbs it — both as information about how you feel and as something she now has to manage. This week, notice once a day when you are about to say something self-critical out loud, and replace it with factual observation instead. Not "I'm terrible at this" but "that was harder than I expected."</div>
+      </div>
+      <div class="checkin">
+        <div class="checkin-title">Week 6 Check-In</div>
+        <ul class="checkin-list">
+          <li>Did you do the writing exercise on at least two of the three days?</li>
+          <li>Did you catch at least one self-critical statement and reframe it?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week-block" id="week7">
+      <div class="week-label">Week 7</div>
+      <div class="week-title">The Halfway Point</div>
+      <div class="week-focus">Individual: Review · Relational: What has shifted · Systemic: What is in place</div>
+      <p class="body-text">Seven weeks in. This is the halfway point of Phase Two and the point at which most people who do not have a structure abandon it. You have a structure. Use it.</p>
+      <div class="tool-block">
+        <div class="tool-title">Individual Action — The Honest Review</div>
+        <div class="tool-body">Go back to the written account you made in Week 1 — the three specific observations about how you had changed. Compare them to now. Not to where you want to be. To where you were. What has shifted, even slightly? What has not? This is not a pass/fail exercise. It is calibration.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Relational Action — Ask Her The Same Question</div>
+        <div class="tool-body">Ask your partner the same question you are asking yourself: what has shifted in the past seven weeks, and what has not? Listen to the answer without defending. Her observation is data, not an attack.</div>
+      </div>
+      <div class="checkin">
+        <div class="checkin-title">Week 7 Check-In</div>
+        <ul class="checkin-list">
+          <li>What is measurably different from Week 1?</li>
+          <li>What clinical support is in place?</li>
+          <li>What needs to change in Phase Three?</li>
+        </ul>
+      </div>
+      <div class="remember">
+        <div class="remember-label">Remember</div>
+        <p class="remember-text">Recovery is not linear. A harder week in Week 6 does not erase what Week 4 built. The structure holds even when the feeling does not.</p>
+      </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="phase-header">
+      <div class="phase-label">Phase Three — Weeks 8–11</div>
+      <div class="phase-title">Consolidation.<br><em>Making It Sustainable.</em></div>
+      <p class="phase-desc">Phase Three is about making the gains of Phase Two sustainable beyond the toolkit. Not reliant on willpower. Built into the structure of your life.</p>
+    </div>
+
+    <div class="week-block" id="week8">
+      <div class="week-label">Week 8</div>
+      <div class="week-title">Building The Long-Term Infrastructure</div>
+      <div class="week-focus">Individual: What you will keep · Relational: The ongoing plan · Systemic: Beyond the GP</div>
+      <div class="tool-block">
+        <div class="tool-title">Individual Action — The Keeper List</div>
+        <div class="tool-body">From everything you have done in the past seven weeks, identify three things you will continue beyond this toolkit. Three things that have made a measurable difference — however small — and that you can maintain without this document. Write them down. Put them somewhere you will see them.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Systemic Action — Beyond The GP</div>
+        <div class="tool-body">If you have been through the GP pathway and are in or waiting for therapy, this week is about staying in the system. If you have not yet engaged clinically, this week is the last realistic window to do so within the framework of this toolkit. IAPT (Improving Access to Psychological Therapies) is self-referral in most areas in England. The wait is real. The referral needs to happen now to matter.</div>
+      </div>
+      <div class="checkin">
+        <div class="checkin-title">Week 8 Check-In</div>
+        <ul class="checkin-list">
+          <li>What are your three keepers?</li>
+          <li>Is the clinical pathway still in motion?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week-block" id="week9">
+      <div class="week-label">Week 9</div>
+      <div class="week-title">The Relationship Beyond Survival Mode</div>
+      <div class="week-focus">Relational focus this week</div>
+      <p class="body-text">Doss et al. (2009) found that relationship satisfaction declines sharply in the first year postpartum for most couples — and that the decline is significantly steeper when one partner is experiencing mental health difficulties. This is a known risk. Knowing it is the first step to not being in it.</p>
+      <div class="tool-block">
+        <div class="tool-title">Relational Action — Name One Thing She Has Carried</div>
+        <div class="tool-body">Name one specific thing your partner has carried in the past nine weeks that she has not been thanked for. Say it out loud to her. Not as preamble to a larger conversation. Just: "I have been thinking about how much you have been carrying, specifically [the thing], and I want you to know I see it." This costs nothing and changes more than you expect.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Relational Action — Plan One Thing Forward</div>
+        <div class="tool-body">Plan one thing together that is not about survival — not a logistics conversation, not a "how are we doing" check-in. Something forward-facing. A trip you will take when the baby is older. Something you will do together next month. Couples who can hold a future orientation during a hard period are significantly more resilient than those who cannot.</div>
+      </div>
+      <div class="checkin">
+        <div class="checkin-title">Week 9 Check-In</div>
+        <ul class="checkin-list">
+          <li>Did you name the one thing she has carried?</li>
+          <li>Is there something forward-facing planned?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week-block" id="week10">
+      <div class="week-label">Week 10</div>
+      <div class="week-title">Identity Beyond Fatherhood</div>
+      <div class="week-focus">Individual: Who you were · Who you are becoming</div>
+      <p class="body-text">One of the least discussed aspects of the transition to fatherhood is identity loss. The person you were — with specific interests, social roles, freedoms — does not simply continue. He is interrupted. For many fathers, this interruption, the absence of the old self without the new self yet fully formed, is a significant driver of paternal PPD.</p>
+      <div class="tool-block">
+        <div class="tool-title">Individual Action — One Thing That Was Yours</div>
+        <div class="tool-body">Identify one interest, activity, or pursuit that was yours before the baby — something that was part of who you were. Plan a specific time this week to do it, even briefly. Not as escape. As maintenance. The father is more capable when the person is not entirely subsumed.</div>
+      </div>
+      <div class="checkin">
+        <div class="checkin-title">Week 10 Check-In</div>
+        <ul class="checkin-list">
+          <li>Did you do the thing that was yours?</li>
+          <li>Can you describe who you are becoming — not who you were, not who you think you should be, but who you are actually becoming?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week-block" id="week11">
+      <div class="week-label">Week 11</div>
+      <div class="week-title">When It Is Beyond This Toolkit</div>
+      <div class="week-focus">Systemic: Knowing the threshold</div>
+      <p class="body-text">This toolkit is not a substitute for clinical care. If you have reached Week 11 and you are still struggling significantly — if the low mood is persistent, if you are using alcohol or substances to manage, if you are having thoughts of self-harm or of not being here — <strong>this is the week to escalate, not persist with self-managed support.</strong></p>
+      <div class="crisis">
+        <div class="crisis-title">⚠ If This Is You Right Now</div>
+        <div class="crisis-body">
+          <p><strong>Samaritans: 116 123</strong> — free, 24 hours, no judgement, no record kept</p>
+          <p><strong>NHS 111</strong> — for urgent mental health support</p>
+          <p><strong>PANDAS Foundation: 0808 196 1776</strong> — specifically for perinatal mental health</p>
+          <p><strong>Your GP</strong> — call first thing and say: "I need an urgent appointment. I have been struggling with my mental health since becoming a father and it is getting worse, not better."</p>
+        </div>
+      </div>
+      <div class="checkin">
+        <div class="checkin-title">Week 11 Check-In</div>
+        <ul class="checkin-list">
+          <li>Honestly: do you need more support than this guide alone can provide?</li>
+          <li>If yes: what is the one action you will take today?</li>
+          <li>If you are in crisis right now: stop reading and contact support immediately.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="phase-header">
+      <div class="phase-label">Phase Four — Week 12 — Day 90</div>
+      <div class="phase-title">The Father You Are Becoming.<br><em>What Comes Next.</em></div>
+      <p class="phase-desc">Twelve weeks. Whatever the journey looked like — whether you worked through every week in order or found the one page that helped at 3am — you are here. That is not a small thing.</p>
+    </div>
+
+    <div class="week-block" id="week12">
+      <div class="week-label">Week 12 — Day 90</div>
+      <div class="week-title">The Father You Are Becoming</div>
+      <div class="tool-block">
+        <div class="tool-title">Write The Letter</div>
+        <div class="tool-body">Write a letter to yourself as you were in Week 1. What do you know now that you did not know then? What would you tell that man? This is not therapy for its own sake — it is making your own growth visible to yourself at a moment when most men are too close to the experience to see how far they have come.</div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Make The Commitment</div>
+        <div class="tool-body">Name one thing you will continue to do for your mental health beyond this guide. One recurring action, one relationship you will keep honest, one resource you will stay connected to. Fatherhood is a long road. <strong>Maintained infrastructure is how you travel it.</strong></div>
+      </div>
+      <div class="tool-block">
+        <div class="tool-title">Tell Another Dad</div>
+        <div class="tool-body">First-person disclosure from peers is more effective at reducing mental health stigma than any media campaign or clinical communication. The most powerful thing you can do is tell one other new father this exists. Not the whole story. Just: "There is a guide I found that helped. Here it is." That is how the conversation changes. One father at a time.</div>
+      </div>
+      <div class="remember">
+        <div class="remember-label">Remember</div>
+        <p class="remember-text">You showed up. Every week, imperfectly, under impossible pressure, you showed up. That is what fatherhood is. You are already doing it.</p>
       </div>
     </div>
   </section>
 
   <hr>
 
-  <section aria-labelledby="not-ready-heading">
+  <!-- ══ SECTION 3 — PARTNER GUIDE ══ -->
+  <section id="section-3" aria-labelledby="s3-heading">
     <div class="section-marker" aria-hidden="true">
-      <span class="section-num">NOT READY YET?</span>
+      <span class="section-tag">Section 03</span>
       <span class="section-line"></span>
     </div>
+    <h2 id="s3-heading">The Partner Guide.<br><em>Written For The Person Watching It Happen.</em></h2>
 
-    <div class="not-ready">
-      <div class="not-ready-text">
-        <div class="not-ready-label">START WITH THE FREE GUIDE</div>
-        <p class="not-ready-desc">
-          The 7 Signs of Paternal PPD — free, no commitment.
-          If it resonates, the toolkit will still be here.
-        </p>
+    <p class="body-text">
+      If you are reading this as the partner — you noticed first. Partners almost always do.
+      You have been watching something change in him and not knowing what to name it
+      or how to reach him. <strong>What you have observed is not nothing. It is information.</strong>
+      This section is for you.
+    </p>
+
+    <h3>The 7 Signs — In Full</h3>
+    <p class="body-text">These are the seven signs most commonly reported by partners of fathers experiencing paternal PPD. They are not a checklist — they are a picture. The more of these that resonate, the more likely what you are seeing is clinical, not personal.</p>
+
+    <div class="sign-block">
+      <span class="sign-num">01</span>
+      <div class="sign-body">
+        <div class="sign-title">Withdrawal — From You, From The Baby, From Everything</div>
+        <div class="sign-desc">Not just tiredness. A specific pulling away — less conversation, less physical contact, less engagement with the baby even when present. He is there but not there. <strong>This is not deliberate.</strong> Withdrawal is a symptom of emotional numbing, which is a core feature of male-pattern depression.</div>
       </div>
-      <a href="https://subscribepage.io/W3WGYX" class="not-ready-btn" aria-label="Download the free 7 Signs guide" onclick="gtag('event','free_guide_click',{source:'toolkit_page'})">Free Guide &rarr;</a>
     </div>
 
-    <div class="not-ready">
-      <div class="not-ready-text">
-        <div class="not-ready-label">TAKE THE FREE ASSESSMENT FIRST</div>
-        <p class="not-ready-desc">
-          Not sure if this applies? The Gotland Male Depression Scale takes under
-          3 minutes. No email required. Your score may answer the question.
-        </p>
+    <div class="sign-block">
+      <span class="sign-num">02</span>
+      <div class="sign-body">
+        <div class="sign-title">Irritability That Feels Disproportionate</div>
+        <div class="sign-desc">Short fuse over small things. Reactions that do not match the trigger. Anger that comes quickly and seems to surprise even him. <strong>In men, irritability is often depression wearing a different face.</strong> The standard picture of depression — sadness, tearfulness — is less common in male presentation. Irritability is frequently what you see instead.</div>
       </div>
-      <a href="https://parents2beintl-hue.github.io/parents2be-assessment" class="not-ready-btn" aria-label="Take the free Gotland assessment" onclick="gtag('event','assessment_click',{source:'toolkit_page'})">Take Assessment &rarr;</a>
     </div>
 
-    <div class="not-ready">
-      <div class="not-ready-text">
-        <div class="not-ready-label">RETURN TO THE MAIN SITE</div>
-        <p class="not-ready-desc">
-          Articles, resources, and more at Parents2Be International.
-        </p>
+    <div class="sign-block">
+      <span class="sign-num">03</span>
+      <div class="sign-body">
+        <div class="sign-title">Increased Alcohol Use Or Screen Escape</div>
+        <div class="sign-desc">More drinks than before. Hours on a screen when he would previously have been present. These are not character flaws — they are escape mechanisms. When emotional regulation becomes difficult, people reach for shortcuts. <strong>The behaviour is a signal, not the problem itself.</strong></div>
       </div>
-      <a href="https://parents2beintl.com" class="not-ready-btn" aria-label="Return to Parents2Be International">Main Site &rarr;</a>
+    </div>
+
+    <div class="sign-block">
+      <span class="sign-num">04</span>
+      <div class="sign-body">
+        <div class="sign-title">Excessive Worry About Providing Or Protecting</div>
+        <div class="sign-desc">An anxiety that has shifted from normal new-parent concern to something more consuming. Obsessive checking of finances. Fear of something happening to the baby or to you. A sense that something bad is inevitable. <strong>This hypervigilance is a known feature of paternal PPD</strong> — the threat response system running too hot, too constantly.</div>
+      </div>
+    </div>
+
+    <div class="sign-block">
+      <span class="sign-num">05</span>
+      <div class="sign-body">
+        <div class="sign-title">Feeling Like A Stranger In His Own Life</div>
+        <div class="sign-desc">He may say things like "I don't recognise myself" or "I feel like I'm watching my life from outside it." He may say nothing, but behave as though disconnected from everything around him. <strong>Depersonalisation and identity disruption</strong> are documented features of the transition to fatherhood, amplified significantly by depression.</div>
+      </div>
+    </div>
+
+    <div class="sign-block">
+      <span class="sign-num">06</span>
+      <div class="sign-body">
+        <div class="sign-title">Physical Symptoms With No Physical Cause</div>
+        <div class="sign-desc">Headaches, digestive problems, muscle tension, fatigue that sleep does not fix. Men are significantly more likely than women to present with somatic symptoms of depression — <strong>the body expressing what the mind is not naming.</strong> If he has been to the GP for physical symptoms and been given the all-clear, consider that the cause may not be physical.</div>
+      </div>
+    </div>
+
+    <div class="sign-block">
+      <span class="sign-num">07</span>
+      <div class="sign-body">
+        <div class="sign-title">Loss Of Interest In Things He Used To Care About</div>
+        <div class="sign-desc">The sport he watched. The hobby he had. The friends he saw. A flat affect where enthusiasm used to be. <strong>Anhedonia — the inability to feel pleasure from previously enjoyable activities — is a diagnostic criterion for depression.</strong> When the things that used to sustain him stop working, that is clinically significant.</div>
+      </div>
+    </div>
+
+    <h3>How To Approach Him Without Pushing Him Further In</h3>
+
+    <div class="partner-block">
+      <div class="partner-label">What Works</div>
+      <div class="partner-body">
+        <p><strong>Ask without diagnosis.</strong> "I've noticed you seem to be carrying a lot — is there anything I can do?" rather than "I think you're depressed and you need help." The second closes the conversation before it starts. The first opens a door without specifying what is behind it.</p>
+        <p><strong>Lower the threshold for what counts as talking.</strong> He does not need to have a full conversation. He needs to know the door is open. "You don't have to explain everything — you can just tell me one thing" is more likely to get a response than "we need to talk about how you've been feeling."</p>
+        <p><strong>Make it practical where possible.</strong> Many men find it easier to engage with a problem when there is an action attached. "I found this toolkit — do you want to look at it together?" gives him something to do rather than just something to feel.</p>
+        <p><strong>Name what you observe, not what you interpret.</strong> "I've noticed you've seemed more withdrawn this week" is factual. "I can tell you're depressed" is interpretive. Stick to what you have observed. It is harder to argue with.</p>
+      </div>
+    </div>
+
+    <div class="partner-block">
+      <div class="partner-label">What Does Not Work</div>
+      <div class="partner-body">
+        <p><strong>Ultimatums before connection.</strong> "You need to get help or I don't know what's going to happen to us" may be true, but said before he feels understood, it reads as threat, not concern. Save the difficult boundary conversations for after he knows you are on his side.</p>
+        <p><strong>Comparison.</strong> "Other dads seem to manage fine" is not useful information. It is shaming. It closes the conversation.</p>
+        <p><strong>Taking his withdrawal personally.</strong> The most common partner response to his withdrawal is to interpret it as rejection. It is usually not. It is a symptom. When you interpret it as rejection and respond accordingly — with hurt or anger — it confirms his existing belief that he is a burden and makes withdrawal more likely, not less.</p>
+      </div>
+    </div>
+
+    <h3>Looking After Yourself</h3>
+
+    <div class="partner-block">
+      <div class="partner-label">This Applies To You Too</div>
+      <div class="partner-body">
+        <p>Pilkington et al. (2015) found that partner mental health is significantly impacted by the partner's depression — that the burden of carrying a depressed partner while managing a new baby produces measurable psychological strain in the supporting partner.</p>
+        <p><strong>You are allowed to be struggling too.</strong> Supporting him does not require you to absorb his depression. There is a difference between being present and being consumed. If you are finding it hard to tell which one you are doing, that is worth speaking to your own GP about.</p>
+        <p>The resources in Section 4 and Section 5 of this toolkit are for both of you. The GP scripts work for partners seeking support too. You are not in this alone, but you cannot support him indefinitely from empty.</p>
+      </div>
     </div>
   </section>
 
-  <p class="disclaimer">
-    <strong>Clinical disclaimer:</strong> This toolkit is an educational and supportive resource.
-    It does not constitute clinical diagnosis, treatment, or professional mental health advice.
-    Always consult a qualified healthcare professional for clinical concerns.
-    If you are concerned about immediate safety, contact your GP, call NHS 111,
-    or call the Samaritans on <strong>116 123</strong> (free, 24 hours, no judgement).
-  </p>
+  <hr>
+
+  <!-- ══ SECTION 4 — GP PREPARATION ══ -->
+  <section id="section-4" aria-labelledby="s4-heading">
+    <div class="section-marker" aria-hidden="true">
+      <span class="section-tag">Section 04</span>
+      <span class="section-line"></span>
+    </div>
+    <h2 id="s4-heading">GP Preparation.<br><em>The Framing That Gets Heard Differently.</em></h2>
+
+    <p class="body-text">
+      Most fathers who do see a GP about paternal PPD underreport their symptoms, frame them vaguely,
+      and leave without a clear plan. This section gives you the exact language to use —
+      for the father, and for the partner going on his behalf or alongside him.
+      <strong>How you say it changes what happens next.</strong>
+    </p>
+
+    <h3>Before You Go — What To Prepare</h3>
+    <div class="content-block">
+      <div class="content-block-title">Your Pre-Appointment Preparation</div>
+      <div class="content-block-body">
+        <p>Write down — before the appointment, not in the waiting room — the answers to these four questions:</p>
+        <p><strong>1. When did this start?</strong> As specifically as you can. "About three weeks after the baby was born" is more useful than "a few months ago."</p>
+        <p><strong>2. What does it feel like day to day?</strong> Use the language from Section 1 of this toolkit if it fits. Irritability. Withdrawal. Numbness. Physical symptoms. The more specific, the better.</p>
+        <p><strong>3. How is it affecting your daily functioning?</strong> Work, relationships, sleep, appetite, ability to engage with the baby.</p>
+        <p><strong>4. Your Gotland score.</strong> Tell the GP you completed the Gotland Male Depression Scale — a validated clinical screening tool — and share your score and band. This is clinical information. It changes how the conversation goes.</p>
+      </div>
+    </div>
+
+    <h3>For The Father — What To Say</h3>
+
+    <div class="script-block">
+      <div class="script-label">Opening Script — Father</div>
+      <p class="script-text">"I've been struggling since my baby was born. I've completed a validated screening tool for paternal postpartum depression — the Gotland Male Depression Scale — and my score was [your score], which is in the [no indication / probable / significant] range. I need to talk about what's been happening and what my options are."</p>
+    </div>
+
+    <div class="script-block">
+      <div class="script-label">If You Are Dismissed Or Not Taken Seriously</div>
+      <p class="script-text">"I understand this isn't something that comes up often, but paternal postpartum depression affects approximately one in ten new fathers and is documented in peer-reviewed literature. I completed a validated screening tool specifically designed for male depression and I scored in the [probable / significant] range. I would like a formal assessment and a referral to be documented on my record."</p>
+    </div>
+
+    <div class="script-block">
+      <div class="script-label">If You Are Offered Antidepressants And Are Unsure</div>
+      <p class="script-text">"Before I decide, can you tell me what the evidence says about medication combined with talking therapy for my presentation? I would like to understand both options before I commit to one."</p>
+    </div>
+
+    <h3>For The Partner — Going On His Behalf Or Alongside</h3>
+
+    <div class="script-block">
+      <div class="script-label">Opening Script — Partner</div>
+      <p class="script-text">"I'm here because I'm concerned about my partner. Since our baby was born, I've observed significant changes in his behaviour — [name the two or three most specific things you have observed]. I've read about paternal postpartum depression and I believe that's what I'm seeing. I want to understand what support is available and how to help him access it."</p>
+    </div>
+
+    <div class="script-block">
+      <div class="script-label">If The GP Says Fathers Do Not Get Postnatal Depression</div>
+      <p class="script-text">"Paternal postpartum depression is documented in the clinical literature and is included in NHS perinatal mental health guidance. I am not asking for a diagnosis today — I am asking for my concerns to be taken seriously and for a referral pathway to be discussed."</p>
+    </div>
+
+    <h3>NHS Pathways — What To Ask For</h3>
+    <div class="content-block">
+      <div class="content-block-title">Your Options In England</div>
+      <div class="content-block-body">
+        <p><strong>IAPT (Improving Access to Psychological Therapies)</strong> — self-referral available in most areas of England. You do not need a GP referral. Search "IAPT self-referral [your area]" to find your local service. Wait times vary — refer yourself now, not when you feel ready.</p>
+        <p><strong>GP referral to Community Mental Health Team</strong> — appropriate for significant scores or where symptoms are severe. Ask specifically for this referral by name.</p>
+        <p><strong>NHS Talking Therapies</strong> — formerly IAPT, rebranded. Same service, same self-referral option. nhs.uk/mental-health/talking-therapies-medicine-treatments/talking-therapies-and-counselling/nhs-talking-therapies</p>
+        <p><strong>PANDAS Foundation</strong> — specifically for perinatal mental health including fathers. 0808 196 1776. Free.</p>
+        <p><strong>Andy's Man Club</strong> — peer support groups for men. Free, non-clinical, nationwide. andysmanclub.co.uk</p>
+      </div>
+    </div>
+
+    <div class="crisis">
+      <div class="crisis-title">⚠ Crisis Escalation — Use This Section If Needed</div>
+      <div class="crisis-body">
+        <p>If there are thoughts of self-harm, of not wanting to be here, or of harm to others — this is beyond a GP appointment.</p>
+        <p><strong>Samaritans: 116 123</strong> — free, 24/7, no record kept, no judgement</p>
+        <p><strong>NHS 111</strong> — option 2 for mental health crisis</p>
+        <p><strong>A&E</strong> — if there is immediate risk to safety</p>
+        <p><strong>What to say at A&E:</strong> "I am in mental health crisis and I need to be assessed." Those words will result in a specific clinical pathway. Use them exactly.</p>
+        <p>If you are the partner and you are concerned about his safety and he will not seek help: you can call his GP on his behalf to express concerns. The GP cannot share information about him, but they can receive information from you and act on it. You can also call 999 if you believe there is immediate risk.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ══ SECTION 5 — PROGRESS TRACKER ══ -->
+  <section id="section-5" aria-labelledby="s5-heading">
+    <div class="section-marker" aria-hidden="true">
+      <span class="section-tag">Section 05</span>
+      <span class="section-line"></span>
+    </div>
+    <h2 id="s5-heading">Progress Tracker.<br><em>Structure For The Long Game.</em></h2>
+
+    <p class="body-text">
+      Recovery is not linear. This tracker gives you a simple weekly snapshot
+      using five key indicators. Your scores over time are the most honest measure
+      of how you are moving. <strong>Scores save automatically to this browser on this device.</strong>
+      Return to this page weekly.
+    </p>
+
+    <div class="notice">
+      <div class="notice-title">How To Use The Tracker</div>
+      <div class="notice-body">
+        Score yourself 0–3 on each indicator: 0 = not at all / 3 = significantly. Record weekly, same day each week if possible. Over time, the pattern is more informative than any single score. If your scores are consistently rising after Week 6, this warrants a conversation with your GP.
+      </div>
+    </div>
+
+    <div class="tracker-wrap" role="region" aria-label="Weekly progress tracker">
+      <div class="tracker-header">Weekly Check-In — Score 0 (None) to 3 (Significant)</div>
+      <div class="tracker-body">
+        <div class="tracker-row">
+          <div class="tracker-label">Mood / Irritability</div>
+          <div class="tracker-score-btns" role="group" aria-label="Mood score">
+            <button class="score-btn" data-q="mood" data-v="0" onclick="setScore('mood',0)" aria-label="Mood: 0">0</button>
+            <button class="score-btn" data-q="mood" data-v="1" onclick="setScore('mood',1)" aria-label="Mood: 1">1</button>
+            <button class="score-btn" data-q="mood" data-v="2" onclick="setScore('mood',2)" aria-label="Mood: 2">2</button>
+            <button class="score-btn" data-q="mood" data-v="3" onclick="setScore('mood',3)" aria-label="Mood: 3">3</button>
+          </div>
+        </div>
+        <div class="tracker-row">
+          <div class="tracker-label">Withdrawal</div>
+          <div class="tracker-score-btns" role="group" aria-label="Withdrawal score">
+            <button class="score-btn" data-q="withdrawal" data-v="0" onclick="setScore('withdrawal',0)" aria-label="Withdrawal: 0">0</button>
+            <button class="score-btn" data-q="withdrawal" data-v="1" onclick="setScore('withdrawal',1)" aria-label="Withdrawal: 1">1</button>
+            <button class="score-btn" data-q="withdrawal" data-v="2" onclick="setScore('withdrawal',2)" aria-label="Withdrawal: 2">2</button>
+            <button class="score-btn" data-q="withdrawal" data-v="3" onclick="setScore('withdrawal',3)" aria-label="Withdrawal: 3">3</button>
+          </div>
+        </div>
+        <div class="tracker-row">
+          <div class="tracker-label">Sleep Quality</div>
+          <div class="tracker-score-btns" role="group" aria-label="Sleep score">
+            <button class="score-btn" data-q="sleep" data-v="0" onclick="setScore('sleep',0)" aria-label="Sleep: 0">0</button>
+            <button class="score-btn" data-q="sleep" data-v="1" onclick="setScore('sleep',1)" aria-label="Sleep: 1">1</button>
+            <button class="score-btn" data-q="sleep" data-v="2" onclick="setScore('sleep',2)" aria-label="Sleep: 2">2</button>
+            <button class="score-btn" data-q="sleep" data-v="3" onclick="setScore('sleep',3)" aria-label="Sleep: 3">3</button>
+          </div>
+        </div>
+        <div class="tracker-row">
+          <div class="tracker-label">Relationship Strain</div>
+          <div class="tracker-score-btns" role="group" aria-label="Relationship score">
+            <button class="score-btn" data-q="relationship" data-v="0" onclick="setScore('relationship',0)" aria-label="Relationship: 0">0</button>
+            <button class="score-btn" data-q="relationship" data-v="1" onclick="setScore('relationship',1)" aria-label="Relationship: 1">1</button>
+            <button class="score-btn" data-q="relationship" data-v="2" onclick="setScore('relationship',2)" aria-label="Relationship: 2">2</button>
+            <button class="score-btn" data-q="relationship" data-v="3" onclick="setScore('relationship',3)" aria-label="Relationship: 3">3</button>
+          </div>
+        </div>
+        <div class="tracker-row">
+          <div class="tracker-label">Daily Function</div>
+          <div class="tracker-score-btns" role="group" aria-label="Function score">
+            <button class="score-btn" data-q="function" data-v="0" onclick="setScore('function',0)" aria-label="Function: 0">0</button>
+            <button class="score-btn" data-q="function" data-v="1" onclick="setScore('function',1)" aria-label="Function: 1">1</button>
+            <button class="score-btn" data-q="function" data-v="2" onclick="setScore('function',2)" aria-label="Function: 2">2</button>
+            <button class="score-btn" data-q="function" data-v="3" onclick="setScore('function',3)" aria-label="Function: 3">3</button>
+          </div>
+        </div>
+      </div>
+      <div class="tracker-total">
+        <span>Total: <strong id="tracker-total-display">—</strong> / 15</span>
+        <button class="tracker-save-btn" onclick="saveEntry()" aria-label="Save this week's scores">Save This Week &rarr;</button>
+      </div>
+      <div class="tracker-history" id="tracker-history" aria-live="polite" aria-label="Saved entries">
+        No entries saved yet. Complete your first check-in and save it.
+      </div>
+    </div>
+
+    <div class="notice">
+      <div class="notice-title">Take The Gotland Assessment Again</div>
+      <div class="notice-body">
+        At the end of your 90 days, retake the Gotland Male Depression Scale to see how your score has moved. The assessment is free and takes under 3 minutes. <a href="https://parents2beintl-hue.github.io/parents2be-assessment" style="color:var(--gold);">Take the assessment →</a>
+      </div>
+    </div>
+
+    <p class="disclaimer">
+      <strong>Clinical disclaimer:</strong> This toolkit is an educational and structured support resource.
+      It does not constitute clinical diagnosis, treatment, or professional mental health advice.
+      Always consult a qualified healthcare professional for clinical concerns.
+      If you are concerned about immediate safety: contact your GP, call NHS 111 (option 2),
+      or call the Samaritans on <strong>116 123</strong> (free, 24 hours, no judgement).<br><br>
+      References: Paulson &amp; Bazemore (2010) JAMA; Gettler et al. (2011) PNAS; Martin et al. (2013) JAMA Psychiatry;
+      Doss et al. (2009) J Personality &amp; Social Psychology; Sarkadi et al. (2008) Acta Paediatrica;
+      Pilkington et al. (2015) J Affective Disorders; Pennebaker &amp; Beall (1986) J Abnormal Psychology;
+      Corrigan et al. (2012) Psychiatric Services; Williamson &amp; Feyer (2000) Occupational &amp; Environmental Medicine.<br><br>
+      Version 1.0 | April 2026 | Next review April 2027 | Parents2Be International | parents2beintl.com<br>
+      Single User Licence — Not For Redistribution
+    </p>
+  </section>
 
 </div>
 </main>
 
 <footer>
-  <span>&copy; 2026 Parents2Be International</span>
-  <span>Evidence-Based &middot; NHS-Cited &middot; UK-Focused</span>
+  <span>&copy; 2026 Parents2Be International. All Rights Reserved.</span>
+  <span>Single User Licence &middot; Not For Redistribution</span>
   <span>parents2beintl.com</span>
 </footer>
+
+<script>
+// ── SCROLL PROGRESS ──
+window.addEventListener('scroll', function() {
+  var el = document.getElementById('scroll-progress-fill');
+  if (!el) return;
+  var scrollTop = window.scrollY || document.documentElement.scrollTop;
+  var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  el.style.width = docHeight > 0 ? (scrollTop / docHeight * 100) + '%' : '0%';
+}, { passive: true });
+
+// ── SMOOTH SCROLL ──
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+  a.addEventListener('click', function(e) {
+    var t = document.querySelector(this.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+// ── TRACKER ──
+var scores = { mood: null, withdrawal: null, sleep: null, relationship: null, function: null };
+
+function setScore(q, v) {
+  scores[q] = v;
+  document.querySelectorAll('[data-q="' + q + '"]').forEach(function(btn) {
+    btn.classList.toggle('selected', parseInt(btn.getAttribute('data-v')) === v);
+  });
+  var total = Object.values(scores).reduce(function(a, b) { return a + (b !== null ? b : 0); }, 0);
+  var allSet = Object.values(scores).every(function(s) { return s !== null; });
+  document.getElementById('tracker-total-display').textContent = allSet ? total : '—';
+  if (allSet) gtag('event', 'tracker_scored', { total: total });
+}
+
+function saveEntry() {
+  var allSet = Object.values(scores).every(function(s) { return s !== null; });
+  if (!allSet) { alert('Please score all five areas before saving.'); return; }
+  var total = Object.values(scores).reduce(function(a, b) { return a + b; }, 0);
+  var date = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  var entry = { date: date, total: total, scores: Object.assign({}, scores) };
+
+  var stored = [];
+  try { stored = JSON.parse(localStorage.getItem('p2bi_tracker') || '[]'); } catch(e) {}
+  stored.push(entry);
+  try { localStorage.setItem('p2bi_tracker', JSON.stringify(stored)); } catch(e) {}
+
+  renderHistory(stored);
+  gtag('event', 'tracker_saved', { total: total });
+}
+
+function renderHistory(entries) {
+  var el = document.getElementById('tracker-history');
+  if (!entries || entries.length === 0) {
+    el.textContent = 'No entries saved yet. Complete your first check-in and save it.';
+    return;
+  }
+  el.innerHTML = entries.slice().reverse().map(function(e) {
+    return '<div class="tracker-history-entry"><span>' + e.date + '</span> — Total: <span>' + e.total + '/15</span> — Mood: ' + e.scores.mood + ' · Withdrawal: ' + e.scores.withdrawal + ' · Sleep: ' + e.scores.sleep + ' · Relationship: ' + e.scores.relationship + ' · Function: ' + e.scores.function + '</div>';
+  }).join('');
+}
+
+// Load saved entries on page load
+(function() {
+  try {
+    var stored = JSON.parse(localStorage.getItem('p2bi_tracker') || '[]');
+    if (stored.length > 0) renderHistory(stored);
+  } catch(e) {}
+})();
+</script>
 
 </body>
 </html>
